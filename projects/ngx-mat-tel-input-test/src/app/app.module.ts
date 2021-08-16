@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import {NgxMatTelInputModule} from 'ngx-mat-tel-input';
+import { NgxMatTelInputModule } from 'ngx-mat-tel-input';
 
 @NgModule({
   declarations: [
