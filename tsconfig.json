@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-mat-tel-input": [
+        "dist/ngx-mat-tel-input/ngx-mat-tel-input",
+        "dist/ngx-mat-tel-input"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
