@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { NgxMatTelInputModule } from 'ngx-mat-tel-input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { NgxMatTelInputModule } from 'ngx-mat-tel-input';
   ],
   imports: [
     BrowserModule,
-    NgxMatTelInputModule
+    NgxMatTelInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
