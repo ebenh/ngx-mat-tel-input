@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'lib-ngx-mat-tel-input',
-  template: `
-    <p>
-      ngx-mat-tel-input works!
-    </p>
-  `,
-  styles: []
+  templateUrl: './ngx-mat-tel-input.component.html',
+  styleUrls: ['./ngx-mat-tel-input.component.scss']
 })
 export class NgxMatTelInputComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
