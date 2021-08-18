@@ -1,3 +1,51 @@
-<p>
-  ngx-mat-tel-input works!
-</p>
+<div [formGroup]="formGroup">
+
+  <div fxLayout="row">
+
+    <mat-select formControlName="country"
+                (selectionChange)="onSelectionChange($event.value)"
+                fxFlex="45px"
+                #singleSelect>
+
+      <mat-select-trigger>
+<!--        <img src="assets/flags/24/{{country.value.cca2}}.png" height="24px">-->
+        {{country.value.cca2}}
+      </mat-select-trigger>
+
+      <mat-option>
+        <ngx-mat-select-search formControlName="countryFilter"
+                               placeholderLabel="Search..."
+                               noEntriesFoundLabel="No Results">
+        </ngx-mat-select-search>
+      </mat-option>
+
+      <mat-option *ngFor="let country of filteredCountries| async" [value]="country">
+<!--        <img src="../../assets/flags/24/{{country.cca2}}.png" height="24px" class="flag">{{country.name.common}}-->
+        {{country.name.common}}
+      </mat-option>
+
+    </mat-select>
+
+    <input [id]="id"
+           matInput
+           type="tel"
+           formControlName="phoneNumber"
+           [placeholder]="placeholder"
+           [errorStateMatcher]="phoneNumberErrorStateMatcher"
+           (blur)="onBlur()"
+           fxFlex="grow">
+
+  </div>
+
+  <!-- For debugging only -->
+  <!--
+  <div fxLayout="row">
+    <mat-form-field appearance="outline" fxFlex="grow">
+      <input matInput
+             type="tel"
+             formControlName="phoneNumberE164Format">
+    </mat-form-field>
+  </div>
+  -->
+
+</div>
