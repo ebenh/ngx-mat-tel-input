@@ -1,21 +1,13 @@
 <h1>Hello World!</h1>
 <form id="sign-up-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" autocomplete="off">
-            <!-- Email/Username Input-->
-          <mat-form-field appearance="outline" fxFlex="grow">
-            <mat-label>Phone Number</mat-label>
-            <lib-ngx-mat-tel-input formControlName="phone_number" [defaultCountry]="'ET'"></lib-ngx-mat-tel-input>
-            <mat-error *ngIf="phoneNumber.hasError('required')">
-              This field is <strong>required</strong>
-            </mat-error>
-            <mat-error *ngIf="phoneNumber.hasError('phoneNumber')">
-              Phone number is <strong>invalid</strong>
-            </mat-error>
-            <mat-error *ngIf="phoneNumber.hasError('server')">
-              {{ phoneNumber.getError('server') }}
-            </mat-error>
-          </mat-form-field>
-          <!-- Non-Field Errors -->
-          <mat-error *ngIf="formGroup.hasError('server')">
-            {{ formGroup.getError('server') }}
-          </mat-error>
+  <mat-form-field appearance="outline" fxFlex="grow">
+    <mat-label>Phone Number</mat-label>
+    <lib-ngx-mat-tel-input formControlName="phone_number" [defaultCountry]="'ET'"></lib-ngx-mat-tel-input>
+    <mat-error *ngIf="phoneNumber.hasError('required')">
+      This field is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="phoneNumber.hasError('phoneNumber')">
+      Phone number is <strong>invalid</strong>
+    </mat-error>
+  </mat-form-field>
 </form>
