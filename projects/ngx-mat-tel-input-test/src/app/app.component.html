@@ -11,3 +11,10 @@
     </mat-error>
   </mat-form-field>
 </form>
+
+<dl>
+  <dt>Input value (E.164 format):</dt>
+  <dd *ngIf="phoneNumber.value; then thenBlock else elseBlock"></dd>
+  <ng-template #thenBlock>{{phoneNumber.value}}</ng-template>
+  <ng-template #elseBlock><i>null</i></ng-template>
+</dl>
