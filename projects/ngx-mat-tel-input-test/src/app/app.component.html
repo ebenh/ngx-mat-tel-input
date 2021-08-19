@@ -2,7 +2,7 @@
 <form id="sign-up-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" autocomplete="off">
   <mat-form-field appearance="outline" fxFlex="grow">
     <mat-label>Phone Number</mat-label>
-    <lib-ngx-mat-tel-input formControlName="phone_number" [defaultCountry]="'ET'"></lib-ngx-mat-tel-input>
+    <lib-ngx-mat-tel-input formControlName="phone_number" [defaultCountry]="'GB'"></lib-ngx-mat-tel-input>
     <mat-error *ngIf="phoneNumber.hasError('required')">
       This field is <strong>required</strong>
     </mat-error>
