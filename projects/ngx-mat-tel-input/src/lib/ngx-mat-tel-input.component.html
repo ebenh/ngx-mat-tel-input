@@ -8,8 +8,8 @@
                 #singleSelect>
 
       <mat-select-trigger>
-<!--        <img src="assets/flags/24/{{country.value.cca2}}.png" height="24px">-->
-        {{country.value.cca2}}
+        <img src="../../assets/flags/24/{{country.value.cca2}}.png"
+             onerror="javascript:this.src='../../assets/flags/24/_unknown.png'" class="flag"/>
       </mat-select-trigger>
 
       <mat-option>
@@ -20,7 +20,8 @@
       </mat-option>
 
       <mat-option *ngFor="let country of filteredCountries| async" [value]="country">
-<!--        <img src="../../assets/flags/24/{{country.cca2}}.png" height="24px" class="flag">{{country.name.common}}-->
+        <img src="../../assets/flags/24/{{country.cca2}}.png"
+             onerror="javascript:this.src='../../assets/flags/24/_unknown.png'" class="flag"/>
         {{country.name.common}}
       </mat-option>
 
