@@ -1,2 +1,20 @@
-<h1>Hello World!</h1>
-<lib-ngx-mat-tel-input></lib-ngx-mat-tel-input>
+<h1>ngx-mat-tel-input</h1>
+<form id="sign-up-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" autocomplete="off">
+  <mat-form-field appearance="outline" fxFlex="grow">
+    <mat-label>Phone Number</mat-label>
+    <lib-ngx-mat-tel-input formControlName="phone_number" [defaultCountry]="'GB'"></lib-ngx-mat-tel-input>
+    <mat-error *ngIf="phoneNumber.hasError('required')">
+      This field is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="phoneNumber.hasError('phoneNumber')">
+      Phone number is <strong>invalid</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
+
+<dl>
+  <dt>Input value (E.164 format):</dt>
+  <dd *ngIf="phoneNumber.value; then thenBlock else elseBlock"></dd>
+  <ng-template #thenBlock>{{phoneNumber.value}}</ng-template>
+  <ng-template #elseBlock><i>null</i></ng-template>
+</dl>

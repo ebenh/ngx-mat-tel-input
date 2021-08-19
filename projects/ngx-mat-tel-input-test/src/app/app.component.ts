@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngx-mat-tel-input-test';
+
+  formGroup = new FormGroup({
+    phone_number: new FormControl({value: '', disabled: false}, [Validators.required,]),
+  });
+
+  onSubmit(): void {
+
+  }
+
+  get phoneNumber(): FormControl {
+    return this.formGroup.get('phone_number') as FormControl;
+  }
+
 }

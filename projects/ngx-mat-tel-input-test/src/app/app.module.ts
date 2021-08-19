@@ -1,9 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
-import { NgxMatTelInputModule } from 'ngx-mat-tel-input';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+import {NgxMatTelInputModule} from 'ngx-mat-tel-input';
 
 @NgModule({
   declarations: [
@@ -11,9 +15,13 @@ import { NgxMatTelInputModule } from 'ngx-mat-tel-input';
   ],
   imports: [
     BrowserModule,
-    NgxMatTelInputModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    NgxMatTelInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

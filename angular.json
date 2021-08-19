@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "ngx-mat-tel-input": {
@@ -61,9 +61,15 @@
             "aot": true,
             "assets": [
               "projects/ngx-mat-tel-input-test/src/favicon.ico",
-              "projects/ngx-mat-tel-input-test/src/assets"
+              "projects/ngx-mat-tel-input-test/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./dist/ngx-mat-tel-input/assets/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/ngx-mat-tel-input-test/src/styles.css"
             ],
             "scripts": []
@@ -128,6 +134,7 @@
               "projects/ngx-mat-tel-input-test/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/ngx-mat-tel-input-test/src/styles.css"
             ],
             "scripts": []
@@ -159,6 +166,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ngx-mat-tel-input"
 }
