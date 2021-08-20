@@ -1,6 +1,6 @@
 {
   "name": "ngx-mat-tel-input",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Angular Material component for inputting telephone numbers.",
   "author": "Ebenezer Hailemariam",
   "repository": {
