@@ -1,6 +1,6 @@
 # NgxMatTelInput
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
 ## Code scaffolding
 
@@ -13,7 +13,13 @@ Run `ng build ngx-mat-tel-input` to build the project. The build artifacts will 
 
 ## Publishing
 
-After building your library with `ng build ngx-mat-tel-input`, go to the dist folder `cd dist/ngx-mat-tel-input` and run `npm publish`.
+### Library
+
+After building your library with `ng build ngx-mat-tel-input --prod`, go to the dist folder `cd dist/ngx-mat-tel-input` and run `npm publish`.
+
+### Test application
+
+After building your test project with `ng build ngx-mat-tel-input-test --prod` run `firebase deploy`.
 
 ## Running unit tests
 
