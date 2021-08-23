@@ -39,9 +39,6 @@ Add the following to your `angular.json` file:
         ...
     }
 
-## Build
-
-Run `ng build ngx-mat-tel-input` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
