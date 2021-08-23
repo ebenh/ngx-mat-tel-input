@@ -40,4 +40,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-More information on creating Angular libraries [here](https://angular.io/guide/creating-libraries).
+More information on Angular libraries [here](https://angular.io/guide/creating-libraries).
