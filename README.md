@@ -16,6 +16,7 @@ Run `ng generate component component-name --project ngx-mat-tel-input` to genera
 ## Build
 
 Run `ng build ngx-mat-tel-input` to build the project. The build artifacts will be stored in the `dist/` directory.
+> Note: Add `--watch` to enable automatic incremental builds when file changes are detected.
 
 ## Running unit tests
 
