@@ -1,6 +1,6 @@
 <h1>ngx-mat-tel-input</h1>
 <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()" autocomplete="off">
-  <mat-form-field appearance="outline" fxFlex="grow">
+  <mat-form-field appearance="outline">
     <mat-label>Phone Number</mat-label>
     <lib-ngx-mat-tel-input formControlName="tel" [defaultCountry]="'GB'"></lib-ngx-mat-tel-input>
     <mat-error *ngIf="tel.hasError('required')">
