@@ -1,6 +1,8 @@
 # NgxMatTelInput
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+Angular Material component for inputting telephone numbers.
+
+Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
 ## Development server
 
