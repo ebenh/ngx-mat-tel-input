@@ -1,5 +1,5 @@
 <h1>ngx-mat-tel-input</h1>
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" autocomplete="off">
+<form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()" autocomplete="off">
   <mat-form-field appearance="outline" fxFlex="grow">
     <mat-label>Phone Number</mat-label>
     <lib-ngx-mat-tel-input formControlName="phone_number" [defaultCountry]="'GB'"></lib-ngx-mat-tel-input>

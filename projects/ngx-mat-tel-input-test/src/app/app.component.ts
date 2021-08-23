@@ -10,7 +10,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 export class AppComponent {
   title = 'ngx-mat-tel-input';
 
-  formGroup = new FormGroup({
+  myFormGroup = new FormGroup({
     phone_number: new FormControl({value: '', disabled: false}, [Validators.required,]),
   });
 
@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   get phoneNumber(): FormControl {
-    return this.formGroup.get('phone_number') as FormControl;
+    return this.myFormGroup.get('phone_number') as FormControl;
   }
 
 }
