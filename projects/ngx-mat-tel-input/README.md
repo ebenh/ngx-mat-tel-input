@@ -39,18 +39,6 @@ Add the following to your `angular.json` file:
         ...
     }
 
-
-## Publishing
-
-### Library
-
-After building your library with `ng build ngx-mat-tel-input --prod`, go to the dist folder `cd dist/ngx-mat-tel-input`
-and run `npm publish`.
-
-### Test application
-
-After building your test project with `ng build ngx-mat-tel-input-test --prod` run `firebase deploy`.
-
 ## Running unit tests
 
 Run `ng test ngx-mat-tel-input` to execute the unit tests via [Karma](https://karma-runner.github.io).

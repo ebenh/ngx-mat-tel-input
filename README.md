@@ -18,6 +18,16 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build ngx-mat-tel-input` to build the project. The build artifacts will be stored in the `dist/` directory.
 > Note: Add `--watch` to enable automatic incremental builds when file changes are detected.
 
+## Publishing
+
+### Library
+
+Build the library with `ng build --prod`, then navigate to the `dist/ngx-mat-tel-input` directory and run `npm publish`.
+
+### Test application
+
+After building your test project with `ng build ngx-mat-tel-input-test --prod` run `firebase deploy`.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
