@@ -22,11 +22,13 @@ Run `ng build` to build the library. The build artifacts will be stored in the `
 
 ### Library
 
+Before building the library, increment its version number using the [npm version](https://docs.npmjs.com/cli/v7/commands/npm-version) command.
+
 Build the library with `ng build --prod`, then navigate to the `dist/ngx-mat-tel-input` directory and run `npm publish`.
 
 ### Test application
 
-After building your test project with `ng build ngx-mat-tel-input-test --prod` run `firebase deploy`.
+Build the test project with `ng build ngx-mat-tel-input-test --prod` then run `firebase deploy`.
 
 ## Running unit tests
 
