@@ -38,3 +38,44 @@ Add the following to your `angular.json` file:
         ].
         ...
     }
+
+## Usage
+
+### Template
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <lib-ngx-mat-tel-input formControlName="phoneNumber" [defaultCountry]="'GB'"></lib-ngx-mat-tel-input>
+      <mat-error *ngIf="phoneNumber.hasError('required')">
+        This field is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="phoneNumber.hasError('phoneNumber')">
+        Phone number is <strong>invalid</strong>
+      </mat-error>
+    </mat-form-field>
+
+### Component
+
+    import {Component} from '@angular/core';
+    
+    import {FormGroup, FormControl, Validators} from '@angular/forms';
+    
+    @Component({
+      selector: 'my-component',
+      templateUrl: './my-component.component.html',
+      styleUrls: ['./my-component.component.css']
+    })
+    export class MyComponent { 
+      myFormGroup = new FormGroup({
+        phoneNumber: new FormControl({value: '', disabled: false}, [Validators.required,]),
+      });
+    
+      onSubmit(): void {
+    
+      }
+    
+      get phoneNumber(): FormControl {
+        return this.myFormGroup.get('phoneNumber') as FormControl;
+      }
+    
+    }
