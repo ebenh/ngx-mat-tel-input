@@ -8,7 +8,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ngx-mat-tel-input-test';
+  title = 'ngx-mat-tel-input';
 
   formGroup = new FormGroup({
     phone_number: new FormControl({value: '', disabled: false}, [Validators.required,]),
