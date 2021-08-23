@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'ngx-mat-tel-input';
 
   myFormGroup = new FormGroup({
-    phone_number: new FormControl({value: '', disabled: false}, [Validators.required,]),
+    tel: new FormControl({value: '', disabled: false}, [Validators.required,]),
   });
 
   onSubmit(): void {
@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   get phoneNumber(): FormControl {
-    return this.myFormGroup.get('phone_number') as FormControl;
+    return this.myFormGroup.get('tel') as FormControl;
   }
 
 }
