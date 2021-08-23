@@ -16,7 +16,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the library. The build artifacts will be stored in the `dist/` directory.
-> Note: Add `--watch` to enable automatic incremental builds when file changes are detected.
+> Note: Add `--watch` to enable automatic incremental builds.
 
 ## Publishing
 
