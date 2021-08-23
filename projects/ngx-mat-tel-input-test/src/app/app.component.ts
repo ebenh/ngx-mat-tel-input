@@ -18,7 +18,7 @@ export class AppComponent {
 
   }
 
-  get phoneNumber(): FormControl {
+  get tel(): FormControl {
     return this.myFormGroup.get('tel') as FormControl;
   }
 
