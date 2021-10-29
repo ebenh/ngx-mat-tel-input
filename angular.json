@@ -61,12 +61,7 @@
             "aot": true,
             "assets": [
               "projects/ngx-mat-tel-input-test/src/favicon.ico",
-              "projects/ngx-mat-tel-input-test/src/assets",
-              {
-                "glob": "**/*",
-                "input": "./dist/ngx-mat-tel-input/assets/",
-                "output": "/assets/"
-              }
+              "projects/ngx-mat-tel-input-test/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
