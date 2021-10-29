@@ -6,6 +6,11 @@
   height: 24px;
 }
 
+.__unknown {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -54px;
+}
+
 ._abkhazia {
   @include flag;
   background: url('../../assets/flags.png') -10px -10px;
@@ -89,11 +94,6 @@
 ._united_nations {
   @include flag;
   background: url('../../assets/flags.png') -186px -10px;
-}
-
-._unknown {
-  @include flag;
-  background: url('../../assets/flags.png') -186px -54px;
 }
 
 ._wales {

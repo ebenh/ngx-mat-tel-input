@@ -8,7 +8,7 @@
                 #singleSelect>
 
       <mat-select-trigger>
-        <div class="{{country.value.cca2}}"></div>
+        <div class="{{country.value.cca2}} __unknown"></div>
       </mat-select-trigger>
 
       <mat-option>
@@ -19,7 +19,7 @@
       </mat-option>
 
       <mat-option *ngFor="let country of filteredCountries| async" [value]="country">
-        <div class="{{country.cca2}}"></div>
+        <div class="{{country.cca2}} __unknown"></div>
         {{country.name.common}}
       </mat-option>
 
