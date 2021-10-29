@@ -1,4 +1,1368 @@
-.flag {
-  vertical-align: sub;
-  margin-right: 4px;
+@mixin flag {
+  display: inline-block;
+  vertical-align: text-bottom;
+
+  width: 24px;
+  height: 24px;
 }
+
+._abkhazia {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -10px;
+}
+
+._basque_country {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -10px;
+}
+
+._british_antarctic_territory {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -54px;
+}
+
+._commonwealth {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -54px;
+}
+
+._england {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -10px;
+}
+
+._gosquared {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -54px;
+}
+
+._kosovo {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -98px;
+}
+
+._mars {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -98px;
+}
+
+._nagorno_karabakh {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -98px;
+}
+
+._nato {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -10px;
+}
+
+._northern_cyprus {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -54px;
+}
+
+._olympics {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -98px;
+}
+
+._red_cross {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -142px;
+}
+
+._scotland {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -142px;
+}
+
+._somaliland {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -142px;
+}
+
+._south_ossetia {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -142px;
+}
+
+._united_nations {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -10px;
+}
+
+._unknown {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -54px;
+}
+
+._wales {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -98px;
+}
+
+.AD {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -142px;
+}
+
+.AE {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -186px;
+}
+
+.AF {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -186px;
+}
+
+.AG {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -186px;
+}
+
+.AI {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -186px;
+}
+
+.AL {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -186px;
+}
+
+.AM {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -10px;
+}
+
+.AN {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -54px;
+}
+
+.AO {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -98px;
+}
+
+.AQ {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -142px;
+}
+
+.AR {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -186px;
+}
+
+.AS {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -230px;
+}
+
+.AT {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -230px;
+}
+
+.AU {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -230px;
+}
+
+.AW {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -230px;
+}
+
+.AX {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -230px;
+}
+
+.AZ {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -230px;
+}
+
+.BA {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -10px;
+}
+
+.BB {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -54px;
+}
+
+.BD {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -98px;
+}
+
+.BE {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -142px;
+}
+
+.BF {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -186px;
+}
+
+.BG {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -230px;
+}
+
+.BH {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -274px;
+}
+
+.BI {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -274px;
+}
+
+.BJ {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -274px;
+}
+
+.BL {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -274px;
+}
+
+.BM {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -274px;
+}
+
+.BN {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -274px;
+}
+
+.BO {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -274px;
+}
+
+.BQ {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -10px;
+}
+
+.BR {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -54px;
+}
+
+.BS {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -98px;
+}
+
+.BT {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -142px;
+}
+
+.BV {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -186px;
+}
+
+.BW {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -230px;
+}
+
+.BY {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -274px;
+}
+
+.BZ {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -318px;
+}
+
+.CA {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -318px;
+}
+
+.CC {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -318px;
+}
+
+.CD {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -318px;
+}
+
+.CF {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -318px;
+}
+
+.CG {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -318px;
+}
+
+.CH {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -318px;
+}
+
+.CI {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -318px;
+}
+
+.CK {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -10px;
+}
+
+.CL {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -54px;
+}
+
+.CM {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -98px;
+}
+
+.CN {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -142px;
+}
+
+.CO {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -186px;
+}
+
+.CR {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -230px;
+}
+
+.CT {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -274px;
+}
+
+.CU {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -318px;
+}
+
+.CV {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -362px;
+}
+
+.CW {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -362px;
+}
+
+.CX {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -362px;
+}
+
+.CY {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -362px;
+}
+
+.CZ {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -362px;
+}
+
+.DE {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -362px;
+}
+
+.DJ {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -362px;
+}
+
+.DK {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -362px;
+}
+
+.DM {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -362px;
+}
+
+.DO {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -10px;
+}
+
+.DZ {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -54px;
+}
+
+.EC {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -98px;
+}
+
+.EE {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -142px;
+}
+
+.EG {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -186px;
+}
+
+.EH {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -230px;
+}
+
+.ER {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -274px;
+}
+
+.ES {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -318px;
+}
+
+.ET {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -362px;
+}
+
+.EU {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -406px;
+}
+
+.FI {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -406px;
+}
+
+.FJ {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -406px;
+}
+
+.FK {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -406px;
+}
+
+.FM {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -406px;
+}
+
+.FO {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -406px;
+}
+
+.FR {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -406px;
+}
+
+.GA {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -406px;
+}
+
+.GB {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -406px;
+}
+
+.GD {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -406px;
+}
+
+.GE {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -10px;
+}
+
+.GF {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -54px;
+}
+
+.GG {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -98px;
+}
+
+.GH {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -142px;
+}
+
+.GI {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -186px;
+}
+
+.GL {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -230px;
+}
+
+.GM {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -274px;
+}
+
+.GN {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -318px;
+}
+
+.GP {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -362px;
+}
+
+.GQ {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -406px;
+}
+
+.GR {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -450px;
+}
+
+.GS {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -450px;
+}
+
+.GT {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -450px;
+}
+
+.GU {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -450px;
+}
+
+.GW {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -450px;
+}
+
+.GY {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -450px;
+}
+
+.HK {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -450px;
+}
+
+.HM {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -450px;
+}
+
+.HN {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -450px;
+}
+
+.HR {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -450px;
+}
+
+.HT {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -450px;
+}
+
+.HU {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -10px;
+}
+
+.IC {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -54px;
+}
+
+.ID {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -98px;
+}
+
+.IE {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -142px;
+}
+
+.IL {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -186px;
+}
+
+.IM {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -230px;
+}
+
+.IN {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -274px;
+}
+
+.IO {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -318px;
+}
+
+.IQ {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -362px;
+}
+
+.IR {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -406px;
+}
+
+.IS {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -450px;
+}
+
+.IT {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -494px;
+}
+
+.JE {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -494px;
+}
+
+.JM {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -494px;
+}
+
+.JO {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -494px;
+}
+
+.JP {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -494px;
+}
+
+.KE {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -494px;
+}
+
+.KG {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -494px;
+}
+
+.KH {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -494px;
+}
+
+.KI {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -494px;
+}
+
+.KM {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -494px;
+}
+
+.KN {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -494px;
+}
+
+.KP {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -494px;
+}
+
+.KR {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -10px;
+}
+
+.KW {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -54px;
+}
+
+.KY {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -98px;
+}
+
+.KZ {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -142px;
+}
+
+.LA {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -186px;
+}
+
+.LB {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -230px;
+}
+
+.LC {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -274px;
+}
+
+.LI {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -318px;
+}
+
+.LK {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -362px;
+}
+
+.LR {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -406px;
+}
+
+.LS {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -450px;
+}
+
+.LT {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -494px;
+}
+
+.LU {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -538px;
+}
+
+.LV {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -538px;
+}
+
+.LY {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -538px;
+}
+
+.MA {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -538px;
+}
+
+.MC {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -538px;
+}
+
+.MD {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -538px;
+}
+
+.ME {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -538px;
+}
+
+.MF {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -538px;
+}
+
+.MG {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -538px;
+}
+
+.MH {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -538px;
+}
+
+.MK {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -538px;
+}
+
+.ML {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -538px;
+}
+
+.MM {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -538px;
+}
+
+.MN {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -10px;
+}
+
+.MO {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -54px;
+}
+
+.MP {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -98px;
+}
+
+.MQ {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -142px;
+}
+
+.MR {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -186px;
+}
+
+.MS {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -230px;
+}
+
+.MT {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -274px;
+}
+
+.MU {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -318px;
+}
+
+.MV {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -362px;
+}
+
+.MW {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -406px;
+}
+
+.MX {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -450px;
+}
+
+.MY {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -494px;
+}
+
+.MZ {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -538px;
+}
+
+.NA {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -582px;
+}
+
+.NC {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -582px;
+}
+
+.NE {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -582px;
+}
+
+.NF {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -582px;
+}
+
+.NG {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -582px;
+}
+
+.NI {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -582px;
+}
+
+.NL {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -582px;
+}
+
+.NO {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -582px;
+}
+
+.NP {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -582px;
+}
+
+.NR {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -582px;
+}
+
+.NU {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -582px;
+}
+
+.NZ {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -582px;
+}
+
+.OM {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -582px;
+}
+
+.PA {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -582px;
+}
+
+.PE {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -10px;
+}
+
+.PF {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -54px;
+}
+
+.PG {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -98px;
+}
+
+.PH {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -142px;
+}
+
+.PK {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -186px;
+}
+
+.PL {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -230px;
+}
+
+.PM {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -274px;
+}
+
+.PN {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -318px;
+}
+
+.PR {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -362px;
+}
+
+.PS {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -406px;
+}
+
+.PT {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -450px;
+}
+
+.PW {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -494px;
+}
+
+.PY {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -538px;
+}
+
+.QA {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -582px;
+}
+
+.RE {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -626px;
+}
+
+.RO {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -626px;
+}
+
+.RS {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -626px;
+}
+
+.RU {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -626px;
+}
+
+.RW {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -626px;
+}
+
+.SA {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -626px;
+}
+
+.SB {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -626px;
+}
+
+.SC {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -626px;
+}
+
+.SD {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -626px;
+}
+
+.SE {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -626px;
+}
+
+.SG {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -626px;
+}
+
+.SH {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -626px;
+}
+
+.SI {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -626px;
+}
+
+.SJ {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -626px;
+}
+
+.SK {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -626px;
+}
+
+.SL {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -10px;
+}
+
+.SM {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -54px;
+}
+
+.SN {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -98px;
+}
+
+.SO {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -142px;
+}
+
+.SR {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -186px;
+}
+
+.SS {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -230px;
+}
+
+.ST {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -274px;
+}
+
+.SV {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -318px;
+}
+
+.SX {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -362px;
+}
+
+.SY {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -406px;
+}
+
+.SZ {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -450px;
+}
+
+.TC {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -494px;
+}
+
+.TD {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -538px;
+}
+
+.TF {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -582px;
+}
+
+.TG {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -626px;
+}
+
+.TH {
+  @include flag;
+  background: url('../../assets/flags.png') -10px -670px;
+}
+
+.TJ {
+  @include flag;
+  background: url('../../assets/flags.png') -54px -670px;
+}
+
+.TK {
+  @include flag;
+  background: url('../../assets/flags.png') -98px -670px;
+}
+
+.TL {
+  @include flag;
+  background: url('../../assets/flags.png') -142px -670px;
+}
+
+.TM {
+  @include flag;
+  background: url('../../assets/flags.png') -186px -670px;
+}
+
+.TN {
+  @include flag;
+  background: url('../../assets/flags.png') -230px -670px;
+}
+
+.TO {
+  @include flag;
+  background: url('../../assets/flags.png') -274px -670px;
+}
+
+.TR {
+  @include flag;
+  background: url('../../assets/flags.png') -318px -670px;
+}
+
+.TT {
+  @include flag;
+  background: url('../../assets/flags.png') -362px -670px;
+}
+
+.TV {
+  @include flag;
+  background: url('../../assets/flags.png') -406px -670px;
+}
+
+.TW {
+  @include flag;
+  background: url('../../assets/flags.png') -450px -670px;
+}
+
+.TZ {
+  @include flag;
+  background: url('../../assets/flags.png') -494px -670px;
+}
+
+.UA {
+  @include flag;
+  background: url('../../assets/flags.png') -538px -670px;
+}
+
+.UG {
+  @include flag;
+  background: url('../../assets/flags.png') -582px -670px;
+}
+
+.UM {
+  @include flag;
+  background: url('../../assets/flags.png') -626px -670px;
+}
+
+.US {
+  @include flag;
+  background: url('../../assets/flags.png') -670px -670px;
+}
+
+.UY {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -10px;
+}
+
+.UZ {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -54px;
+}
+
+.VA {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -98px;
+}
+
+.VC {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -142px;
+}
+
+.VE {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -186px;
+}
+
+.VG {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -230px;
+}
+
+.VI {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -274px;
+}
+
+.VN {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -318px;
+}
+
+.VU {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -362px;
+}
+
+.WF {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -406px;
+}
+
+.WS {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -450px;
+}
+
+.YE {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -494px;
+}
+
+.YT {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -538px;
+}
+
+.ZA {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -582px;
+}
+
+.ZM {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -626px;
+}
+
+.ZW {
+  @include flag;
+  background: url('../../assets/flags.png') -714px -670px;
+}
+
