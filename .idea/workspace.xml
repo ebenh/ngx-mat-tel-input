@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a9292e3-a100-4787-ade6-3423084a3f04" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="0a9292e3-a100-4787-ade6-3423084a3f04" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +104,7 @@
       <workItem from="1635349455182" duration="11662000" />
       <workItem from="1635522820058" duration="18550000" />
       <workItem from="1635605966893" duration="2268000" />
-      <workItem from="1635623972913" duration="44000" />
+      <workItem from="1635623972913" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="Transferred component from outside project into ngx-mat-tel-input library">
       <created>1629246848303</created>
@@ -430,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635607642299</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Adding .idea directory to source control">
+      <created>1635624053362</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1635624053362</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +465,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed default country in test application" />
     <MESSAGE value="Updated package.json" />
     <MESSAGE value="Adding missing peer dependencies" />
     <MESSAGE value="Updated version numbers in peer dependencies" />
@@ -485,6 +489,7 @@
     <MESSAGE value="Style change&#10;&#10;- Changed element from span to div" />
     <MESSAGE value="Now gracefully handling countries for which we don't have a flag" />
     <MESSAGE value="Updating flags&#10;&#10;- New more space efficient flag sprites&#10;- Gracefully handle country codes for which we may not have a flag" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating flags&#10;&#10;- New more space efficient flag sprites&#10;- Gracefully handle country codes for which we may not have a flag" />
+    <MESSAGE value="Adding .idea directory to source control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding .idea directory to source control" />
   </component>
 </project>
