@@ -1,1368 +1,1279 @@
 @mixin flag {
   display: inline-block;
-  vertical-align: text-bottom;
+  background-image: url("../../assets/flags.png");
 
   width: 24px;
-  height: 24px;
+  height: 18px;
+
+  vertical-align: middle;
 }
 
-.__unknown {
+.unknown {
   @include flag;
-  background: url('../../assets/flags.png') -186px -54px;
-}
-
-._abkhazia {
-  @include flag;
-  background: url('../../assets/flags.png') -10px -10px;
-}
-
-._basque_country {
-  @include flag;
-  background: url('../../assets/flags.png') -54px -10px;
-}
-
-._british_antarctic_territory {
-  @include flag;
-  background: url('../../assets/flags.png') -10px -54px;
-}
-
-._commonwealth {
-  @include flag;
-  background: url('../../assets/flags.png') -54px -54px;
-}
-
-._england {
-  @include flag;
-  background: url('../../assets/flags.png') -98px -10px;
-}
-
-._gosquared {
-  @include flag;
-  background: url('../../assets/flags.png') -98px -54px;
-}
-
-._kosovo {
-  @include flag;
-  background: url('../../assets/flags.png') -10px -98px;
-}
-
-._mars {
-  @include flag;
-  background: url('../../assets/flags.png') -54px -98px;
-}
-
-._nagorno_karabakh {
-  @include flag;
-  background: url('../../assets/flags.png') -98px -98px;
-}
-
-._nato {
-  @include flag;
-  background: url('../../assets/flags.png') -142px -10px;
-}
-
-._northern_cyprus {
-  @include flag;
-  background: url('../../assets/flags.png') -142px -54px;
-}
-
-._olympics {
-  @include flag;
-  background: url('../../assets/flags.png') -142px -98px;
-}
-
-._red_cross {
-  @include flag;
-  background: url('../../assets/flags.png') -10px -142px;
-}
-
-._scotland {
-  @include flag;
-  background: url('../../assets/flags.png') -54px -142px;
-}
-
-._somaliland {
-  @include flag;
-  background: url('../../assets/flags.png') -98px -142px;
-}
-
-._south_ossetia {
-  @include flag;
-  background: url('../../assets/flags.png') -142px -142px;
-}
-
-._united_nations {
-  @include flag;
-  background: url('../../assets/flags.png') -186px -10px;
-}
-
-._wales {
-  @include flag;
-  background: url('../../assets/flags.png') -186px -98px;
+  background-position: 0 0;
 }
 
 .AD {
   @include flag;
-  background: url('../../assets/flags.png') -186px -142px;
+  background-position: 0 -18px;
 }
 
 .AE {
   @include flag;
-  background: url('../../assets/flags.png') -10px -186px;
+  background-position: 0 -36px;
 }
 
 .AF {
   @include flag;
-  background: url('../../assets/flags.png') -54px -186px;
+  background-position: 0 -54px;
 }
 
 .AG {
   @include flag;
-  background: url('../../assets/flags.png') -98px -186px;
+  background-position: 0 -72px;
 }
 
 .AI {
   @include flag;
-  background: url('../../assets/flags.png') -142px -186px;
+  background-position: 0 -90px;
 }
 
 .AL {
   @include flag;
-  background: url('../../assets/flags.png') -186px -186px;
+  background-position: 0 -108px;
 }
 
 .AM {
   @include flag;
-  background: url('../../assets/flags.png') -230px -10px;
+  background-position: 0 -126px;
 }
 
 .AN {
   @include flag;
-  background: url('../../assets/flags.png') -230px -54px;
+  background-position: 0 -144px;
 }
 
 .AO {
   @include flag;
-  background: url('../../assets/flags.png') -230px -98px;
+  background-position: 0 -162px;
 }
 
 .AQ {
   @include flag;
-  background: url('../../assets/flags.png') -230px -142px;
+  background-position: 0 -180px;
 }
 
 .AR {
   @include flag;
-  background: url('../../assets/flags.png') -230px -186px;
+  background-position: 0 -198px;
 }
 
 .AS {
   @include flag;
-  background: url('../../assets/flags.png') -10px -230px;
+  background-position: 0 -216px;
 }
 
 .AT {
   @include flag;
-  background: url('../../assets/flags.png') -54px -230px;
+  background-position: 0 -234px;
 }
 
 .AU {
   @include flag;
-  background: url('../../assets/flags.png') -98px -230px;
+  background-position: 0 -252px;
 }
 
 .AW {
   @include flag;
-  background: url('../../assets/flags.png') -142px -230px;
+  background-position: 0 -270px;
 }
 
 .AX {
   @include flag;
-  background: url('../../assets/flags.png') -186px -230px;
+  background-position: 0 -288px;
 }
 
 .AZ {
   @include flag;
-  background: url('../../assets/flags.png') -230px -230px;
+  background-position: 0 -306px;
 }
 
 .BA {
   @include flag;
-  background: url('../../assets/flags.png') -274px -10px;
+  background-position: 0 -324px;
 }
 
 .BB {
   @include flag;
-  background: url('../../assets/flags.png') -274px -54px;
+  background-position: 0 -342px;
 }
 
 .BD {
   @include flag;
-  background: url('../../assets/flags.png') -274px -98px;
+  background-position: 0 -360px;
 }
 
 .BE {
   @include flag;
-  background: url('../../assets/flags.png') -274px -142px;
+  background-position: 0 -378px;
 }
 
 .BF {
   @include flag;
-  background: url('../../assets/flags.png') -274px -186px;
+  background-position: 0 -396px;
 }
 
 .BG {
   @include flag;
-  background: url('../../assets/flags.png') -274px -230px;
+  background-position: 0 -414px;
 }
 
 .BH {
   @include flag;
-  background: url('../../assets/flags.png') -10px -274px;
+  background-position: 0 -432px;
 }
 
 .BI {
   @include flag;
-  background: url('../../assets/flags.png') -54px -274px;
+  background-position: 0 -450px;
 }
 
 .BJ {
   @include flag;
-  background: url('../../assets/flags.png') -98px -274px;
+  background-position: 0 -468px;
 }
 
 .BL {
   @include flag;
-  background: url('../../assets/flags.png') -142px -274px;
+  background-position: 0 -486px;
 }
 
 .BM {
   @include flag;
-  background: url('../../assets/flags.png') -186px -274px;
+  background-position: 0 -504px;
 }
 
 .BN {
   @include flag;
-  background: url('../../assets/flags.png') -230px -274px;
+  background-position: 0 -522px;
 }
 
 .BO {
   @include flag;
-  background: url('../../assets/flags.png') -274px -274px;
+  background-position: 0 -540px;
 }
 
 .BQ {
   @include flag;
-  background: url('../../assets/flags.png') -318px -10px;
+  background-position: 0 -558px;
 }
 
 .BR {
   @include flag;
-  background: url('../../assets/flags.png') -318px -54px;
+  background-position: 0 -576px;
 }
 
 .BS {
   @include flag;
-  background: url('../../assets/flags.png') -318px -98px;
+  background-position: 0 -594px;
 }
 
 .BT {
   @include flag;
-  background: url('../../assets/flags.png') -318px -142px;
+  background-position: 0 -612px;
 }
 
 .BV {
   @include flag;
-  background: url('../../assets/flags.png') -318px -186px;
+  background-position: 0 -630px;
 }
 
 .BW {
   @include flag;
-  background: url('../../assets/flags.png') -318px -230px;
+  background-position: 0 -648px;
 }
 
 .BY {
   @include flag;
-  background: url('../../assets/flags.png') -318px -274px;
+  background-position: 0 -666px;
 }
 
 .BZ {
   @include flag;
-  background: url('../../assets/flags.png') -10px -318px;
+  background-position: 0 -684px;
 }
 
 .CA {
   @include flag;
-  background: url('../../assets/flags.png') -54px -318px;
+  background-position: 0 -702px;
 }
 
 .CC {
   @include flag;
-  background: url('../../assets/flags.png') -98px -318px;
+  background-position: 0 -720px;
 }
 
 .CD {
   @include flag;
-  background: url('../../assets/flags.png') -142px -318px;
+  background-position: 0 -738px;
 }
 
 .CF {
   @include flag;
-  background: url('../../assets/flags.png') -186px -318px;
+  background-position: 0 -756px;
 }
 
 .CG {
   @include flag;
-  background: url('../../assets/flags.png') -230px -318px;
+  background-position: 0 -774px;
 }
 
 .CH {
   @include flag;
-  background: url('../../assets/flags.png') -274px -318px;
+  background-position: 0 -792px;
 }
 
 .CI {
   @include flag;
-  background: url('../../assets/flags.png') -318px -318px;
+  background-position: 0 -810px;
 }
 
 .CK {
   @include flag;
-  background: url('../../assets/flags.png') -362px -10px;
+  background-position: 0 -828px;
 }
 
 .CL {
   @include flag;
-  background: url('../../assets/flags.png') -362px -54px;
+  background-position: 0 -846px;
 }
 
 .CM {
   @include flag;
-  background: url('../../assets/flags.png') -362px -98px;
+  background-position: 0 -864px;
 }
 
 .CN {
   @include flag;
-  background: url('../../assets/flags.png') -362px -142px;
+  background-position: 0 -882px;
 }
 
 .CO {
   @include flag;
-  background: url('../../assets/flags.png') -362px -186px;
+  background-position: 0 -900px;
 }
 
 .CR {
   @include flag;
-  background: url('../../assets/flags.png') -362px -230px;
-}
-
-.CT {
-  @include flag;
-  background: url('../../assets/flags.png') -362px -274px;
+  background-position: 0 -918px;
 }
 
 .CU {
   @include flag;
-  background: url('../../assets/flags.png') -362px -318px;
+  background-position: 0 -936px;
 }
 
 .CV {
   @include flag;
-  background: url('../../assets/flags.png') -10px -362px;
+  background-position: 0 -954px;
 }
 
 .CW {
   @include flag;
-  background: url('../../assets/flags.png') -54px -362px;
+  background-position: 0 -972px;
 }
 
 .CX {
   @include flag;
-  background: url('../../assets/flags.png') -98px -362px;
+  background-position: 0 -990px;
 }
 
 .CY {
   @include flag;
-  background: url('../../assets/flags.png') -142px -362px;
+  background-position: 0 -1008px;
 }
 
 .CZ {
   @include flag;
-  background: url('../../assets/flags.png') -186px -362px;
+  background-position: 0 -1026px;
 }
 
 .DE {
   @include flag;
-  background: url('../../assets/flags.png') -230px -362px;
+  background-position: 0 -1044px;
 }
 
 .DJ {
   @include flag;
-  background: url('../../assets/flags.png') -274px -362px;
+  background-position: 0 -1062px;
 }
 
 .DK {
   @include flag;
-  background: url('../../assets/flags.png') -318px -362px;
+  background-position: 0 -1080px;
 }
 
 .DM {
   @include flag;
-  background: url('../../assets/flags.png') -362px -362px;
+  background-position: 0 -1098px;
 }
 
 .DO {
   @include flag;
-  background: url('../../assets/flags.png') -406px -10px;
+  background-position: 0 -1116px;
 }
 
 .DZ {
   @include flag;
-  background: url('../../assets/flags.png') -406px -54px;
+  background-position: 0 -1134px;
 }
 
 .EC {
   @include flag;
-  background: url('../../assets/flags.png') -406px -98px;
+  background-position: 0 -1152px;
 }
 
 .EE {
   @include flag;
-  background: url('../../assets/flags.png') -406px -142px;
+  background-position: 0 -1170px;
 }
 
 .EG {
   @include flag;
-  background: url('../../assets/flags.png') -406px -186px;
+  background-position: 0 -1188px;
 }
 
 .EH {
   @include flag;
-  background: url('../../assets/flags.png') -406px -230px;
+  background-position: 0 -1206px;
 }
 
 .ER {
   @include flag;
-  background: url('../../assets/flags.png') -406px -274px;
+  background-position: 0 -1224px;
 }
 
 .ES {
   @include flag;
-  background: url('../../assets/flags.png') -406px -318px;
+  background-position: 0 -1242px;
 }
 
 .ET {
   @include flag;
-  background: url('../../assets/flags.png') -406px -362px;
+  background-position: 0 -1260px;
 }
 
 .EU {
   @include flag;
-  background: url('../../assets/flags.png') -10px -406px;
+  background-position: 0 -1278px;
 }
 
 .FI {
   @include flag;
-  background: url('../../assets/flags.png') -54px -406px;
+  background-position: 0 -1296px;
 }
 
 .FJ {
   @include flag;
-  background: url('../../assets/flags.png') -98px -406px;
+  background-position: 0 -1314px;
 }
 
 .FK {
   @include flag;
-  background: url('../../assets/flags.png') -142px -406px;
+  background-position: 0 -1332px;
 }
 
 .FM {
   @include flag;
-  background: url('../../assets/flags.png') -186px -406px;
+  background-position: 0 -1350px;
 }
 
 .FO {
   @include flag;
-  background: url('../../assets/flags.png') -230px -406px;
+  background-position: 0 -1368px;
 }
 
 .FR {
   @include flag;
-  background: url('../../assets/flags.png') -274px -406px;
+  background-position: 0 -1386px;
 }
 
 .GA {
   @include flag;
-  background: url('../../assets/flags.png') -318px -406px;
+  background-position: 0 -1404px;
 }
 
 .GB {
   @include flag;
-  background: url('../../assets/flags.png') -362px -406px;
+  background-position: 0 -1422px;
 }
 
 .GD {
   @include flag;
-  background: url('../../assets/flags.png') -406px -406px;
+  background-position: 0 -1440px;
 }
 
 .GE {
   @include flag;
-  background: url('../../assets/flags.png') -450px -10px;
+  background-position: 0 -1458px;
 }
 
 .GF {
   @include flag;
-  background: url('../../assets/flags.png') -450px -54px;
+  background-position: 0 -1476px;
 }
 
 .GG {
   @include flag;
-  background: url('../../assets/flags.png') -450px -98px;
+  background-position: 0 -1494px;
 }
 
 .GH {
   @include flag;
-  background: url('../../assets/flags.png') -450px -142px;
+  background-position: 0 -1512px;
 }
 
 .GI {
   @include flag;
-  background: url('../../assets/flags.png') -450px -186px;
+  background-position: 0 -1530px;
 }
 
 .GL {
   @include flag;
-  background: url('../../assets/flags.png') -450px -230px;
+  background-position: 0 -1548px;
 }
 
 .GM {
   @include flag;
-  background: url('../../assets/flags.png') -450px -274px;
+  background-position: 0 -1566px;
 }
 
 .GN {
   @include flag;
-  background: url('../../assets/flags.png') -450px -318px;
+  background-position: 0 -1584px;
 }
 
 .GP {
   @include flag;
-  background: url('../../assets/flags.png') -450px -362px;
+  background-position: 0 -1602px;
 }
 
 .GQ {
   @include flag;
-  background: url('../../assets/flags.png') -450px -406px;
+  background-position: 0 -1620px;
 }
 
 .GR {
   @include flag;
-  background: url('../../assets/flags.png') -10px -450px;
+  background-position: 0 -1638px;
 }
 
 .GS {
   @include flag;
-  background: url('../../assets/flags.png') -54px -450px;
+  background-position: 0 -1656px;
 }
 
 .GT {
   @include flag;
-  background: url('../../assets/flags.png') -98px -450px;
+  background-position: 0 -1674px;
 }
 
 .GU {
   @include flag;
-  background: url('../../assets/flags.png') -142px -450px;
+  background-position: 0 -1692px;
 }
 
 .GW {
   @include flag;
-  background: url('../../assets/flags.png') -186px -450px;
+  background-position: 0 -1710px;
 }
 
 .GY {
   @include flag;
-  background: url('../../assets/flags.png') -230px -450px;
+  background-position: 0 -1728px;
 }
 
 .HK {
   @include flag;
-  background: url('../../assets/flags.png') -274px -450px;
+  background-position: 0 -1746px;
 }
 
 .HM {
   @include flag;
-  background: url('../../assets/flags.png') -318px -450px;
+  background-position: 0 -1764px;
 }
 
 .HN {
   @include flag;
-  background: url('../../assets/flags.png') -362px -450px;
+  background-position: 0 -1782px;
 }
 
 .HR {
   @include flag;
-  background: url('../../assets/flags.png') -406px -450px;
+  background-position: 0 -1800px;
 }
 
 .HT {
   @include flag;
-  background: url('../../assets/flags.png') -450px -450px;
+  background-position: 0 -1818px;
 }
 
 .HU {
   @include flag;
-  background: url('../../assets/flags.png') -494px -10px;
+  background-position: 0 -1836px;
 }
 
 .IC {
   @include flag;
-  background: url('../../assets/flags.png') -494px -54px;
+  background-position: 0 -1854px;
 }
 
 .ID {
   @include flag;
-  background: url('../../assets/flags.png') -494px -98px;
+  background-position: 0 -1872px;
 }
 
 .IE {
   @include flag;
-  background: url('../../assets/flags.png') -494px -142px;
+  background-position: 0 -1890px;
 }
 
 .IL {
   @include flag;
-  background: url('../../assets/flags.png') -494px -186px;
+  background-position: 0 -1908px;
 }
 
 .IM {
   @include flag;
-  background: url('../../assets/flags.png') -494px -230px;
+  background-position: 0 -1926px;
 }
 
 .IN {
   @include flag;
-  background: url('../../assets/flags.png') -494px -274px;
+  background-position: 0 -1944px;
 }
 
 .IO {
   @include flag;
-  background: url('../../assets/flags.png') -494px -318px;
+  background-position: 0 -1962px;
 }
 
 .IQ {
   @include flag;
-  background: url('../../assets/flags.png') -494px -362px;
+  background-position: 0 -1980px;
 }
 
 .IR {
   @include flag;
-  background: url('../../assets/flags.png') -494px -406px;
+  background-position: 0 -1998px;
 }
 
 .IS {
   @include flag;
-  background: url('../../assets/flags.png') -494px -450px;
+  background-position: 0 -2016px;
 }
 
 .IT {
   @include flag;
-  background: url('../../assets/flags.png') -10px -494px;
+  background-position: 0 -2034px;
 }
 
 .JE {
   @include flag;
-  background: url('../../assets/flags.png') -54px -494px;
+  background-position: 0 -2052px;
 }
 
 .JM {
   @include flag;
-  background: url('../../assets/flags.png') -98px -494px;
+  background-position: 0 -2070px;
 }
 
 .JO {
   @include flag;
-  background: url('../../assets/flags.png') -142px -494px;
+  background-position: 0 -2088px;
 }
 
 .JP {
   @include flag;
-  background: url('../../assets/flags.png') -186px -494px;
+  background-position: 0 -2106px;
 }
 
 .KE {
   @include flag;
-  background: url('../../assets/flags.png') -230px -494px;
+  background-position: 0 -2124px;
 }
 
 .KG {
   @include flag;
-  background: url('../../assets/flags.png') -274px -494px;
+  background-position: 0 -2142px;
 }
 
 .KH {
   @include flag;
-  background: url('../../assets/flags.png') -318px -494px;
+  background-position: 0 -2160px;
 }
 
 .KI {
   @include flag;
-  background: url('../../assets/flags.png') -362px -494px;
+  background-position: 0 -2178px;
 }
 
 .KM {
   @include flag;
-  background: url('../../assets/flags.png') -406px -494px;
+  background-position: 0 -2196px;
 }
 
 .KN {
   @include flag;
-  background: url('../../assets/flags.png') -450px -494px;
+  background-position: 0 -2214px;
 }
 
 .KP {
   @include flag;
-  background: url('../../assets/flags.png') -494px -494px;
+  background-position: 0 -2232px;
 }
 
 .KR {
   @include flag;
-  background: url('../../assets/flags.png') -538px -10px;
+  background-position: 0 -2250px;
 }
 
 .KW {
   @include flag;
-  background: url('../../assets/flags.png') -538px -54px;
+  background-position: 0 -2268px;
 }
 
 .KY {
   @include flag;
-  background: url('../../assets/flags.png') -538px -98px;
+  background-position: 0 -2286px;
 }
 
 .KZ {
   @include flag;
-  background: url('../../assets/flags.png') -538px -142px;
+  background-position: 0 -2304px;
 }
 
 .LA {
   @include flag;
-  background: url('../../assets/flags.png') -538px -186px;
+  background-position: 0 -2322px;
 }
 
 .LB {
   @include flag;
-  background: url('../../assets/flags.png') -538px -230px;
+  background-position: 0 -2340px;
 }
 
 .LC {
   @include flag;
-  background: url('../../assets/flags.png') -538px -274px;
+  background-position: 0 -2358px;
 }
 
 .LI {
   @include flag;
-  background: url('../../assets/flags.png') -538px -318px;
+  background-position: 0 -2376px;
 }
 
 .LK {
   @include flag;
-  background: url('../../assets/flags.png') -538px -362px;
+  background-position: 0 -2394px;
 }
 
 .LR {
   @include flag;
-  background: url('../../assets/flags.png') -538px -406px;
+  background-position: 0 -2412px;
 }
 
 .LS {
   @include flag;
-  background: url('../../assets/flags.png') -538px -450px;
+  background-position: 0 -2430px;
 }
 
 .LT {
   @include flag;
-  background: url('../../assets/flags.png') -538px -494px;
+  background-position: 0 -2448px;
 }
 
 .LU {
   @include flag;
-  background: url('../../assets/flags.png') -10px -538px;
+  background-position: 0 -2466px;
 }
 
 .LV {
   @include flag;
-  background: url('../../assets/flags.png') -54px -538px;
+  background-position: 0 -2484px;
 }
 
 .LY {
   @include flag;
-  background: url('../../assets/flags.png') -98px -538px;
+  background-position: 0 -2502px;
 }
 
 .MA {
   @include flag;
-  background: url('../../assets/flags.png') -142px -538px;
+  background-position: 0 -2520px;
 }
 
 .MC {
   @include flag;
-  background: url('../../assets/flags.png') -186px -538px;
+  background-position: 0 -2538px;
 }
 
 .MD {
   @include flag;
-  background: url('../../assets/flags.png') -230px -538px;
+  background-position: 0 -2556px;
 }
 
 .ME {
   @include flag;
-  background: url('../../assets/flags.png') -274px -538px;
+  background-position: 0 -2574px;
 }
 
 .MF {
   @include flag;
-  background: url('../../assets/flags.png') -318px -538px;
+  background-position: 0 -2592px;
 }
 
 .MG {
   @include flag;
-  background: url('../../assets/flags.png') -362px -538px;
+  background-position: 0 -2610px;
 }
 
 .MH {
   @include flag;
-  background: url('../../assets/flags.png') -406px -538px;
+  background-position: 0 -2628px;
 }
 
 .MK {
   @include flag;
-  background: url('../../assets/flags.png') -450px -538px;
+  background-position: 0 -2646px;
 }
 
 .ML {
   @include flag;
-  background: url('../../assets/flags.png') -494px -538px;
+  background-position: 0 -2664px;
 }
 
 .MM {
   @include flag;
-  background: url('../../assets/flags.png') -538px -538px;
+  background-position: 0 -2682px;
 }
 
 .MN {
   @include flag;
-  background: url('../../assets/flags.png') -582px -10px;
+  background-position: 0 -2700px;
 }
 
 .MO {
   @include flag;
-  background: url('../../assets/flags.png') -582px -54px;
+  background-position: 0 -2718px;
 }
 
 .MP {
   @include flag;
-  background: url('../../assets/flags.png') -582px -98px;
+  background-position: 0 -2736px;
 }
 
 .MQ {
   @include flag;
-  background: url('../../assets/flags.png') -582px -142px;
+  background-position: 0 -2754px;
 }
 
 .MR {
   @include flag;
-  background: url('../../assets/flags.png') -582px -186px;
+  background-position: 0 -2772px;
 }
 
 .MS {
   @include flag;
-  background: url('../../assets/flags.png') -582px -230px;
+  background-position: 0 -2790px;
 }
 
 .MT {
   @include flag;
-  background: url('../../assets/flags.png') -582px -274px;
+  background-position: 0 -2808px;
 }
 
 .MU {
   @include flag;
-  background: url('../../assets/flags.png') -582px -318px;
+  background-position: 0 -2826px;
 }
 
 .MV {
   @include flag;
-  background: url('../../assets/flags.png') -582px -362px;
+  background-position: 0 -2844px;
 }
 
 .MW {
   @include flag;
-  background: url('../../assets/flags.png') -582px -406px;
+  background-position: 0 -2862px;
 }
 
 .MX {
   @include flag;
-  background: url('../../assets/flags.png') -582px -450px;
+  background-position: 0 -2880px;
 }
 
 .MY {
   @include flag;
-  background: url('../../assets/flags.png') -582px -494px;
+  background-position: 0 -2898px;
 }
 
 .MZ {
   @include flag;
-  background: url('../../assets/flags.png') -582px -538px;
+  background-position: 0 -2916px;
 }
 
 .NA {
   @include flag;
-  background: url('../../assets/flags.png') -10px -582px;
+  background-position: 0 -2934px;
 }
 
 .NC {
   @include flag;
-  background: url('../../assets/flags.png') -54px -582px;
+  background-position: 0 -2952px;
 }
 
 .NE {
   @include flag;
-  background: url('../../assets/flags.png') -98px -582px;
+  background-position: 0 -2970px;
 }
 
 .NF {
   @include flag;
-  background: url('../../assets/flags.png') -142px -582px;
+  background-position: 0 -2988px;
 }
 
 .NG {
   @include flag;
-  background: url('../../assets/flags.png') -186px -582px;
+  background-position: 0 -3006px;
 }
 
 .NI {
   @include flag;
-  background: url('../../assets/flags.png') -230px -582px;
+  background-position: 0 -3024px;
 }
 
 .NL {
   @include flag;
-  background: url('../../assets/flags.png') -274px -582px;
+  background-position: 0 -3042px;
 }
 
 .NO {
   @include flag;
-  background: url('../../assets/flags.png') -318px -582px;
+  background-position: 0 -3060px;
 }
 
 .NP {
   @include flag;
-  background: url('../../assets/flags.png') -362px -582px;
+  background-position: 0 -3078px;
 }
 
 .NR {
   @include flag;
-  background: url('../../assets/flags.png') -406px -582px;
+  background-position: 0 -3096px;
 }
 
 .NU {
   @include flag;
-  background: url('../../assets/flags.png') -450px -582px;
+  background-position: 0 -3114px;
 }
 
 .NZ {
   @include flag;
-  background: url('../../assets/flags.png') -494px -582px;
+  background-position: 0 -3132px;
 }
 
 .OM {
   @include flag;
-  background: url('../../assets/flags.png') -538px -582px;
+  background-position: 0 -3150px;
 }
 
 .PA {
   @include flag;
-  background: url('../../assets/flags.png') -582px -582px;
+  background-position: 0 -3168px;
 }
 
 .PE {
   @include flag;
-  background: url('../../assets/flags.png') -626px -10px;
+  background-position: 0 -3186px;
 }
 
 .PF {
   @include flag;
-  background: url('../../assets/flags.png') -626px -54px;
+  background-position: 0 -3204px;
 }
 
 .PG {
   @include flag;
-  background: url('../../assets/flags.png') -626px -98px;
+  background-position: 0 -3222px;
 }
 
 .PH {
   @include flag;
-  background: url('../../assets/flags.png') -626px -142px;
+  background-position: 0 -3240px;
 }
 
 .PK {
   @include flag;
-  background: url('../../assets/flags.png') -626px -186px;
+  background-position: 0 -3258px;
 }
 
 .PL {
   @include flag;
-  background: url('../../assets/flags.png') -626px -230px;
+  background-position: 0 -3276px;
 }
 
 .PM {
   @include flag;
-  background: url('../../assets/flags.png') -626px -274px;
+  background-position: 0 -3294px;
 }
 
 .PN {
   @include flag;
-  background: url('../../assets/flags.png') -626px -318px;
+  background-position: 0 -3312px;
 }
 
 .PR {
   @include flag;
-  background: url('../../assets/flags.png') -626px -362px;
+  background-position: 0 -3330px;
 }
 
 .PS {
   @include flag;
-  background: url('../../assets/flags.png') -626px -406px;
+  background-position: 0 -3348px;
 }
 
 .PT {
   @include flag;
-  background: url('../../assets/flags.png') -626px -450px;
+  background-position: 0 -3366px;
 }
 
 .PW {
   @include flag;
-  background: url('../../assets/flags.png') -626px -494px;
+  background-position: 0 -3384px;
 }
 
 .PY {
   @include flag;
-  background: url('../../assets/flags.png') -626px -538px;
+  background-position: 0 -3402px;
 }
 
 .QA {
   @include flag;
-  background: url('../../assets/flags.png') -626px -582px;
+  background-position: 0 -3420px;
 }
 
 .RE {
   @include flag;
-  background: url('../../assets/flags.png') -10px -626px;
+  background-position: 0 -3438px;
 }
 
 .RO {
   @include flag;
-  background: url('../../assets/flags.png') -54px -626px;
+  background-position: 0 -3456px;
 }
 
 .RS {
   @include flag;
-  background: url('../../assets/flags.png') -98px -626px;
+  background-position: 0 -3474px;
 }
 
 .RU {
   @include flag;
-  background: url('../../assets/flags.png') -142px -626px;
+  background-position: 0 -3492px;
 }
 
 .RW {
   @include flag;
-  background: url('../../assets/flags.png') -186px -626px;
+  background-position: 0 -3510px;
 }
 
 .SA {
   @include flag;
-  background: url('../../assets/flags.png') -230px -626px;
+  background-position: 0 -3528px;
 }
 
 .SB {
   @include flag;
-  background: url('../../assets/flags.png') -274px -626px;
+  background-position: 0 -3546px;
 }
 
 .SC {
   @include flag;
-  background: url('../../assets/flags.png') -318px -626px;
+  background-position: 0 -3564px;
 }
 
 .SD {
   @include flag;
-  background: url('../../assets/flags.png') -362px -626px;
+  background-position: 0 -3582px;
 }
 
 .SE {
   @include flag;
-  background: url('../../assets/flags.png') -406px -626px;
+  background-position: 0 -3600px;
 }
 
 .SG {
   @include flag;
-  background: url('../../assets/flags.png') -450px -626px;
+  background-position: 0 -3618px;
 }
 
 .SH {
   @include flag;
-  background: url('../../assets/flags.png') -494px -626px;
+  background-position: 0 -3636px;
 }
 
 .SI {
   @include flag;
-  background: url('../../assets/flags.png') -538px -626px;
+  background-position: 0 -3654px;
 }
 
 .SJ {
   @include flag;
-  background: url('../../assets/flags.png') -582px -626px;
+  background-position: 0 -3672px;
 }
 
 .SK {
   @include flag;
-  background: url('../../assets/flags.png') -626px -626px;
+  background-position: 0 -3690px;
 }
 
 .SL {
   @include flag;
-  background: url('../../assets/flags.png') -670px -10px;
+  background-position: 0 -3708px;
 }
 
 .SM {
   @include flag;
-  background: url('../../assets/flags.png') -670px -54px;
+  background-position: 0 -3726px;
 }
 
 .SN {
   @include flag;
-  background: url('../../assets/flags.png') -670px -98px;
+  background-position: 0 -3744px;
 }
 
 .SO {
   @include flag;
-  background: url('../../assets/flags.png') -670px -142px;
+  background-position: 0 -3762px;
 }
 
 .SR {
   @include flag;
-  background: url('../../assets/flags.png') -670px -186px;
+  background-position: 0 -3780px;
 }
 
 .SS {
   @include flag;
-  background: url('../../assets/flags.png') -670px -230px;
+  background-position: 0 -3798px;
 }
 
 .ST {
   @include flag;
-  background: url('../../assets/flags.png') -670px -274px;
+  background-position: 0 -3816px;
 }
 
 .SV {
   @include flag;
-  background: url('../../assets/flags.png') -670px -318px;
+  background-position: 0 -3834px;
 }
 
 .SX {
   @include flag;
-  background: url('../../assets/flags.png') -670px -362px;
+  background-position: 0 -3852px;
 }
 
 .SY {
   @include flag;
-  background: url('../../assets/flags.png') -670px -406px;
+  background-position: 0 -3870px;
 }
 
 .SZ {
   @include flag;
-  background: url('../../assets/flags.png') -670px -450px;
+  background-position: 0 -3888px;
 }
 
 .TC {
   @include flag;
-  background: url('../../assets/flags.png') -670px -494px;
+  background-position: 0 -3906px;
 }
 
 .TD {
   @include flag;
-  background: url('../../assets/flags.png') -670px -538px;
+  background-position: 0 -3924px;
 }
 
 .TF {
   @include flag;
-  background: url('../../assets/flags.png') -670px -582px;
+  background-position: 0 -3942px;
 }
 
 .TG {
   @include flag;
-  background: url('../../assets/flags.png') -670px -626px;
+  background-position: 0 -3960px;
 }
 
 .TH {
   @include flag;
-  background: url('../../assets/flags.png') -10px -670px;
+  background-position: 0 -3978px;
 }
 
 .TJ {
   @include flag;
-  background: url('../../assets/flags.png') -54px -670px;
+  background-position: 0 -3996px;
 }
 
 .TK {
   @include flag;
-  background: url('../../assets/flags.png') -98px -670px;
+  background-position: 0 -4014px;
 }
 
 .TL {
   @include flag;
-  background: url('../../assets/flags.png') -142px -670px;
+  background-position: 0 -4032px;
 }
 
 .TM {
   @include flag;
-  background: url('../../assets/flags.png') -186px -670px;
+  background-position: 0 -4050px;
 }
 
 .TN {
   @include flag;
-  background: url('../../assets/flags.png') -230px -670px;
+  background-position: 0 -4068px;
 }
 
 .TO {
   @include flag;
-  background: url('../../assets/flags.png') -274px -670px;
+  background-position: 0 -4086px;
 }
 
 .TR {
   @include flag;
-  background: url('../../assets/flags.png') -318px -670px;
+  background-position: 0 -4104px;
 }
 
 .TT {
   @include flag;
-  background: url('../../assets/flags.png') -362px -670px;
+  background-position: 0 -4122px;
 }
 
 .TV {
   @include flag;
-  background: url('../../assets/flags.png') -406px -670px;
+  background-position: 0 -4140px;
 }
 
 .TW {
   @include flag;
-  background: url('../../assets/flags.png') -450px -670px;
+  background-position: 0 -4158px;
 }
 
 .TZ {
   @include flag;
-  background: url('../../assets/flags.png') -494px -670px;
+  background-position: 0 -4176px;
 }
 
 .UA {
   @include flag;
-  background: url('../../assets/flags.png') -538px -670px;
+  background-position: 0 -4194px;
 }
 
 .UG {
   @include flag;
-  background: url('../../assets/flags.png') -582px -670px;
+  background-position: 0 -4212px;
 }
 
 .UM {
   @include flag;
-  background: url('../../assets/flags.png') -626px -670px;
+  background-position: 0 -4230px;
 }
 
 .US {
   @include flag;
-  background: url('../../assets/flags.png') -670px -670px;
+  background-position: 0 -4248px;
 }
 
 .UY {
   @include flag;
-  background: url('../../assets/flags.png') -714px -10px;
+  background-position: 0 -4266px;
 }
 
 .UZ {
   @include flag;
-  background: url('../../assets/flags.png') -714px -54px;
+  background-position: 0 -4284px;
 }
 
 .VA {
   @include flag;
-  background: url('../../assets/flags.png') -714px -98px;
+  background-position: 0 -4302px;
 }
 
 .VC {
   @include flag;
-  background: url('../../assets/flags.png') -714px -142px;
+  background-position: 0 -4320px;
 }
 
 .VE {
   @include flag;
-  background: url('../../assets/flags.png') -714px -186px;
+  background-position: 0 -4338px;
 }
 
 .VG {
   @include flag;
-  background: url('../../assets/flags.png') -714px -230px;
+  background-position: 0 -4356px;
 }
 
 .VI {
   @include flag;
-  background: url('../../assets/flags.png') -714px -274px;
+  background-position: 0 -4374px;
 }
 
 .VN {
   @include flag;
-  background: url('../../assets/flags.png') -714px -318px;
+  background-position: 0 -4392px;
 }
 
 .VU {
   @include flag;
-  background: url('../../assets/flags.png') -714px -362px;
+  background-position: 0 -4410px;
 }
 
 .WF {
   @include flag;
-  background: url('../../assets/flags.png') -714px -406px;
+  background-position: 0 -4428px;
 }
 
 .WS {
   @include flag;
-  background: url('../../assets/flags.png') -714px -450px;
+  background-position: 0 -4446px;
+}
+
+.XK {
+  @include flag;
+  background-position: 0 -4464px;
 }
 
 .YE {
   @include flag;
-  background: url('../../assets/flags.png') -714px -494px;
+  background-position: 0 -4482px;
 }
 
 .YT {
   @include flag;
-  background: url('../../assets/flags.png') -714px -538px;
+  background-position: 0 -4500px;
 }
 
 .ZA {
   @include flag;
-  background: url('../../assets/flags.png') -714px -582px;
+  background-position: 0 -4518px;
 }
 
 .ZM {
   @include flag;
-  background: url('../../assets/flags.png') -714px -626px;
+  background-position: 0 -4536px;
 }
 
 .ZW {
   @include flag;
-  background: url('../../assets/flags.png') -714px -670px;
+  background-position: 0 -4554px;
 }
-
