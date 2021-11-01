@@ -1,15 +1,13 @@
 .flag {
   display: inline-block;
+
   background-image: url("../../assets/flags.png");
+  background-position: 0 0;
 
   width: 24px;
   height: 18px;
 
   vertical-align: middle;
-}
-
-.flag.unknown {
-  background-position: 0 0;
 }
 
 .flag.AD {
