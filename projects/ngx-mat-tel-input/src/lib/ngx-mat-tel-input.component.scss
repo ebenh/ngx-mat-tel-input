@@ -1,11 +1,10 @@
 .flag {
   display: inline-block;
+  width: 24px;
+  height: 18px;
 
   background-image: url("../../assets/flags.png");
   background-position: 0 0;
-
-  width: 24px;
-  height: 18px;
 
   vertical-align: middle;
 }
