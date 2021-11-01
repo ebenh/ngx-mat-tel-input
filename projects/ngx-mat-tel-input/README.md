@@ -24,21 +24,6 @@ Import the module into your `app.module.ts`:
       ...
     })
 
-Add the following to your `angular.json` file:
-
-    {
-        ...
-        "assets": [
-            ...,
-            {
-                "glob": "**/*",
-                "input": "./node_modules/ngx-mat-tel-input/assets",
-                "output": "./assets/flags"
-            }
-        ].
-        ...
-    }
-
 ## Usage
 
 ### Template

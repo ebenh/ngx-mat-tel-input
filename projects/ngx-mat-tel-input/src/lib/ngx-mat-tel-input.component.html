@@ -8,8 +8,7 @@
                 #singleSelect>
 
       <mat-select-trigger>
-        <img src="../../assets/flags/24/{{country.value.cca2}}.png"
-             onerror="javascript:this.src='../../assets/flags/24/_unknown.png'" class="flag"/>
+        <div class="flag {{country.value.cca2}}"></div>
       </mat-select-trigger>
 
       <mat-option>
@@ -20,8 +19,7 @@
       </mat-option>
 
       <mat-option *ngFor="let country of filteredCountries| async" [value]="country">
-        <img src="../../assets/flags/24/{{country.cca2}}.png"
-             onerror="javascript:this.src='../../assets/flags/24/_unknown.png'" class="flag"/>
+        <div class="flag {{country.cca2}}"></div>
         {{country.name.common}}
       </mat-option>
 
@@ -37,16 +35,5 @@
            fxFlex="grow">
 
   </div>
-
-  <!-- For debugging only -->
-  <!--
-  <div fxLayout="row">
-    <mat-form-field appearance="outline" fxFlex="grow">
-      <input matInput
-             type="tel"
-             formControlName="phoneNumberE164Format">
-    </mat-form-field>
-  </div>
-  -->
 
 </div>
