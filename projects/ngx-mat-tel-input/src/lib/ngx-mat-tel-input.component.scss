@@ -1,4 +1,4 @@
-@mixin flag {
+.flag {
   display: inline-block;
   background-image: url("../../assets/flags.png");
 
@@ -8,1272 +8,1018 @@
   vertical-align: middle;
 }
 
-.unknown {
-  @include flag;
+.flag.unknown {
   background-position: 0 0;
 }
 
-.AD {
-  @include flag;
+.flag.AD {
   background-position: 0 -18px;
 }
 
-.AE {
-  @include flag;
+.flag.AE {
   background-position: 0 -36px;
 }
 
-.AF {
-  @include flag;
+.flag.AF {
   background-position: 0 -54px;
 }
 
-.AG {
-  @include flag;
+.flag.AG {
   background-position: 0 -72px;
 }
 
-.AI {
-  @include flag;
+.flag.AI {
   background-position: 0 -90px;
 }
 
-.AL {
-  @include flag;
+.flag.AL {
   background-position: 0 -108px;
 }
 
-.AM {
-  @include flag;
+.flag.AM {
   background-position: 0 -126px;
 }
 
-.AN {
-  @include flag;
+.flag.AN {
   background-position: 0 -144px;
 }
 
-.AO {
-  @include flag;
+.flag.AO {
   background-position: 0 -162px;
 }
 
-.AQ {
-  @include flag;
+.flag.AQ {
   background-position: 0 -180px;
 }
 
-.AR {
-  @include flag;
+.flag.AR {
   background-position: 0 -198px;
 }
 
-.AS {
-  @include flag;
+.flag.AS {
   background-position: 0 -216px;
 }
 
-.AT {
-  @include flag;
+.flag.AT {
   background-position: 0 -234px;
 }
 
-.AU {
-  @include flag;
+.flag.AU {
   background-position: 0 -252px;
 }
 
-.AW {
-  @include flag;
+.flag.AW {
   background-position: 0 -270px;
 }
 
-.AX {
-  @include flag;
+.flag.AX {
   background-position: 0 -288px;
 }
 
-.AZ {
-  @include flag;
+.flag.AZ {
   background-position: 0 -306px;
 }
 
-.BA {
-  @include flag;
+.flag.BA {
   background-position: 0 -324px;
 }
 
-.BB {
-  @include flag;
+.flag.BB {
   background-position: 0 -342px;
 }
 
-.BD {
-  @include flag;
+.flag.BD {
   background-position: 0 -360px;
 }
 
-.BE {
-  @include flag;
+.flag.BE {
   background-position: 0 -378px;
 }
 
-.BF {
-  @include flag;
+.flag.BF {
   background-position: 0 -396px;
 }
 
-.BG {
-  @include flag;
+.flag.BG {
   background-position: 0 -414px;
 }
 
-.BH {
-  @include flag;
+.flag.BH {
   background-position: 0 -432px;
 }
 
-.BI {
-  @include flag;
+.flag.BI {
   background-position: 0 -450px;
 }
 
-.BJ {
-  @include flag;
+.flag.BJ {
   background-position: 0 -468px;
 }
 
-.BL {
-  @include flag;
+.flag.BL {
   background-position: 0 -486px;
 }
 
-.BM {
-  @include flag;
+.flag.BM {
   background-position: 0 -504px;
 }
 
-.BN {
-  @include flag;
+.flag.BN {
   background-position: 0 -522px;
 }
 
-.BO {
-  @include flag;
+.flag.BO {
   background-position: 0 -540px;
 }
 
-.BQ {
-  @include flag;
+.flag.BQ {
   background-position: 0 -558px;
 }
 
-.BR {
-  @include flag;
+.flag.BR {
   background-position: 0 -576px;
 }
 
-.BS {
-  @include flag;
+.flag.BS {
   background-position: 0 -594px;
 }
 
-.BT {
-  @include flag;
+.flag.BT {
   background-position: 0 -612px;
 }
 
-.BV {
-  @include flag;
+.flag.BV {
   background-position: 0 -630px;
 }
 
-.BW {
-  @include flag;
+.flag.BW {
   background-position: 0 -648px;
 }
 
-.BY {
-  @include flag;
+.flag.BY {
   background-position: 0 -666px;
 }
 
-.BZ {
-  @include flag;
+.flag.BZ {
   background-position: 0 -684px;
 }
 
-.CA {
-  @include flag;
+.flag.CA {
   background-position: 0 -702px;
 }
 
-.CC {
-  @include flag;
+.flag.CC {
   background-position: 0 -720px;
 }
 
-.CD {
-  @include flag;
+.flag.CD {
   background-position: 0 -738px;
 }
 
-.CF {
-  @include flag;
+.flag.CF {
   background-position: 0 -756px;
 }
 
-.CG {
-  @include flag;
+.flag.CG {
   background-position: 0 -774px;
 }
 
-.CH {
-  @include flag;
+.flag.CH {
   background-position: 0 -792px;
 }
 
-.CI {
-  @include flag;
+.flag.CI {
   background-position: 0 -810px;
 }
 
-.CK {
-  @include flag;
+.flag.CK {
   background-position: 0 -828px;
 }
 
-.CL {
-  @include flag;
+.flag.CL {
   background-position: 0 -846px;
 }
 
-.CM {
-  @include flag;
+.flag.CM {
   background-position: 0 -864px;
 }
 
-.CN {
-  @include flag;
+.flag.CN {
   background-position: 0 -882px;
 }
 
-.CO {
-  @include flag;
+.flag.CO {
   background-position: 0 -900px;
 }
 
-.CR {
-  @include flag;
+.flag.CR {
   background-position: 0 -918px;
 }
 
-.CU {
-  @include flag;
+.flag.CU {
   background-position: 0 -936px;
 }
 
-.CV {
-  @include flag;
+.flag.CV {
   background-position: 0 -954px;
 }
 
-.CW {
-  @include flag;
+.flag.CW {
   background-position: 0 -972px;
 }
 
-.CX {
-  @include flag;
+.flag.CX {
   background-position: 0 -990px;
 }
 
-.CY {
-  @include flag;
+.flag.CY {
   background-position: 0 -1008px;
 }
 
-.CZ {
-  @include flag;
+.flag.CZ {
   background-position: 0 -1026px;
 }
 
-.DE {
-  @include flag;
+.flag.DE {
   background-position: 0 -1044px;
 }
 
-.DJ {
-  @include flag;
+.flag.DJ {
   background-position: 0 -1062px;
 }
 
-.DK {
-  @include flag;
+.flag.DK {
   background-position: 0 -1080px;
 }
 
-.DM {
-  @include flag;
+.flag.DM {
   background-position: 0 -1098px;
 }
 
-.DO {
-  @include flag;
+.flag.DO {
   background-position: 0 -1116px;
 }
 
-.DZ {
-  @include flag;
+.flag.DZ {
   background-position: 0 -1134px;
 }
 
-.EC {
-  @include flag;
+.flag.EC {
   background-position: 0 -1152px;
 }
 
-.EE {
-  @include flag;
+.flag.EE {
   background-position: 0 -1170px;
 }
 
-.EG {
-  @include flag;
+.flag.EG {
   background-position: 0 -1188px;
 }
 
-.EH {
-  @include flag;
+.flag.EH {
   background-position: 0 -1206px;
 }
 
-.ER {
-  @include flag;
+.flag.ER {
   background-position: 0 -1224px;
 }
 
-.ES {
-  @include flag;
+.flag.ES {
   background-position: 0 -1242px;
 }
 
-.ET {
-  @include flag;
+.flag.ET {
   background-position: 0 -1260px;
 }
 
-.EU {
-  @include flag;
+.flag.EU {
   background-position: 0 -1278px;
 }
 
-.FI {
-  @include flag;
+.flag.FI {
   background-position: 0 -1296px;
 }
 
-.FJ {
-  @include flag;
+.flag.FJ {
   background-position: 0 -1314px;
 }
 
-.FK {
-  @include flag;
+.flag.FK {
   background-position: 0 -1332px;
 }
 
-.FM {
-  @include flag;
+.flag.FM {
   background-position: 0 -1350px;
 }
 
-.FO {
-  @include flag;
+.flag.FO {
   background-position: 0 -1368px;
 }
 
-.FR {
-  @include flag;
+.flag.FR {
   background-position: 0 -1386px;
 }
 
-.GA {
-  @include flag;
+.flag.GA {
   background-position: 0 -1404px;
 }
 
-.GB {
-  @include flag;
+.flag.GB {
   background-position: 0 -1422px;
 }
 
-.GD {
-  @include flag;
+.flag.GD {
   background-position: 0 -1440px;
 }
 
-.GE {
-  @include flag;
+.flag.GE {
   background-position: 0 -1458px;
 }
 
-.GF {
-  @include flag;
+.flag.GF {
   background-position: 0 -1476px;
 }
 
-.GG {
-  @include flag;
+.flag.GG {
   background-position: 0 -1494px;
 }
 
-.GH {
-  @include flag;
+.flag.GH {
   background-position: 0 -1512px;
 }
 
-.GI {
-  @include flag;
+.flag.GI {
   background-position: 0 -1530px;
 }
 
-.GL {
-  @include flag;
+.flag.GL {
   background-position: 0 -1548px;
 }
 
-.GM {
-  @include flag;
+.flag.GM {
   background-position: 0 -1566px;
 }
 
-.GN {
-  @include flag;
+.flag.GN {
   background-position: 0 -1584px;
 }
 
-.GP {
-  @include flag;
+.flag.GP {
   background-position: 0 -1602px;
 }
 
-.GQ {
-  @include flag;
+.flag.GQ {
   background-position: 0 -1620px;
 }
 
-.GR {
-  @include flag;
+.flag.GR {
   background-position: 0 -1638px;
 }
 
-.GS {
-  @include flag;
+.flag.GS {
   background-position: 0 -1656px;
 }
 
-.GT {
-  @include flag;
+.flag.GT {
   background-position: 0 -1674px;
 }
 
-.GU {
-  @include flag;
+.flag.GU {
   background-position: 0 -1692px;
 }
 
-.GW {
-  @include flag;
+.flag.GW {
   background-position: 0 -1710px;
 }
 
-.GY {
-  @include flag;
+.flag.GY {
   background-position: 0 -1728px;
 }
 
-.HK {
-  @include flag;
+.flag.HK {
   background-position: 0 -1746px;
 }
 
-.HM {
-  @include flag;
+.flag.HM {
   background-position: 0 -1764px;
 }
 
-.HN {
-  @include flag;
+.flag.HN {
   background-position: 0 -1782px;
 }
 
-.HR {
-  @include flag;
+.flag.HR {
   background-position: 0 -1800px;
 }
 
-.HT {
-  @include flag;
+.flag.HT {
   background-position: 0 -1818px;
 }
 
-.HU {
-  @include flag;
+.flag.HU {
   background-position: 0 -1836px;
 }
 
-.IC {
-  @include flag;
+.flag.IC {
   background-position: 0 -1854px;
 }
 
-.ID {
-  @include flag;
+.flag.ID {
   background-position: 0 -1872px;
 }
 
-.IE {
-  @include flag;
+.flag.IE {
   background-position: 0 -1890px;
 }
 
-.IL {
-  @include flag;
+.flag.IL {
   background-position: 0 -1908px;
 }
 
-.IM {
-  @include flag;
+.flag.IM {
   background-position: 0 -1926px;
 }
 
-.IN {
-  @include flag;
+.flag.IN {
   background-position: 0 -1944px;
 }
 
-.IO {
-  @include flag;
+.flag.IO {
   background-position: 0 -1962px;
 }
 
-.IQ {
-  @include flag;
+.flag.IQ {
   background-position: 0 -1980px;
 }
 
-.IR {
-  @include flag;
+.flag.IR {
   background-position: 0 -1998px;
 }
 
-.IS {
-  @include flag;
+.flag.IS {
   background-position: 0 -2016px;
 }
 
-.IT {
-  @include flag;
+.flag.IT {
   background-position: 0 -2034px;
 }
 
-.JE {
-  @include flag;
+.flag.JE {
   background-position: 0 -2052px;
 }
 
-.JM {
-  @include flag;
+.flag.JM {
   background-position: 0 -2070px;
 }
 
-.JO {
-  @include flag;
+.flag.JO {
   background-position: 0 -2088px;
 }
 
-.JP {
-  @include flag;
+.flag.JP {
   background-position: 0 -2106px;
 }
 
-.KE {
-  @include flag;
+.flag.KE {
   background-position: 0 -2124px;
 }
 
-.KG {
-  @include flag;
+.flag.KG {
   background-position: 0 -2142px;
 }
 
-.KH {
-  @include flag;
+.flag.KH {
   background-position: 0 -2160px;
 }
 
-.KI {
-  @include flag;
+.flag.KI {
   background-position: 0 -2178px;
 }
 
-.KM {
-  @include flag;
+.flag.KM {
   background-position: 0 -2196px;
 }
 
-.KN {
-  @include flag;
+.flag.KN {
   background-position: 0 -2214px;
 }
 
-.KP {
-  @include flag;
+.flag.KP {
   background-position: 0 -2232px;
 }
 
-.KR {
-  @include flag;
+.flag.KR {
   background-position: 0 -2250px;
 }
 
-.KW {
-  @include flag;
+.flag.KW {
   background-position: 0 -2268px;
 }
 
-.KY {
-  @include flag;
+.flag.KY {
   background-position: 0 -2286px;
 }
 
-.KZ {
-  @include flag;
+.flag.KZ {
   background-position: 0 -2304px;
 }
 
-.LA {
-  @include flag;
+.flag.LA {
   background-position: 0 -2322px;
 }
 
-.LB {
-  @include flag;
+.flag.LB {
   background-position: 0 -2340px;
 }
 
-.LC {
-  @include flag;
+.flag.LC {
   background-position: 0 -2358px;
 }
 
-.LI {
-  @include flag;
+.flag.LI {
   background-position: 0 -2376px;
 }
 
-.LK {
-  @include flag;
+.flag.LK {
   background-position: 0 -2394px;
 }
 
-.LR {
-  @include flag;
+.flag.LR {
   background-position: 0 -2412px;
 }
 
-.LS {
-  @include flag;
+.flag.LS {
   background-position: 0 -2430px;
 }
 
-.LT {
-  @include flag;
+.flag.LT {
   background-position: 0 -2448px;
 }
 
-.LU {
-  @include flag;
+.flag.LU {
   background-position: 0 -2466px;
 }
 
-.LV {
-  @include flag;
+.flag.LV {
   background-position: 0 -2484px;
 }
 
-.LY {
-  @include flag;
+.flag.LY {
   background-position: 0 -2502px;
 }
 
-.MA {
-  @include flag;
+.flag.MA {
   background-position: 0 -2520px;
 }
 
-.MC {
-  @include flag;
+.flag.MC {
   background-position: 0 -2538px;
 }
 
-.MD {
-  @include flag;
+.flag.MD {
   background-position: 0 -2556px;
 }
 
-.ME {
-  @include flag;
+.flag.ME {
   background-position: 0 -2574px;
 }
 
-.MF {
-  @include flag;
+.flag.MF {
   background-position: 0 -2592px;
 }
 
-.MG {
-  @include flag;
+.flag.MG {
   background-position: 0 -2610px;
 }
 
-.MH {
-  @include flag;
+.flag.MH {
   background-position: 0 -2628px;
 }
 
-.MK {
-  @include flag;
+.flag.MK {
   background-position: 0 -2646px;
 }
 
-.ML {
-  @include flag;
+.flag.ML {
   background-position: 0 -2664px;
 }
 
-.MM {
-  @include flag;
+.flag.MM {
   background-position: 0 -2682px;
 }
 
-.MN {
-  @include flag;
+.flag.MN {
   background-position: 0 -2700px;
 }
 
-.MO {
-  @include flag;
+.flag.MO {
   background-position: 0 -2718px;
 }
 
-.MP {
-  @include flag;
+.flag.MP {
   background-position: 0 -2736px;
 }
 
-.MQ {
-  @include flag;
+.flag.MQ {
   background-position: 0 -2754px;
 }
 
-.MR {
-  @include flag;
+.flag.MR {
   background-position: 0 -2772px;
 }
 
-.MS {
-  @include flag;
+.flag.MS {
   background-position: 0 -2790px;
 }
 
-.MT {
-  @include flag;
+.flag.MT {
   background-position: 0 -2808px;
 }
 
-.MU {
-  @include flag;
+.flag.MU {
   background-position: 0 -2826px;
 }
 
-.MV {
-  @include flag;
+.flag.MV {
   background-position: 0 -2844px;
 }
 
-.MW {
-  @include flag;
+.flag.MW {
   background-position: 0 -2862px;
 }
 
-.MX {
-  @include flag;
+.flag.MX {
   background-position: 0 -2880px;
 }
 
-.MY {
-  @include flag;
+.flag.MY {
   background-position: 0 -2898px;
 }
 
-.MZ {
-  @include flag;
+.flag.MZ {
   background-position: 0 -2916px;
 }
 
-.NA {
-  @include flag;
+.flag.NA {
   background-position: 0 -2934px;
 }
 
-.NC {
-  @include flag;
+.flag.NC {
   background-position: 0 -2952px;
 }
 
-.NE {
-  @include flag;
+.flag.NE {
   background-position: 0 -2970px;
 }
 
-.NF {
-  @include flag;
+.flag.NF {
   background-position: 0 -2988px;
 }
 
-.NG {
-  @include flag;
+.flag.NG {
   background-position: 0 -3006px;
 }
 
-.NI {
-  @include flag;
+.flag.NI {
   background-position: 0 -3024px;
 }
 
-.NL {
-  @include flag;
+.flag.NL {
   background-position: 0 -3042px;
 }
 
-.NO {
-  @include flag;
+.flag.NO {
   background-position: 0 -3060px;
 }
 
-.NP {
-  @include flag;
+.flag.NP {
   background-position: 0 -3078px;
 }
 
-.NR {
-  @include flag;
+.flag.NR {
   background-position: 0 -3096px;
 }
 
-.NU {
-  @include flag;
+.flag.NU {
   background-position: 0 -3114px;
 }
 
-.NZ {
-  @include flag;
+.flag.NZ {
   background-position: 0 -3132px;
 }
 
-.OM {
-  @include flag;
+.flag.OM {
   background-position: 0 -3150px;
 }
 
-.PA {
-  @include flag;
+.flag.PA {
   background-position: 0 -3168px;
 }
 
-.PE {
-  @include flag;
+.flag.PE {
   background-position: 0 -3186px;
 }
 
-.PF {
-  @include flag;
+.flag.PF {
   background-position: 0 -3204px;
 }
 
-.PG {
-  @include flag;
+.flag.PG {
   background-position: 0 -3222px;
 }
 
-.PH {
-  @include flag;
+.flag.PH {
   background-position: 0 -3240px;
 }
 
-.PK {
-  @include flag;
+.flag.PK {
   background-position: 0 -3258px;
 }
 
-.PL {
-  @include flag;
+.flag.PL {
   background-position: 0 -3276px;
 }
 
-.PM {
-  @include flag;
+.flag.PM {
   background-position: 0 -3294px;
 }
 
-.PN {
-  @include flag;
+.flag.PN {
   background-position: 0 -3312px;
 }
 
-.PR {
-  @include flag;
+.flag.PR {
   background-position: 0 -3330px;
 }
 
-.PS {
-  @include flag;
+.flag.PS {
   background-position: 0 -3348px;
 }
 
-.PT {
-  @include flag;
+.flag.PT {
   background-position: 0 -3366px;
 }
 
-.PW {
-  @include flag;
+.flag.PW {
   background-position: 0 -3384px;
 }
 
-.PY {
-  @include flag;
+.flag.PY {
   background-position: 0 -3402px;
 }
 
-.QA {
-  @include flag;
+.flag.QA {
   background-position: 0 -3420px;
 }
 
-.RE {
-  @include flag;
+.flag.RE {
   background-position: 0 -3438px;
 }
 
-.RO {
-  @include flag;
+.flag.RO {
   background-position: 0 -3456px;
 }
 
-.RS {
-  @include flag;
+.flag.RS {
   background-position: 0 -3474px;
 }
 
-.RU {
-  @include flag;
+.flag.RU {
   background-position: 0 -3492px;
 }
 
-.RW {
-  @include flag;
+.flag.RW {
   background-position: 0 -3510px;
 }
 
-.SA {
-  @include flag;
+.flag.SA {
   background-position: 0 -3528px;
 }
 
-.SB {
-  @include flag;
+.flag.SB {
   background-position: 0 -3546px;
 }
 
-.SC {
-  @include flag;
+.flag.SC {
   background-position: 0 -3564px;
 }
 
-.SD {
-  @include flag;
+.flag.SD {
   background-position: 0 -3582px;
 }
 
-.SE {
-  @include flag;
+.flag.SE {
   background-position: 0 -3600px;
 }
 
-.SG {
-  @include flag;
+.flag.SG {
   background-position: 0 -3618px;
 }
 
-.SH {
-  @include flag;
+.flag.SH {
   background-position: 0 -3636px;
 }
 
-.SI {
-  @include flag;
+.flag.SI {
   background-position: 0 -3654px;
 }
 
-.SJ {
-  @include flag;
+.flag.SJ {
   background-position: 0 -3672px;
 }
 
-.SK {
-  @include flag;
+.flag.SK {
   background-position: 0 -3690px;
 }
 
-.SL {
-  @include flag;
+.flag.SL {
   background-position: 0 -3708px;
 }
 
-.SM {
-  @include flag;
+.flag.SM {
   background-position: 0 -3726px;
 }
 
-.SN {
-  @include flag;
+.flag.SN {
   background-position: 0 -3744px;
 }
 
-.SO {
-  @include flag;
+.flag.SO {
   background-position: 0 -3762px;
 }
 
-.SR {
-  @include flag;
+.flag.SR {
   background-position: 0 -3780px;
 }
 
-.SS {
-  @include flag;
+.flag.SS {
   background-position: 0 -3798px;
 }
 
-.ST {
-  @include flag;
+.flag.ST {
   background-position: 0 -3816px;
 }
 
-.SV {
-  @include flag;
+.flag.SV {
   background-position: 0 -3834px;
 }
 
-.SX {
-  @include flag;
+.flag.SX {
   background-position: 0 -3852px;
 }
 
-.SY {
-  @include flag;
+.flag.SY {
   background-position: 0 -3870px;
 }
 
-.SZ {
-  @include flag;
+.flag.SZ {
   background-position: 0 -3888px;
 }
 
-.TC {
-  @include flag;
+.flag.TC {
   background-position: 0 -3906px;
 }
 
-.TD {
-  @include flag;
+.flag.TD {
   background-position: 0 -3924px;
 }
 
-.TF {
-  @include flag;
+.flag.TF {
   background-position: 0 -3942px;
 }
 
-.TG {
-  @include flag;
+.flag.TG {
   background-position: 0 -3960px;
 }
 
-.TH {
-  @include flag;
+.flag.TH {
   background-position: 0 -3978px;
 }
 
-.TJ {
-  @include flag;
+.flag.TJ {
   background-position: 0 -3996px;
 }
 
-.TK {
-  @include flag;
+.flag.TK {
   background-position: 0 -4014px;
 }
 
-.TL {
-  @include flag;
+.flag.TL {
   background-position: 0 -4032px;
 }
 
-.TM {
-  @include flag;
+.flag.TM {
   background-position: 0 -4050px;
 }
 
-.TN {
-  @include flag;
+.flag.TN {
   background-position: 0 -4068px;
 }
 
-.TO {
-  @include flag;
+.flag.TO {
   background-position: 0 -4086px;
 }
 
-.TR {
-  @include flag;
+.flag.TR {
   background-position: 0 -4104px;
 }
 
-.TT {
-  @include flag;
+.flag.TT {
   background-position: 0 -4122px;
 }
 
-.TV {
-  @include flag;
+.flag.TV {
   background-position: 0 -4140px;
 }
 
-.TW {
-  @include flag;
+.flag.TW {
   background-position: 0 -4158px;
 }
 
-.TZ {
-  @include flag;
+.flag.TZ {
   background-position: 0 -4176px;
 }
 
-.UA {
-  @include flag;
+.flag.UA {
   background-position: 0 -4194px;
 }
 
-.UG {
-  @include flag;
+.flag.UG {
   background-position: 0 -4212px;
 }
 
-.UM {
-  @include flag;
+.flag.UM {
   background-position: 0 -4230px;
 }
 
-.US {
-  @include flag;
+.flag.US {
   background-position: 0 -4248px;
 }
 
-.UY {
-  @include flag;
+.flag.UY {
   background-position: 0 -4266px;
 }
 
-.UZ {
-  @include flag;
+.flag.UZ {
   background-position: 0 -4284px;
 }
 
-.VA {
-  @include flag;
+.flag.VA {
   background-position: 0 -4302px;
 }
 
-.VC {
-  @include flag;
+.flag.VC {
   background-position: 0 -4320px;
 }
 
-.VE {
-  @include flag;
+.flag.VE {
   background-position: 0 -4338px;
 }
 
-.VG {
-  @include flag;
+.flag.VG {
   background-position: 0 -4356px;
 }
 
-.VI {
-  @include flag;
+.flag.VI {
   background-position: 0 -4374px;
 }
 
-.VN {
-  @include flag;
+.flag.VN {
   background-position: 0 -4392px;
 }
 
-.VU {
-  @include flag;
+.flag.VU {
   background-position: 0 -4410px;
 }
 
-.WF {
-  @include flag;
+.flag.WF {
   background-position: 0 -4428px;
 }
 
-.WS {
-  @include flag;
+.flag.WS {
   background-position: 0 -4446px;
 }
 
-.XK {
-  @include flag;
+.flag.XK {
   background-position: 0 -4464px;
 }
 
-.YE {
-  @include flag;
+.flag.YE {
   background-position: 0 -4482px;
 }
 
-.YT {
-  @include flag;
+.flag.YT {
   background-position: 0 -4500px;
 }
 
-.ZA {
-  @include flag;
+.flag.ZA {
   background-position: 0 -4518px;
 }
 
-.ZM {
-  @include flag;
+.flag.ZM {
   background-position: 0 -4536px;
 }
 
-.ZW {
-  @include flag;
+.flag.ZW {
   background-position: 0 -4554px;
 }
