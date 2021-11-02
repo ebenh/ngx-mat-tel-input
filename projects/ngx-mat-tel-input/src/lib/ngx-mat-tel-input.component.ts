@@ -201,8 +201,7 @@ export class NgxMatTelInputComponent implements OnInit,
 
     // Replace the provider from above with this.
     if (this.ngControl != null) {
-      // Setting the value accessor directly (instead of using
-      // the providers) to avoid running into a circular import.
+      // Setting the value accessor directly (instead of using the providers) to avoid running into a circular import.
       this.ngControl.valueAccessor = this;
     }
 
