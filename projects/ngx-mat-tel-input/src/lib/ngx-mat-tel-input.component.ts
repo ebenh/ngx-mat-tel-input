@@ -209,27 +209,6 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   ngOnInit(): void {
-    /*
-    * Get the abstract control passed to us through the formGroupName directive by our parent component.
-    * */
-    // this.formGroup = this.controlContainer.control as FormGroup;
-
-    /*
-    * We wish to add a validator to the incoming FormGroup.
-    *
-    * Calling AbstractControl.prototype.setValidators overwrites any existing sync validators. Therefore, in order to
-    * not overwrite any existing validators, use Validators.prototype.compose to combine our new validator with any
-    * previously defined validators.
-    * */
-    // this.formGroup.setValidators(
-    //   Validators.compose([this.formGroup.validator, phoneNumberValidator])
-    // );
-    /*
-    * When you call AbstractControl.prototype.setValidators at run time, you must subsequently call
-    * AbstractControl.prototype.updateValueAndValidity() for the new validation to take effect.
-    * */
-    // this.formGroup.updateValueAndValidity();
-
     // Set the default country
     const defaultCountry = countries.find((el: Country): boolean => el.cca2 === this.defaultCountry);
 
