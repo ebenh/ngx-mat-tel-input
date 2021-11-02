@@ -166,6 +166,10 @@ export class NgxMatTelInputComponent implements OnInit,
   @ViewChild(FormGroupDirective) formGroupDirective: FormGroupDirective;
 
   @Input() defaultCountry = 'US';
+  @Input() countryWhitelist: string[];
+  @Input() countryBlacklist: string[];
+  countries: Countries = countries;
+  filteredCountries: Observable<Countries>;
 
   formGroup = new FormGroup({
     countryFilter: new FormControl({value: '', disabled: false}),
@@ -175,8 +179,6 @@ export class NgxMatTelInputComponent implements OnInit,
   }, [phoneNumberValidator]);
 
   phoneNumberErrorStateMatcher = new PhoneNumberErrorStateMatcher();
-
-  filteredCountries: Observable<Countries>;
 
   get country(): FormControl {
     return this.formGroup.get('country') as FormControl;
@@ -219,6 +221,18 @@ export class NgxMatTelInputComponent implements OnInit,
 
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(defaultCountry);
 
+    // Reduce the country list to just the those chosen by the caller
+    if (this.countryWhitelist) {
+      this.countries = this.countries.filter(
+        (country: Country): boolean => this.countryWhitelist.includes(country.cca2)
+      );
+    }
+    if (this.countryBlacklist) {
+      this.countries = this.countries.filter(
+        (country: Country): boolean => !this.countryBlacklist.includes(country.cca2)
+      );
+    }
+
     // Create a filtered list of countries based on the user's input
     this.filteredCountries = this.formGroup.get('countryFilter').valueChanges
       .pipe(
@@ -237,7 +251,7 @@ export class NgxMatTelInputComponent implements OnInit,
   private filter(value: string): Countries {
     const filterValue = value.toLowerCase();
 
-    return countries.filter((country: Country): boolean => {
+    return this.countries.filter((country: Country): boolean => {
       return (
         country.name.common.toLowerCase().includes(filterValue) ||
         country.name.official.toLowerCase().includes(filterValue)
@@ -248,10 +262,6 @@ export class NgxMatTelInputComponent implements OnInit,
   onSelectionChange(selection: Country): void {
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(selection);
     this.formGroup.get('phoneNumber').updateValueAndValidity();
-  }
-
-  get country(): FormControl {
-    return this.formGroup.get('country') as FormControl;
   }
 
   onBlur() {
