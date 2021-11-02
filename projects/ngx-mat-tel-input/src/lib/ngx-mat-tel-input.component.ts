@@ -33,57 +33,6 @@ import {map, startWith} from 'rxjs/operators';
 import countries, {Country, Countries} from 'world-countries';
 import {PhoneNumberUtil, PhoneNumberFormat, PhoneNumberType} from 'google-libphonenumber';
 
-const phoneNumberValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
-  const inputCountry = control.get('country').value as Country;
-  const inputPhoneNumber = control.get('phoneNumber').value as string;
-
-  control.get('phoneNumberE164Format').setValue(inputPhoneNumber, {onlySelf: true});
-
-  if (inputPhoneNumber === '') {
-    return null;
-  }
-
-  try {
-    const phoneNumberUtil = PhoneNumberUtil.getInstance();
-
-    const phoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
-
-    const regionCode = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
-
-    if (regionCode && regionCode !== inputCountry.cca2) {
-      const found = countries.find((el: Country): boolean => el.cca2 === regionCode);
-      if (found) {
-        control.get('country').setValue(found, {onlySelf: true});
-      }
-    }
-
-    const isValidNumber = phoneNumberUtil.isValidNumber(phoneNumber);
-
-    if (isValidNumber) {
-      const formattedPhoneNumber = phoneNumberUtil.format(phoneNumber, PhoneNumberFormat.E164);
-      control.get('phoneNumberE164Format').setValue(formattedPhoneNumber, {onlySelf: true});
-    }
-
-    return isValidNumber ? null : {phoneNumber: true};
-
-  } catch (e) {
-
-    if (e instanceof Error && (
-      e.message !== 'The string supplied did not seem to be a phone number' &&
-      e.message !== 'The string supplied is too short to be a phone number' &&
-      e.message !== 'Invalid country calling code' &&
-      e.message !== 'Phone number too short after IDD')) {
-      throw e; // unexpected error
-    }
-
-    return {phoneNumber: true};
-
-  }
-
-  // unreachable
-
-};
-
 class PhoneNumberErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const formHasPhoneNumberError = form.getError('phoneNumber');
@@ -176,7 +125,7 @@ export class NgxMatTelInputComponent implements OnInit,
     country: new FormControl({value: '', disabled: false}),
     phoneNumber: new FormControl({value: '', disabled: false}),
     phoneNumberE164Format: new FormControl(''),
-  }, [phoneNumberValidator]);
+  }, [this.phoneNumberValidator.bind(this)]);
 
   phoneNumberErrorStateMatcher = new PhoneNumberErrorStateMatcher();
 
@@ -269,6 +218,57 @@ export class NgxMatTelInputComponent implements OnInit,
       this.isTouched = true;
       this.onTouched();
     }
+  }
+
+  private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
+    const inputCountry = control.get('country').value as Country;
+    const inputPhoneNumber = control.get('phoneNumber').value as string;
+
+    control.get('phoneNumberE164Format').setValue(inputPhoneNumber, {onlySelf: true});
+
+    if (inputPhoneNumber === '') {
+      return null;
+    }
+
+    try {
+      const phoneNumberUtil = PhoneNumberUtil.getInstance();
+
+      const phoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
+
+      const regionCode = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
+
+      if (regionCode && regionCode !== inputCountry.cca2) {
+        const found = this.countries.find((el: Country): boolean => el.cca2 === regionCode);
+        if (found) {
+          control.get('country').setValue(found, {onlySelf: true});
+        }
+      }
+
+      const isValidNumber = phoneNumberUtil.isValidNumber(phoneNumber);
+
+      if (isValidNumber) {
+        const formattedPhoneNumber = phoneNumberUtil.format(phoneNumber, PhoneNumberFormat.E164);
+        control.get('phoneNumberE164Format').setValue(formattedPhoneNumber, {onlySelf: true});
+      }
+
+      return isValidNumber  ? null : {phoneNumber: true};
+
+    } catch (e) {
+
+      if (e instanceof Error && (
+        e.message !== 'The string supplied did not seem to be a phone number' &&
+        e.message !== 'The string supplied is too short to be a phone number' &&
+        e.message !== 'Invalid country calling code' &&
+        e.message !== 'Phone number too short after IDD')) {
+        throw e; // unexpected error
+      }
+
+      return {phoneNumber: true};
+
+    }
+
+    // unreachable
+
   }
 
   /**
