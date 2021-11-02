@@ -57,13 +57,11 @@ export class NgxMatTelInputComponent implements OnInit,
   MatFormFieldControl<string>,
   ControlValueAccessor {
 
-  static nextId = 0;
-
-  private subscription: Subscription = new Subscription();
-
   /**
    * MatFormFieldControl properties
    */
+
+  static nextId = 0;
 
   stateChanges = new Subject<void>();
   id = `ngx-mat-tel-input-${NgxMatTelInputComponent.nextId++}`;
@@ -113,13 +111,12 @@ export class NgxMatTelInputComponent implements OnInit,
    * NgxMatTelInputComponent properties and methods
    */
 
-  isTouched = false;
-
   @ViewChild(FormGroupDirective) formGroupDirective: FormGroupDirective;
 
   @Input() defaultCountry = 'US';
   @Input() countryWhitelist: string[];
   @Input() countryBlacklist: string[];
+
   countries: Countries = countries;
   filteredCountries: Observable<Countries>;
 
@@ -131,6 +128,10 @@ export class NgxMatTelInputComponent implements OnInit,
   }, [this.phoneNumberValidator.bind(this)]);
 
   phoneNumberErrorStateMatcher = new PhoneNumberErrorStateMatcher();
+
+  private isTouched = false;
+
+  private subscription: Subscription = new Subscription();
 
   get country(): FormControl {
     return this.formGroup.get('country') as FormControl;
@@ -216,7 +217,7 @@ export class NgxMatTelInputComponent implements OnInit,
     this.formGroup.get('phoneNumber').updateValueAndValidity();
   }
 
-  onBlur() {
+  onBlur(): void {
     if (!this.isTouched) {
       this.isTouched = true;
       this.onTouched();
