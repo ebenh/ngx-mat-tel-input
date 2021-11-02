@@ -88,8 +88,11 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   get shouldLabelFloat(): boolean {
-    // return this.focused || !this.empty;
-    return true;
+    // If we are showing the country picker (i.e. this.countries.length > 1), always float
+    if (this.countries.length > 1) {
+      return true;
+    }
+    return this.focused || !this.empty;
   }
 
   get required(): boolean {

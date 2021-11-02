@@ -2,7 +2,8 @@
 
   <div fxLayout="row">
 
-    <mat-select formControlName="country"
+    <mat-select *ngIf="countries?.length > 1"
+                formControlName="country"
                 (selectionChange)="onSelectionChange($event.value)"
                 fxFlex="45px"
                 #singleSelect>
