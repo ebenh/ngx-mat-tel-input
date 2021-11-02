@@ -237,10 +237,13 @@ export class NgxMatTelInputComponent implements OnInit,
 
       const regionCode = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
 
+      let isCountryInWhitelist = true;
       if (regionCode && regionCode !== inputCountry.cca2) {
-        const found = this.countries.find((el: Country): boolean => el.cca2 === regionCode);
-        if (found) {
-          control.get('country').setValue(found, {onlySelf: true});
+        const country = this.countries.find((el: Country): boolean => el.cca2 === regionCode);
+        if (country) {
+          control.get('country').setValue(country, {onlySelf: true});
+        } else {
+          isCountryInWhitelist = false;
         }
       }
 
@@ -251,7 +254,7 @@ export class NgxMatTelInputComponent implements OnInit,
         control.get('phoneNumberE164Format').setValue(formattedPhoneNumber, {onlySelf: true});
       }
 
-      return isValidNumber  ? null : {phoneNumber: true};
+      return isCountryInWhitelist && isValidNumber ? null : {phoneNumber: true};
 
     } catch (e) {
 
