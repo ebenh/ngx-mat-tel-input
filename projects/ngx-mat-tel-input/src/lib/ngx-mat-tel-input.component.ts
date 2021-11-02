@@ -108,13 +108,13 @@ export class NgxMatTelInputComponent implements OnInit,
   MatFormFieldControl<string>,
   ControlValueAccessor {
 
+  static nextId = 0;
+
   private subscription: Subscription = new Subscription();
 
   /**
    * MatFormFieldControl properties
    */
-
-  static nextId = 0;
 
   stateChanges = new Subject<void>();
   id = `ngx-mat-tel-input-${NgxMatTelInputComponent.nextId++}`;
