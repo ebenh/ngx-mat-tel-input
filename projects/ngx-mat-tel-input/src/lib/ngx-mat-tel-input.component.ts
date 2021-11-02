@@ -27,7 +27,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 import {MatFormFieldControl} from '@angular/material/form-field';
 import {FocusMonitor} from '@angular/cdk/a11y';
 
-import {Observable, Subject} from 'rxjs';
+import {Observable, Subject, Subscription} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
 import countries, {Country, Countries} from 'world-countries';
@@ -107,6 +107,8 @@ export class NgxMatTelInputComponent implements OnInit,
   OnDestroy,
   MatFormFieldControl<string>,
   ControlValueAccessor {
+
+  private subscription: Subscription = new Subscription();
 
   /**
    * MatFormFieldControl properties
@@ -190,10 +192,12 @@ export class NgxMatTelInputComponent implements OnInit,
               @Optional() @Self() public ngControl: NgControl) {
 
     // Monitor our component's root DOM element for focus state changes
-    focusMonitor.monitor(elementRef.nativeElement, true).subscribe(origin => {
-      this.focused = !!origin;
-      this.stateChanges.next();
-    });
+    this.subscription.add(
+      focusMonitor.monitor(elementRef.nativeElement, true).subscribe(origin => {
+        this.focused = !!origin;
+        this.stateChanges.next();
+      })
+    );
 
     // Replace the provider from above with this.
     if (this.ngControl != null) {
@@ -240,8 +244,12 @@ export class NgxMatTelInputComponent implements OnInit,
         map((input: string): Countries => this.filter(input))
       );
 
-    this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next());
-    this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next());
+    this.subscription.add(
+      this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
+    );
+    this.subscription.add(
+      this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
+    );
   }
 
   private filter(value: string): Countries {
@@ -256,10 +264,12 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   ngAfterViewInit(): void {
-    this.parentFormGroupDirective.ngSubmit.subscribe(e => {
-      this.formGroupDirective.onSubmit(e);
-      // this.stateChanges.next();
-    });
+    this.subscription.add(
+      this.parentFormGroupDirective.ngSubmit.subscribe(e => {
+        this.formGroupDirective.onSubmit(e);
+        // this.stateChanges.next();
+      })
+    );
   }
 
   ngDoCheck(): void {
@@ -284,9 +294,9 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   ngOnDestroy(): void {
-    // todo: unsubscribe from observables
     this.focusMonitor.stopMonitoring(this.elementRef.nativeElement);
     this.stateChanges.complete();
+    this.subscription.unsubscribe();
   }
 
   onSelectionChange(selection: Country): void {
@@ -325,7 +335,9 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   registerOnChange(fn: any): void {
-    this.formGroup.get('phoneNumberE164Format').valueChanges.subscribe(x => fn(x));
+    this.subscription.add(
+      this.formGroup.get('phoneNumberE164Format').valueChanges.subscribe(x => fn(x))
+    );
   }
 
   registerOnTouched(fn: any): void {
