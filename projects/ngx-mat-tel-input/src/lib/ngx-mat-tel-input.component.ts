@@ -27,7 +27,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 import {MatFormFieldControl} from '@angular/material/form-field';
 import {FocusMonitor} from '@angular/cdk/a11y';
 
-import {Observable, Subject} from 'rxjs';
+import {Observable, Subject, Subscription} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
 import countries, {Country, Countries} from 'world-countries';
@@ -108,28 +108,19 @@ export class NgxMatTelInputComponent implements OnInit,
   MatFormFieldControl<string>,
   ControlValueAccessor {
 
+  static nextId = 0;
+
+  private subscription: Subscription = new Subscription();
+
   /**
    * MatFormFieldControl properties
    */
 
-  static nextId = 0;
-
-  // value: string;
-  // stateChanges: Observable<void>;
   stateChanges = new Subject<void>();
-  // id: string;
   id = `ngx-mat-tel-input-${NgxMatTelInputComponent.nextId++}`;
   placeholder: string;
-  // ngControl: import('@angular/forms').NgControl;
-  // focused: boolean;
   focused = false;
-  // empty: boolean;
-  // shouldLabelFloat: boolean;
-  // required: boolean;
-  // disabled: boolean;
-  // errorState: boolean;
   errorState = false;
-  // controlType?: string;
   controlType = 'ngx-mat-tel-input';
   // autofilled?: boolean;
 
@@ -201,42 +192,22 @@ export class NgxMatTelInputComponent implements OnInit,
               @Optional() @Self() public ngControl: NgControl) {
 
     // Monitor our component's root DOM element for focus state changes
-    focusMonitor.monitor(elementRef.nativeElement, true).subscribe(origin => {
-      this.focused = !!origin;
-      this.stateChanges.next();
-    });
+    this.subscription.add(
+      focusMonitor.monitor(elementRef.nativeElement, true).subscribe(origin => {
+        this.focused = !!origin;
+        this.stateChanges.next();
+      })
+    );
 
     // Replace the provider from above with this.
     if (this.ngControl != null) {
-      // Setting the value accessor directly (instead of using
-      // the providers) to avoid running into a circular import.
+      // Setting the value accessor directly (instead of using the providers) to avoid running into a circular import.
       this.ngControl.valueAccessor = this;
     }
 
   }
 
   ngOnInit(): void {
-    /*
-    * Get the abstract control passed to us through the formGroupName directive by our parent component.
-    * */
-    // this.formGroup = this.controlContainer.control as FormGroup;
-
-    /*
-    * We wish to add a validator to the incoming FormGroup.
-    *
-    * Calling AbstractControl.prototype.setValidators overwrites any existing sync validators. Therefore, in order to
-    * not overwrite any existing validators, use Validators.prototype.compose to combine our new validator with any
-    * previously defined validators.
-    * */
-    // this.formGroup.setValidators(
-    //   Validators.compose([this.formGroup.validator, phoneNumberValidator])
-    // );
-    /*
-    * When you call AbstractControl.prototype.setValidators at run time, you must subsequently call
-    * AbstractControl.prototype.updateValueAndValidity() for the new validation to take effect.
-    * */
-    // this.formGroup.updateValueAndValidity();
-
     // Set the default country
     const defaultCountry = countries.find((el: Country): boolean => el.cca2 === this.defaultCountry);
 
@@ -251,8 +222,12 @@ export class NgxMatTelInputComponent implements OnInit,
         map((input: string): Countries => this.filter(input))
       );
 
-    this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next());
-    this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next());
+    this.subscription.add(
+      this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
+    );
+    this.subscription.add(
+      this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
+    );
   }
 
   private filter(value: string): Countries {
@@ -267,21 +242,20 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   ngAfterViewInit(): void {
-    this.parentFormGroupDirective.ngSubmit.subscribe(e => {
-      this.formGroupDirective.onSubmit(e);
-      // this.stateChanges.next();
-    });
+    this.subscription.add(
+      this.parentFormGroupDirective.ngSubmit.subscribe(e => {
+        this.formGroupDirective.onSubmit(e);
+        // this.stateChanges.next();
+      })
+    );
   }
 
   ngDoCheck(): void {
     if (this.ngControl) {
-      // this.errorState = this.ngControl.invalid && this.ngControl.touched && !this.focused;
       if (this.formGroup.hasError('phoneNumber')) {
         this.ngControl.control.setErrors({phoneNumber: true});
       }
 
-      // try this.formGroup.touched
-      // const isTouched = this.formGroup.get('phoneNumber').touched || this.formGroup.get('country').touched;
       const isTouched = this.formGroup.get('phoneNumber').touched;
 
       let isSubmitted = false;
@@ -295,9 +269,9 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   ngOnDestroy(): void {
-    // todo: unsubscribe from observables
     this.focusMonitor.stopMonitoring(this.elementRef.nativeElement);
     this.stateChanges.complete();
+    this.subscription.unsubscribe();
   }
 
   onSelectionChange(selection: Country): void {
@@ -336,7 +310,9 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   registerOnChange(fn: any): void {
-    this.formGroup.get('phoneNumberE164Format').valueChanges.subscribe(x => fn(x));
+    this.subscription.add(
+      this.formGroup.get('phoneNumberE164Format').valueChanges.subscribe(x => fn(x))
+    );
   }
 
   registerOnTouched(fn: any): void {
