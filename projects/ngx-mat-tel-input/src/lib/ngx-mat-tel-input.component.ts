@@ -241,6 +241,26 @@ export class NgxMatTelInputComponent implements OnInit,
     });
   }
 
+  onSelectionChange(selection: Country): void {
+    this.placeholder = NgxMatTelInputComponent.getExampleNumber(selection);
+    this.formGroup.get('phoneNumber').updateValueAndValidity();
+  }
+
+  get country(): FormControl {
+    return this.formGroup.get('country') as FormControl;
+  }
+
+  onBlur() {
+    if (!this.isTouched) {
+      this.isTouched = true;
+      this.onTouched();
+    }
+  }
+
+  /**
+   * AfterViewInit methods
+   */
+
   ngAfterViewInit(): void {
     this.subscription.add(
       this.parentFormGroupDirective.ngSubmit.subscribe(e => {
@@ -249,6 +269,10 @@ export class NgxMatTelInputComponent implements OnInit,
       })
     );
   }
+
+  /**
+   * DoCheck methods
+   */
 
   ngDoCheck(): void {
     if (this.ngControl) {
@@ -268,26 +292,14 @@ export class NgxMatTelInputComponent implements OnInit,
     }
   }
 
+  /**
+   * OnDestroy methods
+   */
+
   ngOnDestroy(): void {
     this.focusMonitor.stopMonitoring(this.elementRef.nativeElement);
     this.stateChanges.complete();
     this.subscription.unsubscribe();
-  }
-
-  onSelectionChange(selection: Country): void {
-    this.placeholder = NgxMatTelInputComponent.getExampleNumber(selection);
-    this.formGroup.get('phoneNumber').updateValueAndValidity();
-  }
-
-  get country(): FormControl {
-    return this.formGroup.get('country') as FormControl;
-  }
-
-  onBlur() {
-    if (!this.isTouched) {
-      this.isTouched = true;
-      this.onTouched();
-    }
   }
 
   /**
