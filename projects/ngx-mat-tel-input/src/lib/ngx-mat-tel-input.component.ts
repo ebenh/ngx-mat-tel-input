@@ -114,22 +114,11 @@ export class NgxMatTelInputComponent implements OnInit,
 
   static nextId = 0;
 
-  // value: string;
-  // stateChanges: Observable<void>;
   stateChanges = new Subject<void>();
-  // id: string;
   id = `ngx-mat-tel-input-${NgxMatTelInputComponent.nextId++}`;
   placeholder: string;
-  // ngControl: import('@angular/forms').NgControl;
-  // focused: boolean;
   focused = false;
-  // empty: boolean;
-  // shouldLabelFloat: boolean;
-  // required: boolean;
-  // disabled: boolean;
-  // errorState: boolean;
   errorState = false;
-  // controlType?: string;
   controlType = 'ngx-mat-tel-input';
   // autofilled?: boolean;
 
