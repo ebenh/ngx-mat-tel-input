@@ -274,13 +274,10 @@ export class NgxMatTelInputComponent implements OnInit,
 
   ngDoCheck(): void {
     if (this.ngControl) {
-      // this.errorState = this.ngControl.invalid && this.ngControl.touched && !this.focused;
       if (this.formGroup.hasError('phoneNumber')) {
         this.ngControl.control.setErrors({phoneNumber: true});
       }
 
-      // try this.formGroup.touched
-      // const isTouched = this.formGroup.get('phoneNumber').touched || this.formGroup.get('country').touched;
       const isTouched = this.formGroup.get('phoneNumber').touched;
 
       let isSubmitted = false;
