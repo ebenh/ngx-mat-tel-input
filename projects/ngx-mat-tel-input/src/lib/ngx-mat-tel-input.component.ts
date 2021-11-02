@@ -178,6 +178,10 @@ export class NgxMatTelInputComponent implements OnInit,
 
   filteredCountries: Observable<Countries>;
 
+  get country(): FormControl {
+    return this.formGroup.get('country') as FormControl;
+  }
+
   private static getExampleNumber(country: Country): string {
     const phoneNumberUtil = PhoneNumberUtil.getInstance();
     const exampleNumber = phoneNumberUtil.getExampleNumberForType(country.cca2, PhoneNumberType.MOBILE);
