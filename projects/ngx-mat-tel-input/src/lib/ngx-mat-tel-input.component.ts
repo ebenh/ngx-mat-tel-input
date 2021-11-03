@@ -82,7 +82,7 @@ export class NgxMatTelInputComponent implements OnInit,
   @HostBinding('attr.aria-describedby') describedBy = '';
 
   get value(): string {
-    return this.formGroup.get('phoneNumberE164Format').value;
+    return this.formGroup.get('outputPhoneNumber').value;
   }
 
   set value(value: string) {
@@ -133,7 +133,7 @@ export class NgxMatTelInputComponent implements OnInit,
     countryFilter: new FormControl({value: '', disabled: false}),
     country: new FormControl({value: '', disabled: false}),
     phoneNumber: new FormControl({value: '', disabled: false}),
-    phoneNumberE164Format: new FormControl(''),
+    outputPhoneNumber: new FormControl(''),
   }, [this.phoneNumberValidator.bind(this)]);
 
   phoneNumberErrorStateMatcher = new PhoneNumberErrorStateMatcher();
@@ -241,7 +241,7 @@ export class NgxMatTelInputComponent implements OnInit,
     const inputCountry = control.get('country').value as Country;
     const inputPhoneNumber = control.get('phoneNumber').value as string;
 
-    control.get('phoneNumberE164Format').setValue(inputPhoneNumber, {onlySelf: true});
+    control.get('outputPhoneNumber').setValue(inputPhoneNumber, {onlySelf: true});
 
     if (inputPhoneNumber === '') {
       return null;
@@ -268,7 +268,7 @@ export class NgxMatTelInputComponent implements OnInit,
 
       if (isValidNumber) {
         const formattedPhoneNumber = phoneNumberUtil.format(phoneNumber, this.format);
-        control.get('phoneNumberE164Format').setValue(formattedPhoneNumber, {onlySelf: true});
+        control.get('outputPhoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
       }
 
       if (!isValidNumber) {
@@ -369,7 +369,7 @@ export class NgxMatTelInputComponent implements OnInit,
 
   registerOnChange(fn: any): void {
     this.subscription.add(
-      this.formGroup.get('phoneNumberE164Format').valueChanges.subscribe(x => fn(x))
+      this.formGroup.get('outputPhoneNumber').valueChanges.subscribe(x => fn(x))
     );
   }
 
