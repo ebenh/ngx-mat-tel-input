@@ -30,11 +30,11 @@ Import the module into your `app.module.ts`:
 
     <mat-form-field appearance="outline">
       <mat-label>Phone Number</mat-label>
-      <lib-ngx-mat-tel-input formControlName="phoneNumber" [defaultCountry]="'GB'"></lib-ngx-mat-tel-input>
+      <lib-ngx-mat-tel-input formControlName="phoneNumber"></lib-ngx-mat-tel-input>
       <mat-error *ngIf="phoneNumber.hasError('required')">
         This field is <strong>required</strong>
       </mat-error>
-      <mat-error *ngIf="phoneNumber.hasError('phoneNumber')">
+      <mat-error *ngIf="phoneNumber.hasError('format')">
         Phone number is <strong>invalid</strong>
       </mat-error>
     </mat-form-field>
@@ -64,3 +64,12 @@ Import the module into your `app.module.ts`:
       }
     
     }
+
+## Options
+
+| Option           | Type           | Optional? | Example                                   | Default         | Description                                                                                                                                                              |
+|------------------|----------------|-----------|-------------------------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| defaultCountry   | ```string```   | Yes       | ```[defaultCountry]="'US'"```               | ```undefined``` | The country to be selected by default in the country picker. If omitted, the default will be the first country in English alphabetical order (Afghanistan).              |
+| countryWhitelist | ```string[]``` | Yes       | ```[countryWhitelist]="['US', 'CA']"```     | ```undefined``` | List of countries to **include** in the country picker. If omitted all countries are displayed.                                                                          |
+| countryBlacklist | ```string[]``` | Yes       | ```[countryBlacklist]="['DE','PA','NZ']"``` | ```undefined``` | List of countries to **exclude** from the country picker. If omitted all countries are displayed.                                                                        |
+| format           | ```number```   | Yes       | ```[format]="0"```                          | ```0```         | The format of the phone number written to form control named "phoneNumber".<ul><li>0 - E164</li><li>1 - INTERNATIONAL</li><li>2 - NATIONAL</li><li>3 - RFC3966</li></ul> |
