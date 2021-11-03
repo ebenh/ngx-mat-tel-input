@@ -33,7 +33,7 @@ import {map, startWith} from 'rxjs/operators';
 import countries, {Country, Countries} from 'world-countries';
 import {PhoneNumberUtil, PhoneNumberFormat, PhoneNumberType} from 'google-libphonenumber';
 
-enum Format {
+const enum Format {
   E164,
   INTERNATIONAL,
   NATIONAL,
