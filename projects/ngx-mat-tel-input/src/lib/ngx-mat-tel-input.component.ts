@@ -386,8 +386,8 @@ export class NgxMatTelInputComponent implements OnInit,
  */
 
 function includes(a: string, b: string): boolean {
-  // This function tells you whether "b" is a substring of "a". We remove diacritics (i.e. accents) and lowercase both
-  // arguments before performing a comparison.
+  // This function tells you whether "b" is a substring of "a". We remove diacritics (i.e. accent marks) and lowercase
+  // both arguments before performing a comparison.
   a = a.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   b = b.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   return a.toLowerCase().includes(b.toLowerCase());
