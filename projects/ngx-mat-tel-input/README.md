@@ -24,7 +24,7 @@ Import the module into your `app.module.ts`:
       ...
     })
 
-## Usage
+## Basic Usage
 
 ### Template
 
