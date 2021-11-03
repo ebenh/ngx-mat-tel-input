@@ -4,7 +4,7 @@ Angular Material component for inputting telephone numbers.
 
 * 100% Material Design
 * Phonenumber validation and formatting provided by Google's [libphonenumber](https://github.com/google/libphonenumber)
-* 250 supported nations
+* 250 supported countries and dependent areas
 * Low resolution national flags with minimal visual artefacts.
 * User friendly UX
 
