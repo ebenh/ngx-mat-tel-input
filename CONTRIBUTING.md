@@ -10,6 +10,10 @@ Before contributing, please take time to review our code of conduct [here](CODE_
 
     $ git clone https://github.com/ebenh/ngx-mat-tel-input ngx-mat-tel-input 
 
+### Install Dependencies
+
+    $ npm install
+
 ### Run Development Server
 
     $ npm run start
