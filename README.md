@@ -1,43 +1,108 @@
 # NgxMatTelInput
 
-Angular Material component for inputting telephone numbers.
+**[Angular Material](https://material.angular.io/)** component for inputting telephone numbers.
+
+* **Material design**
+* **Validates** and **formats** phone numbers (via Google's [libphonenumber](https://github.com/google/libphonenumber))
+* **250** countries and dependent areas
+* Flags **optimized** for low resolution
+* **Streamlined** UX
 
 Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
-## Development server
+## Install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Install the package using npm:
 
-## Code scaffolding
+    npm install ngx-mat-tel-input
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-> Note: Add `--project ngx-mat-tel-input-test` if you wish to generate a component for the test application. 
+Import the module into your `app.module.ts`:
 
-## Build
+    import { NgxMatTelInputModule } from 'ngx-mat-tel-input';
 
-Run `ng build` to build the library. The build artifacts will be stored in the `dist/` directory.
-> Note: Add `--watch` to enable automatic incremental builds.
+    @NgModule({
+      ...
+      imports: [
+        ...,
+        NgxMatTelInputModule,
+        ...
+      ],
+      ...
+    })
 
-## Publishing
+## Basic Usage
 
-### Library
+### Template
 
-Before building the library, increment its version number using the [npm version](https://docs.npmjs.com/cli/v7/commands/npm-version) command.
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <lib-ngx-mat-tel-input formControlName="phoneNumber"></lib-ngx-mat-tel-input>
+      <mat-error *ngIf="phoneNumber.hasError('required')">
+        This field is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="phoneNumber.hasError('format')">
+        Phone number is <strong>invalid</strong>
+      </mat-error>
+    </mat-form-field>
 
-Build the library with `ng build --prod`, then navigate to the `dist/ngx-mat-tel-input` directory and run `npm publish`.
+### Component
 
-### Test application
+    import {Component} from '@angular/core';
+    
+    import {FormGroup, FormControl, Validators} from '@angular/forms';
+    
+    @Component({
+      selector: 'my-component',
+      templateUrl: './my-component.component.html',
+      styleUrls: ['./my-component.component.css']
+    })
+    export class MyComponent { 
+      myFormGroup = new FormGroup({
+        phoneNumber: new FormControl({value: '', disabled: false}, [Validators.required,]),
+      });
+    
+      onSubmit(): void {
+    
+      }
+    
+      get phoneNumber(): FormControl {
+        return this.myFormGroup.get('phoneNumber') as FormControl;
+      }
+    
+    }
 
-Build the test project with `ng build ngx-mat-tel-input-test --prod` then run `firebase deploy`.
+# Errors
 
-## Running unit tests
+## `format`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This error is triggered when the user's input does not form a valid phone number.
 
-## Running end-to-end tests
+      <mat-error *ngIf="phoneNumber.hasError('format')">
+        Phone number is <strong>invalid</strong>
+      </mat-error>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## `country`
 
-## Further help
+This error is triggered when the user enters a phone number belonging to a country or dependent area that either isn't
+in `countryWhiteList`, or is in `countryBlacklist`.
 
-More information on Angular libraries [here](https://angular.io/guide/creating-libraries).
+      <mat-error *ngIf="phoneNumber.hasError('country')">
+        US numbers <strong>only</strong>
+      </mat-error>
+
+## Options
+
+| Option           | Type       | Optional? | Example                                 | Default     | Description                                                                                                                                                                              |
+|------------------|------------|-----------|-----------------------------------------|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| defaultCountry   | `string`   | Yes       | `[defaultCountry]="'US'"`               | `undefined` | The country to be selected by default in the country picker. If omitted, the default will be the first country in English alphabetical order (Afghanistan).                              |
+| countryWhitelist | `string[]` | Yes       | `[countryWhitelist]="['US', 'CA']"`     | `undefined` | List of countries to **include** in the country picker. If omitted all countries are displayed.                                                                                          |
+| countryBlacklist | `string[]` | Yes       | `[countryBlacklist]="['DE','PA','NZ']"` | `undefined` | List of countries to **exclude** from the country picker. If omitted all countries are displayed.                                                                                        |
+| format           | `number`   | Yes       | `[format]="0"`                          | `0`         | The format of the phone number written to form control named "phoneNumber".<ul><li>0 - E164 *(Recommended)*</li><li>1 - INTERNATIONAL</li><li>2 - NATIONAL</li><li>3 - RFC3966</li></ul> |
+
+---
+**NOTE**
+
+Countries are represented by their [ISO 3166-1 alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (e.g. "
+FR" for France). Codes should consist of capital letter **only** with no extraneous whitespace.
+
+---
