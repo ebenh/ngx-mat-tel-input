@@ -36,9 +36,10 @@ import {PhoneNumberUtil, PhoneNumberFormat, PhoneNumberType} from 'google-libpho
 class PhoneNumberErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const formHasPhoneNumberError = form.getError('phoneNumber');
+    const formHasCountryError = form.getError('country');
     const isSubmitted = form && form.submitted;
 
-    return !!(control && (control.invalid || formHasPhoneNumberError) && (control.touched || isSubmitted));
+    return !!(control && (control.invalid || formHasPhoneNumberError || formHasCountryError) && (control.touched || isSubmitted));
   }
 }
 
@@ -258,7 +259,15 @@ export class NgxMatTelInputComponent implements OnInit,
         control.get('phoneNumberE164Format').setValue(formattedPhoneNumber, {onlySelf: true});
       }
 
-      return isCountryInWhitelist && isValidNumber ? null : {phoneNumber: true};
+      if (!isValidNumber) {
+        return {phoneNumber: true};
+      }
+
+      if (!isCountryInWhitelist) {
+        return {country: true};
+      }
+
+      return null;
 
     } catch (e) {
 
@@ -299,6 +308,10 @@ export class NgxMatTelInputComponent implements OnInit,
     if (this.ngControl) {
       if (this.formGroup.hasError('phoneNumber')) {
         this.ngControl.control.setErrors({phoneNumber: true});
+      }
+
+      if (this.formGroup.hasError('country')) {
+        this.ngControl.control.setErrors({country: true});
       }
 
       const isTouched = this.formGroup.get('phoneNumber').touched;
