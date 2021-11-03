@@ -42,7 +42,7 @@ enum Format {
 
 class PhoneNumberErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const formHasPhoneNumberError = form.getError('phoneNumber');
+    const formHasPhoneNumberError = form.getError('format');
     const formHasCountryError = form.getError('country');
     const isSubmitted = form && form.submitted;
 
@@ -272,7 +272,7 @@ export class NgxMatTelInputComponent implements OnInit,
       }
 
       if (!isValidNumber) {
-        return {phoneNumber: true};
+        return {format: true};
       }
 
       if (!isCountryInWhitelist) {
@@ -318,8 +318,8 @@ export class NgxMatTelInputComponent implements OnInit,
 
   ngDoCheck(): void {
     if (this.ngControl) {
-      if (this.formGroup.hasError('phoneNumber')) {
-        this.ngControl.control.setErrors({phoneNumber: true});
+      if (this.formGroup.hasError('format')) {
+        this.ngControl.control.setErrors({format: true});
       }
 
       if (this.formGroup.hasError('country')) {
