@@ -114,7 +114,7 @@ export class NgxMatTelInputComponent implements OnInit,
 
   @ViewChild(FormGroupDirective) formGroupDirective: FormGroupDirective;
 
-  @Input() defaultCountry = 'US';
+  @Input() defaultCountry;
   @Input() countryWhitelist: string[];
   @Input() countryBlacklist: string[];
 
@@ -169,7 +169,12 @@ export class NgxMatTelInputComponent implements OnInit,
 
   ngOnInit(): void {
     // Set the default country
-    const defaultCountry = countries.find((el: Country): boolean => el.cca2 === this.defaultCountry);
+    let defaultCountry;
+    if (this.defaultCountry) {
+      defaultCountry = this.countries.find((el: Country): boolean => el.cca2 === this.defaultCountry);
+    } else {
+      defaultCountry = this.countries[0];
+    }
 
     this.formGroup.get('country').setValue(defaultCountry);
 
