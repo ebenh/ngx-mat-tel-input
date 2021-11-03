@@ -2,6 +2,12 @@
 
 Angular Material component for inputting telephone numbers.
 
+* 100% Material Design
+* Phonenumber validation and formatting provided by Google's [libphonenumber](https://github.com/google/libphonenumber)
+* 200+ Nations supported
+* Low resolution national flags with minimal visual artefacts.
+* User friendly UX
+
 Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
 ## Install
