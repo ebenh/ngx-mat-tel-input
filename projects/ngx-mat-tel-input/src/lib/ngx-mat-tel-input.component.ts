@@ -168,18 +168,6 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   ngOnInit(): void {
-    // Set the default country
-    let defaultCountry;
-    if (this.defaultCountry) {
-      defaultCountry = this.countries.find((el: Country): boolean => el.cca2 === this.defaultCountry);
-    } else {
-      defaultCountry = this.countries[0];
-    }
-
-    this.formGroup.get('country').setValue(defaultCountry);
-
-    this.placeholder = NgxMatTelInputComponent.getExampleNumber(defaultCountry);
-
     // Reduce the country list to just the those chosen by the caller
     if (this.countryWhitelist) {
       this.countries = this.countries.filter(
@@ -198,6 +186,17 @@ export class NgxMatTelInputComponent implements OnInit,
         startWith(''),
         map((input: string): Countries => this.filter(input))
       );
+
+    // Set the default country
+    let defaultCountry;
+    if (this.defaultCountry) {
+      defaultCountry = this.countries.find((el: Country): boolean => el.cca2 === this.defaultCountry);
+    } else {
+      defaultCountry = this.countries[0];
+    }
+    this.formGroup.get('country').setValue(defaultCountry);
+
+    this.placeholder = NgxMatTelInputComponent.getExampleNumber(defaultCountry);
 
     this.subscription.add(
       this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
