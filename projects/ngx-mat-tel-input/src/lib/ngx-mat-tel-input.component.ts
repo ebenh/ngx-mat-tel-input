@@ -33,6 +33,13 @@ import {map, startWith} from 'rxjs/operators';
 import countries, {Country, Countries} from 'world-countries';
 import {PhoneNumberUtil, PhoneNumberFormat, PhoneNumberType} from 'google-libphonenumber';
 
+enum Format {
+  E164,
+  INTERNATIONAL,
+  NATIONAL,
+  RFC3966
+}
+
 class PhoneNumberErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const formHasPhoneNumberError = form.getError('phoneNumber');
@@ -117,6 +124,7 @@ export class NgxMatTelInputComponent implements OnInit,
   @Input() defaultCountry;
   @Input() countryWhitelist: string[];
   @Input() countryBlacklist: string[];
+  @Input() format: Format = Format.E164;
 
   countries: Countries = countries;
   filteredCountries: Observable<Countries>;
@@ -259,7 +267,7 @@ export class NgxMatTelInputComponent implements OnInit,
       const isValidNumber = phoneNumberUtil.isValidNumber(phoneNumber);
 
       if (isValidNumber) {
-        const formattedPhoneNumber = phoneNumberUtil.format(phoneNumber, PhoneNumberFormat.E164);
+        const formattedPhoneNumber = phoneNumberUtil.format(phoneNumber, this.format);
         control.get('phoneNumberE164Format').setValue(formattedPhoneNumber, {onlySelf: true});
       }
 
