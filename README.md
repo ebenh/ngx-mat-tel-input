@@ -92,12 +92,12 @@ in `countryWhiteList`, or is in `countryBlacklist`.
 
 ## Options
 
-| Option           | Type       | Optional? | Example                                 | Default     | Description                                                                                                                                                                              |
-|------------------|------------|-----------|-----------------------------------------|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| defaultCountry   | `string`   | Yes       | `[defaultCountry]="'US'"`               | `undefined` | The country to be selected by default in the country picker. If omitted, the default will be the first country in English alphabetical order (Afghanistan).                              |
-| countryWhitelist | `string[]` | Yes       | `[countryWhitelist]="['US', 'CA']"`     | `undefined` | List of countries to **include** in the country picker. If omitted all countries are displayed.                                                                                          |
-| countryBlacklist | `string[]` | Yes       | `[countryBlacklist]="['DE','PA','NZ']"` | `undefined` | List of countries to **exclude** from the country picker. If omitted all countries are displayed.                                                                                        |
-| format           | `number`   | Yes       | `[format]="0"`                          | `0`         | The format of the phone number written to form control named "phoneNumber".<ul><li>0 - E164 *(Recommended)*</li><li>1 - INTERNATIONAL</li><li>2 - NATIONAL</li><li>3 - RFC3966</li></ul> |
+| Option           | Type       | Optional? | Example                                 | Description                                                                                                                                                                              |
+|------------------|------------|-----------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| defaultCountry   | `string`   | Yes       | `[defaultCountry]="'US'"`               | The country to be selected by default in the country picker. If omitted, the default will be the first country in English alphabetical order (Afghanistan).                              |
+| countryWhitelist | `string[]` | Yes       | `[countryWhitelist]="['US', 'CA']"`     | List of countries to **include** in the country picker. If omitted all countries are displayed.                                                                                          |
+| countryBlacklist | `string[]` | Yes       | `[countryBlacklist]="['DE','PA','NZ']"` | List of countries to **exclude** from the country picker. If omitted all countries are displayed.                                                                                        |
+| format           | `number`   | Yes       | `[format]="0"`                          | The format of the phone number written to form control named "phoneNumber".<ul><li>0 - E164 *(Recommended)*</li><li>1 - INTERNATIONAL</li><li>2 - NATIONAL</li><li>3 - RFC3966</li></ul> |
 
 ---
 **NOTE**
