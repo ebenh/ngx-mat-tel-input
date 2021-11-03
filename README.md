@@ -103,6 +103,6 @@ in `countryWhiteList`, or is in `countryBlacklist`.
 **NOTE**
 
 Countries are represented by their [ISO 3166-1 alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (e.g. "
-FR" for France). Codes should consist of capital letter **only** with no extraneous whitespace.
+FR" for France). Codes should consist of capital letters **only** with no extraneous whitespace.
 
 ---
