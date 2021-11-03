@@ -176,6 +176,11 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   ngOnInit(): void {
+    // Sort countries in English alphabetical order
+    this.countries = this.countries.sort(
+      (a, b) => a.name.common.localeCompare(b.name.common)
+    );
+
     // Reduce the country list to just the those chosen by the caller
     if (this.countryWhitelist) {
       this.countries = this.countries.filter(
