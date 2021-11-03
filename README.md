@@ -83,7 +83,7 @@ This error is triggered when the user's input does not form a valid phone number
 
 ## `country`
 
-This error is triggered when the user enters a phone number belonging to a country or dependent area that either isn't
+This error is triggered when the user enters a phone number belonging to a country or dependent area that isn't
 in `countryWhiteList`, or is in `countryBlacklist`.
 
       <mat-error *ngIf="phoneNumber.hasError('country')">
