@@ -12,6 +12,7 @@ Before contributing, please take time to review our code of conduct [here](CODE_
 
 ### Install Dependencies
 
+    $ cd ngx-mat-tel-input
     $ npm install
 
 ### Run Development Server
