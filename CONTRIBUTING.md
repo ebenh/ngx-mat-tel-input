@@ -6,6 +6,10 @@ Before contributing, please take time to review our code of conduct [here](CODE_
 
 ## Developer cookbook
 
+### Clone the git repository
+
+`git clone https://github.com/ebenh/ngx-mat-tel-input ngx-mat-tel-input` 
+
 ### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
