@@ -79,3 +79,11 @@ Import the module into your `app.module.ts`:
 | countryWhitelist | ```string[]``` | Yes       | ```[countryWhitelist]="['US', 'CA']"```     | ```undefined``` | List of countries to **include** in the country picker. If omitted all countries are displayed.                                                                                          |
 | countryBlacklist | ```string[]``` | Yes       | ```[countryBlacklist]="['DE','PA','NZ']"``` | ```undefined``` | List of countries to **exclude** from the country picker. If omitted all countries are displayed.                                                                                        |
 | format           | ```number```   | Yes       | ```[format]="0"```                          | ```0```         | The format of the phone number written to form control named "phoneNumber".<ul><li>0 - E164 *(Recommended)*</li><li>1 - INTERNATIONAL</li><li>2 - NATIONAL</li><li>3 - RFC3966</li></ul> |
+
+---
+**NOTE**
+
+Countries are represented by their [ISO 3166-1 alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (e.g. "
+FR" for France). Codes should consist of capital letter **only** with no extraneous whitespace.
+
+---
