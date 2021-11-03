@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "package-for-npm": "cp ./README.md ./projects/ngx-mat-tel-input; ng build --prod"
+    "package-for-npm": "cp ./README.md ./LICENSE ./projects/ngx-mat-tel-input && ng build --prod"
   },
   "private": true,
   "dependencies": {
