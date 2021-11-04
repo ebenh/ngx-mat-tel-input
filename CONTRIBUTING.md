@@ -15,15 +15,15 @@ Before contributing, please take time to review our code of conduct [here](CODE_
     $ cd ngx-mat-tel-input
     $ npm install
 
-### Running Development Server
-
-    $ npx ng serve
-
 ### Building the Library
 
     $ npx ng build
 
 > Note: Add `--watch` to enable automatic incremental builds. The build artifacts will be stored in the `dist/` directory.
+
+### Running Development Server
+
+    $ npx ng serve
 
 ### Publishing to npm
 
