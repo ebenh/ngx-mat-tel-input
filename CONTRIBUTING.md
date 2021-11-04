@@ -6,37 +6,37 @@ Before contributing, please take time to review our code of conduct [here](CODE_
 
 ## Developer Cookbook
 
-### Clone Git Repository
+### Cloning the Git Repository
 
     $ git clone https://github.com/ebenh/ngx-mat-tel-input ngx-mat-tel-input 
 
-### Install Dependencies
+### Installing Dependencies
 
     $ cd ngx-mat-tel-input
     $ npm install
 
-### Run Development Server
+### Running Development Server
 
     $ npx ng serve
 
-### Build Library
+### Building the Library
 
     $ npx ng build
 
 > Note: Add `--watch` to enable automatic incremental builds. The build artifacts will be stored in the `dist/` directory.
 
-### Publish to npm
+### Publishing to npm
 
     $ npm version
     $ npm run package-for-npm
     $ cd dist/ngx-mat-tel-input
     $ npm publish
 
-### Run Unit Tests
+### Running Unit Tests
 
     $ npx ng test
 
-### Run End-to-End Tests
+### Running End-to-End Tests
 
     $ npx ng e2e
 
