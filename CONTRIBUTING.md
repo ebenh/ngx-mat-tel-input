@@ -2,7 +2,7 @@
 
 ## Code of Conduct
 
-Before contributing, please take time to review our contributor code of conduct [here](CODE_OF_CONDUCT.md).
+Before contributing, please take time to review our code of conduct [here](CODE_OF_CONDUCT.md).
 
 ## Developer Cookbook
 
@@ -17,13 +17,13 @@ Before contributing, please take time to review our contributor code of conduct 
 
 ### Run Development Server
 
-    $ npm run start
+    $ npx ng serve
 
 ### Build Library
 
-    $ npm run build
+    $ npx ng build
 
-The build artifacts will be stored in the `dist/` directory. Add `--watch` to enable automatic incremental builds.
+> Note: Add `--watch` to enable automatic incremental builds. The build artifacts will be stored in the `dist/` directory.
 
 ### Publish to npm
 
@@ -34,11 +34,19 @@ The build artifacts will be stored in the `dist/` directory. Add `--watch` to en
 
 ### Run Unit Tests
 
-    $ npm run test
+    $ npx ng test
 
 ### Run End-to-End Tests
 
-    $ npm run e2e
+    $ npx ng e2e
+
+### Running Arbitrary Angular CLI Commands
+
+To run arbitrary Angular CLI commands, prepend calls to `ng` with `ngx`. For example:
+
+    $ ngx ng generate component component-name
+
+> Note: Add `--project ngx-mat-tel-input-test` if you wish to generate a component for the test application.
 
 ### Further Help
 
