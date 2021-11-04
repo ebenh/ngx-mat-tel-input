@@ -2,8 +2,8 @@
 
 **[Angular Material](https://material.angular.io/)** component for inputting telephone numbers.
 
-* **Material design**
 * **Validates** and **formats** phone numbers (via Google's [libphonenumber](https://github.com/google/libphonenumber))
+* **Material design**
 * **250** countries and dependent areas
 * Flags **optimized** for low resolution
 
