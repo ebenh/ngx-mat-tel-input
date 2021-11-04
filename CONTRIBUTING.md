@@ -42,9 +42,9 @@ Before contributing, please take time to review our code of conduct [here](CODE_
 
 ### Running Arbitrary Angular CLI Commands
 
-To run arbitrary Angular CLI commands, prepend calls to `ng` with `ngx`. For example:
+To run arbitrary Angular CLI commands, prepend calls to `ng` with `npx`. For example:
 
-    $ ngx ng generate component component-name
+    $ npx ng generate component component-name
 
 > Note: Add `--project ngx-mat-tel-input-test` if you wish to generate a component for the test application.
 
