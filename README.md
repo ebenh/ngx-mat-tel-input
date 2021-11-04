@@ -9,7 +9,7 @@
 
 Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
-## Install
+## Installation
 
 Install the package using npm:
 
@@ -91,12 +91,12 @@ in `countryWhiteList`, or is in `countryBlacklist`.
 
 ## Options
 
-| Option           | Type       | Optional? | Example                                 | Description                                                                                                                                                                                           |
-|------------------|------------|-----------|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| defaultCountry   | `string`   | Yes       | `[defaultCountry]="'US'"`               | The country or dependent area to be selected by default in the country picker. If omitted, Afghanistan will be selected by default.                                                                   |
-| countryWhitelist | `string[]` | Yes       | `[countryWhitelist]="['US', 'CA']"`     | List of countries and dependent areas to **include** in the country picker. If omitted, all countries and dependant areas will be displayed.                                                          |
-| countryBlacklist | `string[]` | Yes       | `[countryBlacklist]="['DE','PA','NZ']"` | List of countries and dependent areas to **exclude** from the country picker. If omitted, all countries and dependant areas will be displayed.                                                        |
-| format           | `number`   | Yes       | `[format]="0"`                          | The format of the phone number written to form control bound to `lib-ngx-mat-tel-input`.<ul><li>0 - E164 *(Recommended)*</li><li>1 - INTERNATIONAL</li><li>2 - NATIONAL</li><li>3 - RFC3966</li></ul> |
+| Option           | Type       | Optional? | Example                                 | Description                                                                                                                                                                                       |
+|------------------|------------|-----------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| defaultCountry   | `string`   | Yes       | `[defaultCountry]="'US'"`               | The country or dependent area to be selected by default in the country picker. If omitted, Afghanistan will be selected by default.                                                               |
+| countryWhitelist | `string[]` | Yes       | `[countryWhitelist]="['US', 'CA']"`     | List of countries and dependent areas to **include** in the country picker. If omitted, all countries and dependant areas will be displayed.                                                      |
+| countryBlacklist | `string[]` | Yes       | `[countryBlacklist]="['DE','PA','NZ']"` | List of countries and dependent areas to **exclude** from the country picker. If omitted, all countries and dependant areas will be displayed.                                                    |
+| format           | `number`   | Yes       | `[format]="0"`                          | The format of the phone number written to form control bound to `lib-ngx-mat-tel-input`.<ul><li>0 - E164 *(Default)*</li><li>1 - INTERNATIONAL</li><li>2 - NATIONAL</li><li>3 - RFC3966</li></ul> |
 
 ---
 **NOTE**
