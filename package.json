@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "copy-files": "cp ./README.md ./LICENSE ./projects/ngx-mat-tel-input",
-    "delete-files": "rm -f ./projects/ngx-mat-tel-input/README.md; rm -f ./projects/ngx-mat-tel-input/LICENSE",
+    "delete-files": "rm -f ./projects/ngx-mat-tel-input/README.md ./projects/ngx-mat-tel-input/LICENSE",
     "package-for-npm": "npm run copy-files && ng build --prod; npm run delete-files"
   },
   "private": true,
