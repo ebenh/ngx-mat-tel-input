@@ -58,7 +58,6 @@
             "main": "projects/ngx-mat-tel-input-test/src/main.ts",
             "polyfills": "projects/ngx-mat-tel-input-test/src/polyfills.ts",
             "tsConfig": "projects/ngx-mat-tel-input-test/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/ngx-mat-tel-input-test/src/favicon.ico",
               "projects/ngx-mat-tel-input-test/src/assets"
@@ -67,7 +66,13 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/ngx-mat-tel-input-test/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -97,7 +102,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
