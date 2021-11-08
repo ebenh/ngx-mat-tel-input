@@ -6,7 +6,7 @@
 * **Material design**
 * **250** countries and dependent areas
 * Flags **optimized** for low resolution
-* Angular 8, 9, 10, 11, 12, 13
+* Angular 8, 9, 10, 11, 12
 
 Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
