@@ -43,7 +43,7 @@ From your target project run:
     $ cd ${PROJECT_ROOT}/projects/ngx-mat-tel-input/
     $ npm version
     $ npm run package-for-npm
-    $ cd dist/ngx-mat-tel-input
+    $ cd ${PROJECT_ROOT}/dist/ngx-mat-tel-input/
     $ npm publish
 
 ### Running Unit Tests
