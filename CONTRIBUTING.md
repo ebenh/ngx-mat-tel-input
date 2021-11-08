@@ -40,7 +40,7 @@ From your target project run:
 
 ### Publishing to npm
 
-    $ cd ${PROJECT_ROOT}
+    $ cd ${PROJECT_ROOT}/projects/ngx-mat-tel-input/
     $ npm version
     $ npm run package-for-npm
     $ cd dist/ngx-mat-tel-input
