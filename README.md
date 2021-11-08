@@ -12,15 +12,15 @@ Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
 ## Installation
 
-Manually install peer dependencies:
+Install peer dependencies:
 
-    npm install @angular/flex-layout ngx-mat-select-search google-libphonenumber world-countries
+    $ npm install @angular/flex-layout ngx-mat-select-search google-libphonenumber world-countries
 
 Install the package using npm:
 
-    npm install ngx-mat-tel-input
+    $ npm install ngx-mat-tel-input
 
-> Note: If you're running npm 7.0.0 or later, add `--legacy-peer-deps` 
+> Note: If you're running `npm` 7.0.0 or later, add `--legacy-peer-deps` 
 
 Import the module into your `app.module.ts`:
 
