@@ -33,16 +33,19 @@ Import the module into your `app.module.ts`:
 
 ### Template
 
-    <mat-form-field appearance="outline">
-      <mat-label>Phone Number</mat-label>
-      <lib-ngx-mat-tel-input formControlName="phoneNumber"></lib-ngx-mat-tel-input>
-      <mat-error *ngIf="phoneNumber.hasError('required')">
-        This field is <strong>required</strong>
-      </mat-error>
-      <mat-error *ngIf="phoneNumber.hasError('format')">
-        Phone number is <strong>invalid</strong>
-      </mat-error>
-    </mat-form-field>
+    <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()" autocomplete="off">
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <lib-ngx-mat-tel-input formControlName="phoneNumber">
+        </lib-ngx-mat-tel-input>
+        <mat-error *ngIf="phoneNumber.hasError('required')">
+          This field is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="phoneNumber.hasError('format')">
+          Phone number is <strong>invalid</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
 
 ### Component
 
