@@ -21,7 +21,7 @@ Install the package using npm:
 
     $ npm install ngx-mat-tel-input
 
-> Note: If you're running `npm` 7.0.0 or later, add `--legacy-peer-deps` 
+> Note: If you're running npm 7.0.0 or later, add `--legacy-peer-deps` 
 
 Import the module into your `app.module.ts`:
 
