@@ -22,7 +22,7 @@ Before contributing, please take time to review our code of conduct [here](CODE_
 
 > Note: Add `--watch` to enable automatic incremental builds. The build artifacts will be stored in the `dist/` directory.
 
-### Running Development Server
+### Running the Development Server
     
     $ cd ${PROJECT_ROOT}
     $ npx ng serve
@@ -43,7 +43,7 @@ From your target project run:
     $ cd ${PROJECT_ROOT}/projects/ngx-mat-tel-input/
     $ npm version
     $ npm run package-for-npm
-    $ cd ${PROJECT_ROOT}/dist/ngx-mat-tel-input/
+    $ cd ../../ngx-mat-tel-input/
     $ npm publish
 
 ### Running Unit Tests
