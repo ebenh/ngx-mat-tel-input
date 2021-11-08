@@ -6,15 +6,21 @@
 * **Material design**
 * **250** countries and dependent areas
 * Flags **optimized** for low resolution
-* Angular 8, 9, 10, 11, 12
+* Angular 8, 9, 10, 11, 12, 13
 
 Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
 ## Installation
 
+Manually install peer dependencies:
+
+    npm install @angular/flex-layout ngx-mat-select-search google-libphonenumber world-countries
+
 Install the package using npm:
 
     npm install ngx-mat-tel-input
+
+> Note: If you're running npm 7.0.0 or later, add `--legacy-peer-deps` 
 
 Import the module into your `app.module.ts`:
 
