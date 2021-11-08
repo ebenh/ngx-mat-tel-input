@@ -2,7 +2,8 @@
 
   <div fxLayout="row">
 
-    <mat-select formControlName="country"
+    <mat-select *ngIf="countries?.length > 1"
+                formControlName="country"
                 (selectionChange)="onSelectionChange($event.value)"
                 fxFlex="45px"
                 #singleSelect>
@@ -11,7 +12,7 @@
         <div class="flag {{country.value.cca2}}"></div>
       </mat-select-trigger>
 
-      <mat-option>
+      <mat-option *ngIf="countries?.length > 5">
         <ngx-mat-select-search formControlName="countryFilter"
                                placeholderLabel="Search..."
                                noEntriesFoundLabel="No Results">
