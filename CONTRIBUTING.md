@@ -25,6 +25,17 @@ Before contributing, please take time to review our code of conduct [here](CODE_
 
     $ npx ng serve
 
+### Installing the Library Locally
+
+    $ cd $PROJECT_ROOT
+    $ npm run package-for-npm
+    $ cd dist/ngx-mat-tel-input/
+    $ npm pack
+
+From your target project run:
+
+    $ npm install $PROJECT_ROOT/dist/ngx-mat-tel-input/ngx-mat-tel-input-<version>.tgz
+
 ### Publishing to npm
 
     $ npm version
