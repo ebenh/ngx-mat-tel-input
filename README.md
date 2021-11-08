@@ -4,16 +4,24 @@
 
 * **Validates** and **formats** phone numbers (via Google's [libphonenumber](https://github.com/google/libphonenumber))
 * **Material design**
+* **Reactive forms**
 * **250** countries and dependent areas
 * Flags **optimized** for low resolution
+* Angular 8, 9, 10, 11, 12
 
 Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
 ## Installation
 
+Install peer dependencies:
+
+    $ npm install @angular/flex-layout ngx-mat-select-search google-libphonenumber world-countries
+
 Install the package using npm:
 
-    npm install ngx-mat-tel-input
+    $ npm install ngx-mat-tel-input
+
+> Note: If you're running npm 7.0.0 or later, add `--legacy-peer-deps` 
 
 Import the module into your `app.module.ts`:
 
@@ -33,16 +41,19 @@ Import the module into your `app.module.ts`:
 
 ### Template
 
-    <mat-form-field appearance="outline">
-      <mat-label>Phone Number</mat-label>
-      <lib-ngx-mat-tel-input formControlName="phoneNumber"></lib-ngx-mat-tel-input>
-      <mat-error *ngIf="phoneNumber.hasError('required')">
-        This field is <strong>required</strong>
-      </mat-error>
-      <mat-error *ngIf="phoneNumber.hasError('format')">
-        Phone number is <strong>invalid</strong>
-      </mat-error>
-    </mat-form-field>
+    <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()" autocomplete="off">
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <lib-ngx-mat-tel-input formControlName="phoneNumber">
+        </lib-ngx-mat-tel-input>
+        <mat-error *ngIf="phoneNumber.hasError('required')">
+          This field is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="phoneNumber.hasError('format')">
+          Phone number is <strong>invalid</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
 
 ### Component
 
