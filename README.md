@@ -4,9 +4,10 @@
 
 * **Validates** and **formats** phone numbers (via Google's [libphonenumber](https://github.com/google/libphonenumber))
 * **Material design**
+* **Reactive forms**
 * **250** countries and dependent areas
 * Flags **optimized** for low resolution
-* Angular 8, 9, 10, 11, 12, 13
+* Angular 8, 9, 10, 11, 12
 
 Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
 
