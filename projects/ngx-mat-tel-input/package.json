@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/ebenh/ngx-mat-tel-input"
   },
+  "license": "MIT",
   "peerDependencies": {
     "@angular/core": ">=8.2.14",
     "@angular/material": ">=8.2.3",
