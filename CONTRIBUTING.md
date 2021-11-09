@@ -59,7 +59,7 @@ From your target project run:
 ### Publishing to npm
 
     $ cd ${PROJECT_ROOT}/projects/ngx-mat-tel-input/
-    $ npm version
+    $ npm version <major|minor|patch>
     $ npm run package-for-npm
     $ cd ../../ngx-mat-tel-input/
     $ npm publish
