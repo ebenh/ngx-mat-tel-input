@@ -9,7 +9,7 @@
 * Flags **optimized** for low resolution
 * Angular 8, 9, 10, 11, 12
 
-Click [here](https://ngx-mat-tel-input.web.app/) to see a demo.
+Click [here](https://angular-ivy-vdsda8.stackblitz.io) to see a demo on StackBlitz.
 
 ## Installation
 
