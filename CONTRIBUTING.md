@@ -22,7 +22,7 @@ npx ng build</del></code></pre>
 
 > ~~Note: Add `--watch` to enable automatic incremental builds. The build artifacts will be stored in the `dist/` directory.~~
 
-In order for automatic reload and breakpoints to work with the Angular library, you need replace the following segment
+In order for live reload and breakpoints to work with the Angular library, you need replace the following segment
 in `tsconfig.json`:
 
     "paths": {
