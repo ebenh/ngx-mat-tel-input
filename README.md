@@ -9,7 +9,7 @@
 * Flags **optimized** for low resolution
 * Angular 8, 9, 10, 11, 12
 
-Click [here](https://angular-ivy-vdsda8.stackblitz.io) to see a demo on StackBlitz.
+Click [here](https://stackblitz.com/edit/angular-ivy-vdsda8?file=src/app/app.component.ts) to see a demo on StackBlitz.
 
 ## Installation
 
@@ -21,7 +21,7 @@ Install the package using npm:
 
     $ npm install ngx-mat-tel-input
 
-> Note: If you're running npm 7.0.0 or later, add `--legacy-peer-deps` 
+> Note: If you're running npm 7.0.0 or later, add `--legacy-peer-deps`
 
 Import the module into your `app.module.ts`:
 
