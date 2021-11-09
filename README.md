@@ -9,7 +9,7 @@
 * Flags **optimized** for low resolution
 * Angular 8, 9, 10, 11, 12
 
-Click [here](https://stackblitz.com/edit/angular-ivy-vdsda8?file=src/app/app.component.ts) to see a demo on StackBlitz.
+Click [here](https://stackblitz.com/edit/ngx-mat-tel-input) to see a StackBlitz demo.
 
 ## Installation
 
