@@ -60,8 +60,11 @@ From your target project run:
 
     $ cd ${PROJECT_ROOT}/projects/ngx-mat-tel-input/
     $ npm version <major|minor|patch>
+    $ git commit -am "Bumping version number" && git push
+    $ cd ../..
     $ npm run package-for-npm
-    $ cd ../../ngx-mat-tel-input/
+    $ cd dist/ngx-mat-tel-input/
+    $ npm adduser
     $ npm publish
 
 ### Running Unit Tests
