@@ -267,9 +267,6 @@ export class NgxMatTelInputComponent implements OnInit,
     event.preventDefault();
   }
 
-  onCopy(event: any) {
-  }
-
   onPaste(event: ClipboardEvent) {
     const clipboardData = event.clipboardData;
     const data = clipboardData.getData('text');
