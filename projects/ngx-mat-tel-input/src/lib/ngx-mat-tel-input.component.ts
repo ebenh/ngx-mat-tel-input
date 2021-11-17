@@ -257,9 +257,14 @@ export class NgxMatTelInputComponent implements OnInit,
       '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+',
       'Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight'
     ];
-    if (!validKeys.includes(event.key)) {
-      event.preventDefault();
+    if (validKeys.includes(event.key)) {
+      return;
     }
+    if (event.ctrlKey && (event.key === 'x' || event.key === 'c' || event.key === 'v')) {
+      return;
+    }
+
+    event.preventDefault();
   }
 
   onCopy(event: any) {
