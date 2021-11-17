@@ -231,10 +231,12 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   onKeyDown(event: any): void {
+    // Restrict the user's input to digits 0-9, the + symbol, and some navigation keys and shortcuts
     const validKeys = [
       '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+',
       'Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'
     ];
+
     if (validKeys.includes(event.key)) {
       return;
     }
@@ -261,7 +263,7 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   onPaste(event: ClipboardEvent) {
-    // Remove invalid characters from pasted data. We only allow digits 0-9 and the + character.
+    // Remove invalid characters from pasted data. We only allow digits 0-9 and the + symbol.
     const data = event.clipboardData.getData('text');
     this.formGroup.get('phoneNumber').setValue(
       data.replace(/[^0-9+]/g, '')
