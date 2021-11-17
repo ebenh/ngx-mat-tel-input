@@ -129,8 +129,6 @@ export class NgxMatTelInputComponent implements OnInit,
   countries: Countries = countries;
   filteredCountries: Observable<Countries>;
 
-  caretPosition = 0;
-
   formGroup = new FormGroup({
     countryFilter: new FormControl({value: '', disabled: false}),
     country: new FormControl({value: '', disabled: false}),
@@ -239,26 +237,35 @@ export class NgxMatTelInputComponent implements OnInit,
     }
   }
 
+  onKeyUp(event: any): void {
+    // Format the user's input, but only if the carat is at the end of the user's input
+    if (event.target.selectionStart === this.formGroup.get('phoneNumber').value.length) {
+      console.log('formatting');
+      const formatter = new AsYouTypeFormatter(this.formGroup.get('country').value.cca2);
+      let formattedPhoneNumber = '';
+      for (const d of this.formGroup.get('phoneNumber').value) {
+        if ((d >= '0' && d <= '9') || d === '+') {
+          formattedPhoneNumber = formatter.inputDigit(d);
+        }
+      }
+      this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
+    }
+  }
+
   onKeyDown(event: any): void {
     const validKeys = [
       '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+',
       'Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight'
     ];
-    if (validKeys.includes(event.key)) {
-      if (event.key === 'Backspace' || event.key === 'ArrowLeft') {
-        // The caret has moved left
-        this.caretPosition = Math.max(event.target.selectionStart - 1, 0);
-      } else if (event.key === 'Delete' || event.key === 'Tab') {
-        // Do nothing, caret hasn't moved
-      } else {
-        // Move the carat right
-        this.caretPosition = event.target.selectionStart + 1;
-      }
-    } else {
+    if (!validKeys.includes(event.key)) {
       event.preventDefault();
     }
+  }
 
-    this.caretPosition = event.target.selectionStart;
+  onCopy(event: any) {
+  }
+
+  onPaste(event: any) {
   }
 
   private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
@@ -288,19 +295,6 @@ export class NgxMatTelInputComponent implements OnInit,
         } else {
           isCountryInWhitelist = false;
         }
-      }
-
-      // Format the phone number as the user types, but only if the caret is at the end of the input
-      if (this.caretPosition === inputPhoneNumber.length) {
-        console.log('formatting');
-        const formatter = new AsYouTypeFormatter(inputCountry.cca2);
-        let formattedPhoneNumber = '';
-        for (const d of inputPhoneNumber) {
-          if ((d >= '0' && d <= '9') || d === '+') {
-            formattedPhoneNumber = formatter.inputDigit(d);
-          }
-        }
-        control.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
       }
 
       //  If the phone number is valid, format it and return it to the user

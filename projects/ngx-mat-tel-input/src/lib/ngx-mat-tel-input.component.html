@@ -34,6 +34,9 @@
            [errorStateMatcher]="phoneNumberErrorStateMatcher"
            (blur)="onBlur()"
            (keydown)="onKeyDown($event)"
+           (keyup)="onKeyUp($event)"
+           (copy)="onCopy($event)"
+           (paste)="onPaste($event)"
            fxFlex="grow">
 
   </div>
