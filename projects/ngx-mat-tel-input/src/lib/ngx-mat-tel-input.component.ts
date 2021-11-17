@@ -260,14 +260,14 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   onKeyUp(event: any): void {
-    // Format the user's input, but only if the caret is at the end of the user's input
+    // Format the user's input, but only if the caret is at the end
     if (event.target.selectionStart === this.formGroup.get('phoneNumber').value.length) {
       this.formatUserInput();
     }
   }
 
   onClick(event: any): void {
-    // Format the user's input, but only if the caret is at the end of the user's input
+    // Format the user's input, but only if the caret is at the end
     if (event.target.selectionStart === this.formGroup.get('phoneNumber').value.length) {
       this.formatUserInput();
     }
