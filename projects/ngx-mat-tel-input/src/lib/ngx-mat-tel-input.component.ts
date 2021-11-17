@@ -242,9 +242,19 @@ export class NgxMatTelInputComponent implements OnInit,
   onKeyDown(event: any): void {
     const validKeys = [
       '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+',
-      'Backspace', 'Delete', 'Tab', 'ArrowUp', 'ArrowRight', 'ArrowDown', 'ArrowLeft'
+      'Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight'
     ];
-    if (!validKeys.includes(event.key)) {
+    if (validKeys.includes(event.key)) {
+      if (event.key === 'Backspace' || event.key === 'ArrowLeft') {
+        // The caret has moved left
+        this.caretPosition = Math.max(event.target.selectionStart - 1, 0);
+      } else if (event.key === 'Delete' || event.key === 'Tab') {
+        // Do nothing, caret hasn't moved
+      } else {
+        // Move the carat right
+        this.caretPosition = event.target.selectionStart + 1;
+      }
+    } else {
       event.preventDefault();
     }
 
@@ -280,8 +290,8 @@ export class NgxMatTelInputComponent implements OnInit,
         }
       }
 
-      // Format the phone number as the user types
-      if (this.caretPosition === inputPhoneNumber.length - 1){
+      // Format the phone number as the user types, but only if the caret is at the end of the input
+      if (this.caretPosition === inputPhoneNumber.length) {
         console.log('formatting');
         const formatter = new AsYouTypeFormatter(inputCountry.cca2);
         let num = '';
