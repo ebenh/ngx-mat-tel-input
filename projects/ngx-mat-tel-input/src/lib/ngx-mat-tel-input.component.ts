@@ -270,7 +270,12 @@ export class NgxMatTelInputComponent implements OnInit,
   onCopy(event: any) {
   }
 
-  onPaste(event: any) {
+  onPaste(event: ClipboardEvent) {
+    const clipboardData = event.clipboardData;
+    const data = clipboardData.getData('text');
+    this.formGroup.get('phoneNumber').setValue(data.replace(/[^0-9+]/g, ''));
+
+    event.preventDefault();
   }
 
   private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
