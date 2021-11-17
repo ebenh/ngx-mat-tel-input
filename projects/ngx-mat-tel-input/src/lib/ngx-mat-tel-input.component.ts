@@ -31,7 +31,7 @@ import {Observable, Subject, Subscription} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
 import countries, {Country, Countries} from 'world-countries';
-import {PhoneNumberUtil, PhoneNumberFormat, PhoneNumberType} from 'google-libphonenumber';
+import {PhoneNumberUtil, PhoneNumberFormat, PhoneNumberType, AsYouTypeFormatter} from 'google-libphonenumber';
 
 const enum Format {
   E164,
@@ -128,6 +128,8 @@ export class NgxMatTelInputComponent implements OnInit,
 
   countries: Countries = countries;
   filteredCountries: Observable<Countries>;
+
+  caretPosition = 0;
 
   formGroup = new FormGroup({
     countryFilter: new FormControl({value: '', disabled: false}),
@@ -245,6 +247,8 @@ export class NgxMatTelInputComponent implements OnInit,
     if (!validKeys.includes(event.key)) {
       event.preventDefault();
     }
+
+    this.caretPosition = event.target.selectionStart;
   }
 
   private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
@@ -258,12 +262,14 @@ export class NgxMatTelInputComponent implements OnInit,
     }
 
     try {
+      // Attempt to parse the phone number using libphonenumber
       const phoneNumberUtil = PhoneNumberUtil.getInstance();
 
       const phoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
 
       const regionCode = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
 
+      // If we can infer the phone number's country from the user's input, update the country picker to match
       let isCountryInWhitelist = true;
       if (regionCode && regionCode !== inputCountry.cca2) {
         const country = this.countries.find((el: Country): boolean => el.cca2 === regionCode);
@@ -274,17 +280,32 @@ export class NgxMatTelInputComponent implements OnInit,
         }
       }
 
-      const isValidNumber = phoneNumberUtil.isValidNumber(phoneNumber);
+      // Format the phone number as the user types
+      if (this.caretPosition === inputPhoneNumber.length - 1){
+        console.log('formatting');
+        const formatter = new AsYouTypeFormatter(inputCountry.cca2);
+        let num = '';
+        for (const d of inputPhoneNumber) {
+          if ((d >= '0' && d <= '9') || d === '+') {
+            num = formatter.inputDigit(d);
+          }
+        }
+        control.get('phoneNumber').setValue(num, {onlySelf: true});
+      }
 
+      //  If the phone number is valid, format it and return it to the user
+      const isValidNumber = phoneNumberUtil.isValidNumber(phoneNumber);
       if (isValidNumber) {
         const formattedPhoneNumber = phoneNumberUtil.format(phoneNumber, this.format);
         control.get('outputPhoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
       }
 
+      // If the phone number is not valid, signal a format error
       if (!isValidNumber) {
         return {format: true};
       }
 
+      // If the phone number's country is not in the country whitelist, signal a country error
       if (!isCountryInWhitelist) {
         return {country: true};
       }
