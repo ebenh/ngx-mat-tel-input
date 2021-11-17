@@ -260,7 +260,7 @@ export class NgxMatTelInputComponent implements OnInit,
     if (validKeys.includes(event.key)) {
       return;
     }
-    if (event.ctrlKey && (event.key === 'x' || event.key === 'c' || event.key === 'v')) {
+    if (event.ctrlKey && (event.key === 'x' || event.key === 'c' || event.key === 'v' || event.key === 'a')) {
       return;
     }
 
