@@ -294,13 +294,13 @@ export class NgxMatTelInputComponent implements OnInit,
       if (this.caretPosition === inputPhoneNumber.length) {
         console.log('formatting');
         const formatter = new AsYouTypeFormatter(inputCountry.cca2);
-        let num = '';
+        let formattedPhoneNumber = '';
         for (const d of inputPhoneNumber) {
           if ((d >= '0' && d <= '9') || d === '+') {
-            num = formatter.inputDigit(d);
+            formattedPhoneNumber = formatter.inputDigit(d);
           }
         }
-        control.get('phoneNumber').setValue(num, {onlySelf: true});
+        control.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
       }
 
       //  If the phone number is valid, format it and return it to the user
