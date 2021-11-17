@@ -288,6 +288,8 @@ export class NgxMatTelInputComponent implements OnInit,
       this.isTouched = true;
       this.onTouched();
     }
+    // Format the user's input when they click/tab away
+    this.formatUserInput();
   }
 
   private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
