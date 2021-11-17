@@ -322,7 +322,7 @@ export class NgxMatTelInputComponent implements OnInit,
         throw e; // unexpected error
       }
 
-      return {phoneNumber: true};
+      return {format: true};
 
     }
 
