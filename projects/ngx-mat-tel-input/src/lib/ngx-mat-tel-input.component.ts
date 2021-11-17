@@ -225,6 +225,18 @@ export class NgxMatTelInputComponent implements OnInit,
     });
   }
 
+  private formatUserInput(): void {
+    console.log('formatting');
+    const formatter = new AsYouTypeFormatter(this.formGroup.get('country').value.cca2);
+    let formattedPhoneNumber = '';
+    for (const d of this.formGroup.get('phoneNumber').value) {
+      if ((d >= '0' && d <= '9') || d === '+') {
+        formattedPhoneNumber = formatter.inputDigit(d);
+      }
+    }
+    this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
+  }
+
   onSelectionChange(selection: Country): void {
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(selection);
     this.formGroup.get('phoneNumber').updateValueAndValidity();
@@ -250,15 +262,14 @@ export class NgxMatTelInputComponent implements OnInit,
   onKeyUp(event: any): void {
     // Format the user's input, but only if the caret is at the end of the user's input
     if (event.target.selectionStart === this.formGroup.get('phoneNumber').value.length) {
-      console.log('formatting');
-      const formatter = new AsYouTypeFormatter(this.formGroup.get('country').value.cca2);
-      let formattedPhoneNumber = '';
-      for (const d of this.formGroup.get('phoneNumber').value) {
-        if ((d >= '0' && d <= '9') || d === '+') {
-          formattedPhoneNumber = formatter.inputDigit(d);
-        }
-      }
-      this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
+      this.formatUserInput();
+    }
+  }
+
+  onClick(event: any): void {
+    // Format the user's input, but only if the caret is at the end of the user's input
+    if (event.target.selectionStart === this.formGroup.get('phoneNumber').value.length) {
+      this.formatUserInput();
     }
   }
 
