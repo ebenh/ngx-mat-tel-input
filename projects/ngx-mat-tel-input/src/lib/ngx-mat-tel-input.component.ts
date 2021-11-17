@@ -230,13 +230,6 @@ export class NgxMatTelInputComponent implements OnInit,
     this.formGroup.get('phoneNumber').updateValueAndValidity();
   }
 
-  onBlur(): void {
-    if (!this.isTouched) {
-      this.isTouched = true;
-      this.onTouched();
-    }
-  }
-
   onKeyDown(event: any): void {
     const validKeys = [
       '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+',
@@ -273,6 +266,13 @@ export class NgxMatTelInputComponent implements OnInit,
     this.formGroup.get('phoneNumber').setValue(data.replace(/[^0-9+]/g, ''));
 
     event.preventDefault();
+  }
+
+  onBlur(): void {
+    if (!this.isTouched) {
+      this.isTouched = true;
+      this.onTouched();
+    }
   }
 
   private phoneNumberValidator(control: FormGroup): ValidationErrors | null {

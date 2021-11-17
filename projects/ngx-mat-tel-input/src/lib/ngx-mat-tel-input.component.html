@@ -32,10 +32,10 @@
            formControlName="phoneNumber"
            [placeholder]="placeholder"
            [errorStateMatcher]="phoneNumberErrorStateMatcher"
-           (blur)="onBlur()"
            (keydown)="onKeyDown($event)"
            (keyup)="onKeyUp($event)"
            (paste)="onPaste($event)"
+           (blur)="onBlur()"
            fxFlex="grow">
 
   </div>
