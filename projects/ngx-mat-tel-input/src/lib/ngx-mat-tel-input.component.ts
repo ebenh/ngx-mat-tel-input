@@ -255,7 +255,7 @@ export class NgxMatTelInputComponent implements OnInit,
   onKeyDown(event: any): void {
     const validKeys = [
       '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+',
-      'Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight'
+      'Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'
     ];
     if (validKeys.includes(event.key)) {
       return;
