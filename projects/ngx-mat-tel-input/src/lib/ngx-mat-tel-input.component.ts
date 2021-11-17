@@ -237,6 +237,16 @@ export class NgxMatTelInputComponent implements OnInit,
     }
   }
 
+  onKeyDown(event: any): void {
+    const validKeys = [
+      '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+',
+      'Backspace', 'Delete', 'Tab', 'ArrowUp', 'ArrowRight', 'ArrowDown', 'ArrowLeft'
+    ];
+    if (!validKeys.includes(event.key)) {
+      event.preventDefault();
+    }
+  }
+
   private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
     const inputCountry = control.get('country').value as Country;
     const inputPhoneNumber = control.get('phoneNumber').value as string;

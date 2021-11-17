@@ -33,6 +33,7 @@
            [placeholder]="placeholder"
            [errorStateMatcher]="phoneNumberErrorStateMatcher"
            (blur)="onBlur()"
+           (keydown)="onKeyDown($event)"
            fxFlex="grow">
 
   </div>
