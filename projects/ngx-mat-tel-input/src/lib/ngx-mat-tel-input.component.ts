@@ -315,6 +315,7 @@ export class NgxMatTelInputComponent implements OnInit,
     } catch (e) {
 
       if (e instanceof Error && (
+        e.message !== 'The string supplied is too long to be a phone number' &&
         e.message !== 'The string supplied did not seem to be a phone number' &&
         e.message !== 'The string supplied is too short to be a phone number' &&
         e.message !== 'Invalid country calling code' &&
