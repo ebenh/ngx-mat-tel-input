@@ -339,10 +339,10 @@ export class NgxMatTelInputComponent implements OnInit,
       }
 
       // Strip region code from phone number
-      if (regionCode) {
-        const formattedPhoneNumber: string = phoneNumberUtil.format(phoneNumber, PhoneNumberFormat.NATIONAL);
-        control.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
-      }
+      // if (regionCode) {
+      //   const formattedPhoneNumber: string = phoneNumberUtil.format(phoneNumber, PhoneNumberFormat.NATIONAL);
+      //   control.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
+      // }
 
       //  If the phone number is valid, format it and return it to the user
       const isValidNumber = phoneNumberUtil.isValidNumber(phoneNumber);
