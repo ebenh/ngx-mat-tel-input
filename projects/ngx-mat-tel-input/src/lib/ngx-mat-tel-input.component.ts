@@ -15,7 +15,6 @@ import {
 import {
   FormGroup,
   FormControl,
-  ValidatorFn,
   ValidationErrors,
   FormGroupDirective,
   NgForm,
