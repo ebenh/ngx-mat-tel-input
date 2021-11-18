@@ -296,13 +296,17 @@ export class NgxMatTelInputComponent implements OnInit,
     event.preventDefault();
   }
 
-  onBlur(): void {
+  onBlur(event: any): void {
     if (!this.isTouched) {
       this.isTouched = true;
       this.onTouched();
     }
-    // Format the user's input when they click/tab away
-    this.formatUserInput();
+
+    // Format the user's input only if the caret is **not** at the end.
+    // If the caret is at the end of the input, that means the user's input has already been formatted.
+    if (event.target.selectionStart !== this.formGroup.get('phoneNumber').value.length) {
+      this.formatUserInput();
+    }
   }
 
   private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
