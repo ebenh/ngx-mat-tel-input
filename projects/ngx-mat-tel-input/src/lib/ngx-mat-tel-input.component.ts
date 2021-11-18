@@ -278,7 +278,7 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   onPaste(event: ClipboardEvent) {
-    // Remove invalid characters from pasted data. We only allow digits 0-9 and the + symbol.
+    // Remove invalid characters from pasted data. We only allow digits 0-9 and +.
     const data = event.clipboardData.getData('text');
     this.formGroup.get('phoneNumber').setValue(
       data.replace(/[^0-9+]/g, '')
