@@ -11,6 +11,7 @@ import {
   Self,
   ElementRef,
   HostBinding,
+  AfterContentInit,
 } from '@angular/core';
 import {
   FormGroup,
@@ -60,6 +61,7 @@ class PhoneNumberErrorStateMatcher implements ErrorStateMatcher {
 })
 export class NgxMatTelInputComponent implements OnInit,
   AfterViewInit,
+  AfterContentInit,
   DoCheck,
   OnDestroy,
   MatFormFieldControl<string>,
@@ -173,56 +175,6 @@ export class NgxMatTelInputComponent implements OnInit,
       this.ngControl.valueAccessor = this;
     }
 
-  }
-
-  ngOnInit(): void {
-    // Remove the countries that libphonenumber doesn't know about
-    const unsupportedCountries = ['AQ', 'BV', 'GS', 'HM', 'PN', 'TF', 'UM'];
-    this.countries = this.countries.filter(
-      (country: Country): boolean => !unsupportedCountries.includes(country.cca2)
-    );
-
-    // Reduce the country list to just the those chosen by the caller
-    if (this.countryWhitelist) {
-      this.countries = this.countries.filter(
-        (country: Country): boolean => this.countryWhitelist.includes(country.cca2)
-      );
-    }
-    if (this.countryBlacklist) {
-      this.countries = this.countries.filter(
-        (country: Country): boolean => !this.countryBlacklist.includes(country.cca2)
-      );
-    }
-
-    // Sort countries in English alphabetical order
-    this.countries = this.countries.sort(
-      (a, b) => a.name.common.localeCompare(b.name.common)
-    );
-
-    // Create a filtered list of countries based on the user's input
-    this.filteredCountries = this.formGroup.get('countryFilter').valueChanges
-      .pipe(
-        startWith(''),
-        map((input: string): Countries => this.filter(input))
-      );
-
-    // Set the default country
-    let defaultCountry;
-    if (this.defaultCountry) {
-      defaultCountry = this.countries.find((el: Country): boolean => el.cca2 === this.defaultCountry);
-    } else {
-      defaultCountry = this.countries[0];
-    }
-    this.formGroup.get('country').setValue(defaultCountry);
-
-    this.placeholder = NgxMatTelInputComponent.getExampleNumber(defaultCountry);
-
-    // this.subscription.add(
-    //   this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
-    // );
-    // this.subscription.add(
-    //   this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
-    // );
   }
 
   private filter(q: string): Countries {
@@ -385,15 +337,75 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   /**
-   * AfterViewInit methods
+   * OnInit methods
    */
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
+    // Remove the countries that libphonenumber doesn't know about
+    const unsupportedCountries = ['AQ', 'BV', 'GS', 'HM', 'PN', 'TF', 'UM'];
+    this.countries = this.countries.filter(
+      (country: Country): boolean => !unsupportedCountries.includes(country.cca2)
+    );
+
+    // Reduce the country list to just the those chosen by the caller
+    if (this.countryWhitelist) {
+      this.countries = this.countries.filter(
+        (country: Country): boolean => this.countryWhitelist.includes(country.cca2)
+      );
+    }
+    if (this.countryBlacklist) {
+      this.countries = this.countries.filter(
+        (country: Country): boolean => !this.countryBlacklist.includes(country.cca2)
+      );
+    }
+
+    // Sort countries in English alphabetical order
+    this.countries = this.countries.sort(
+      (a, b) => a.name.common.localeCompare(b.name.common)
+    );
+
+    // Create a filtered list of countries based on the user's input
+    this.filteredCountries = this.formGroup.get('countryFilter').valueChanges
+      .pipe(
+        startWith(''),
+        map((input: string): Countries => this.filter(input))
+      );
+
+    // Set the default country
+    let defaultCountry;
+    if (this.defaultCountry) {
+      defaultCountry = this.countries.find((el: Country): boolean => el.cca2 === this.defaultCountry);
+    } else {
+      defaultCountry = this.countries[0];
+    }
+    this.formGroup.get('country').setValue(defaultCountry);
+
+    this.placeholder = NgxMatTelInputComponent.getExampleNumber(defaultCountry);
+
+    // this.subscription.add(
+    //   this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
+    // );
+    // this.subscription.add(
+    //   this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
+    // );
+  }
+
+  /**
+   * AfterContentInit methods
+   */
+
+  ngAfterContentInit() {
     // Format the initial data passed to this widget
     if (this.ngControl.value) {
       this.formatUserInput();
     }
+  }
 
+  /**
+   * AfterViewInit methods
+   */
+
+  ngAfterViewInit(): void {
     this.subscription.add(
       this.parentFormGroupDirective.ngSubmit.subscribe(e => {
         this.formGroupDirective.onSubmit(e);
