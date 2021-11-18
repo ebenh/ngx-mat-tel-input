@@ -389,6 +389,11 @@ export class NgxMatTelInputComponent implements OnInit,
    */
 
   ngAfterViewInit(): void {
+    // Format the initial data passed to this widget
+    if (this.ngControl.value) {
+      this.formatUserInput();
+    }
+
     this.subscription.add(
       this.parentFormGroupDirective.ngSubmit.subscribe(e => {
         this.formGroupDirective.onSubmit(e);
