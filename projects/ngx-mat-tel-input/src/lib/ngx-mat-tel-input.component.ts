@@ -177,28 +177,6 @@ export class NgxMatTelInputComponent implements OnInit,
 
   }
 
-  private filter(q: string): Countries {
-    return this.countries.filter((country: Country): boolean => {
-      return includes(country.name.common, q) || includes(country.name.official, q);
-    });
-  }
-
-  private formatUserInput(): void {
-    // Only call this method if (A) the caret is at the end of the input, or (B) if the input is not in focus!
-
-    const formatter = new AsYouTypeFormatter(this.formGroup.get('country').value.cca2);
-    let formattedPhoneNumber = '';
-    for (const d of this.formGroup.get('phoneNumber').value) {
-      if ((d >= '0' && d <= '9') || d === '+') {
-        formattedPhoneNumber = formatter.inputDigit(d);
-      }
-    }
-
-    // If you enter a country code (e.g. +27), libphonenumber will always put a space after it. This interferes with
-    // backspace. We trim formattedPhoneNumber in order to fix this.
-    this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber.trim(), {onlySelf: true});
-  }
-
   onSelectionChange(selection: Country): void {
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(selection);
     // this.formGroup.get('phoneNumber').updateValueAndValidity();
@@ -334,6 +312,28 @@ export class NgxMatTelInputComponent implements OnInit,
 
     // unreachable
 
+  }
+
+  private filter(q: string): Countries {
+    return this.countries.filter((country: Country): boolean => {
+      return includes(country.name.common, q) || includes(country.name.official, q);
+    });
+  }
+
+  private formatUserInput(): void {
+    // Only call this method if (A) the caret is at the end of the input, or (B) if the input is not in focus!
+
+    const formatter = new AsYouTypeFormatter(this.formGroup.get('country').value.cca2);
+    let formattedPhoneNumber = '';
+    for (const d of this.formGroup.get('phoneNumber').value) {
+      if ((d >= '0' && d <= '9') || d === '+') {
+        formattedPhoneNumber = formatter.inputDigit(d);
+      }
+    }
+
+    // If you enter a country code (e.g. +27), libphonenumber will always put a space after it. This interferes with
+    // backspace. We trim formattedPhoneNumber in order to fix this.
+    this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber.trim(), {onlySelf: true});
   }
 
   /**
