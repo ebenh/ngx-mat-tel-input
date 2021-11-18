@@ -226,7 +226,8 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   private formatUserInput(): void {
-    console.log('formatting');
+    // Only call this method if the caret is at the end of the input!
+
     const formatter = new AsYouTypeFormatter(this.formGroup.get('country').value.cca2);
     let formattedPhoneNumber = '';
     for (const d of this.formGroup.get('phoneNumber').value) {
