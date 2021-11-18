@@ -333,7 +333,7 @@ export class NgxMatTelInputComponent implements OnInit,
 
       const regionCode = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
 
-      // If we can infer the phone number's country from the user's input, update the country picker to match
+      // Update the country picker to match region code of phone number
       let isCountryInWhitelist = true;
       if (regionCode && regionCode !== inputCountry.cca2) {
         const country = this.countries.find((el: Country): boolean => el.cca2 === regionCode);
@@ -342,6 +342,12 @@ export class NgxMatTelInputComponent implements OnInit,
         } else {
           isCountryInWhitelist = false;
         }
+      }
+
+      // Strip region code from phone number
+      if (regionCode) {
+        const formattedPhoneNumber: string = phoneNumberUtil.format(phoneNumber, PhoneNumberFormat.NATIONAL);
+        control.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
       }
 
       //  If the phone number is valid, format it and return it to the user
