@@ -32,6 +32,7 @@ import {map, startWith} from 'rxjs/operators';
 
 import countries, {Country, Countries} from 'world-countries';
 import {
+  PhoneNumber,
   PhoneNumberUtil,
   PhoneNumberFormat,
   PhoneNumberType,
@@ -327,11 +328,11 @@ export class NgxMatTelInputComponent implements OnInit,
 
     try {
       // Attempt to parse the phone number using libphonenumber
-      const phoneNumberUtil = PhoneNumberUtil.getInstance();
+      const phoneNumberUtil: PhoneNumberUtil = PhoneNumberUtil.getInstance();
 
-      const phoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
+      const phoneNumber: PhoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
 
-      const regionCode = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
+      const regionCode: string = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
 
       // Update the country picker to match region code of phone number
       let isCountryInWhitelist = true;
