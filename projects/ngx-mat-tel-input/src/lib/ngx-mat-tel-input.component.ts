@@ -232,7 +232,7 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   private formatUserInput(): void {
-    // Only call this method if the caret is at the end of the input!
+    // Only call this method if (A) the caret is at the end of the input, or (B) if the input is not in focus!
 
     const formatter = new AsYouTypeFormatter(this.formGroup.get('country').value.cca2);
     let formattedPhoneNumber = '';
@@ -250,6 +250,9 @@ export class NgxMatTelInputComponent implements OnInit,
   onSelectionChange(selection: Country): void {
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(selection);
     this.formGroup.get('phoneNumber').updateValueAndValidity();
+
+    // Attempt to format the user's input
+    this.formatUserInput();
   }
 
   onKeyDown(event: any): void {
