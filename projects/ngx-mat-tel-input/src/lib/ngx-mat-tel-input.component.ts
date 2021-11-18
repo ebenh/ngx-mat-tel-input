@@ -217,12 +217,12 @@ export class NgxMatTelInputComponent implements OnInit,
 
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(defaultCountry);
 
-    this.subscription.add(
-      this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
-    );
-    this.subscription.add(
-      this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
-    );
+    // this.subscription.add(
+    //   this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
+    // );
+    // this.subscription.add(
+    //   this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
+    // );
   }
 
   private filter(q: string): Countries {
@@ -249,7 +249,7 @@ export class NgxMatTelInputComponent implements OnInit,
 
   onSelectionChange(selection: Country): void {
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(selection);
-    this.formGroup.get('phoneNumber').updateValueAndValidity();
+    // this.formGroup.get('phoneNumber').updateValueAndValidity();
 
     // Attempt to format the user's input
     this.formatUserInput();
