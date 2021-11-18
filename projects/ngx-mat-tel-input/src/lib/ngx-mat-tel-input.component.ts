@@ -155,6 +155,14 @@ export class NgxMatTelInputComponent implements OnInit,
     return `eg. ${exampleNumberString}`;
   }
 
+  private static includes(a: string, b: string): boolean {
+    // This function tells you whether "b" is a substring of "a". We remove diacritics (i.e. accent marks) and lowercase
+    // both arguments before performing a comparison.
+    a = a.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    b = b.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return a.toLowerCase().includes(b.toLowerCase());
+  }
+
   constructor(private controlContainer: ControlContainer,
               @Host() private parentFormGroupDirective: FormGroupDirective,
               private focusMonitor: FocusMonitor,
@@ -316,7 +324,10 @@ export class NgxMatTelInputComponent implements OnInit,
 
   private filter(q: string): Countries {
     return this.countries.filter((country: Country): boolean => {
-      return this.includes(country.name.common, q) || this.includes(country.name.official, q);
+      return (
+        NgxMatTelInputComponent.includes(country.name.common, q) ||
+        NgxMatTelInputComponent.includes(country.name.official, q)
+      );
     });
   }
 
@@ -334,14 +345,6 @@ export class NgxMatTelInputComponent implements OnInit,
     // If you enter a country code (e.g. +27), libphonenumber will always put a space after it. This interferes with
     // backspace. We trim formattedPhoneNumber in order to fix this.
     this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber.trim(), {onlySelf: true});
-  }
-
-  private includes(a: string, b: string): boolean {
-    // This function tells you whether "b" is a substring of "a". We remove diacritics (i.e. accent marks) and lowercase
-    // both arguments before performing a comparison.
-    a = a.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    b = b.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    return a.toLowerCase().includes(b.toLowerCase());
   }
 
   /**
