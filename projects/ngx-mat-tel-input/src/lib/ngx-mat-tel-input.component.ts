@@ -234,7 +234,10 @@ export class NgxMatTelInputComponent implements OnInit,
         formattedPhoneNumber = formatter.inputDigit(d);
       }
     }
-    this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
+
+    // If you enter a country code (e.g. +27), libphonenumber will always put a space after it. This interferes with
+    // backspace. We trim formattedPhoneNumber in order to fix this.
+    this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber.trim(), {onlySelf: true});
   }
 
   onSelectionChange(selection: Country): void {
