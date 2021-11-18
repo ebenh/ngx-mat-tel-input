@@ -376,7 +376,7 @@ export class NgxMatTelInputComponent implements OnInit,
         console.error(e.toString());
       }
 
-      // NumberParseException exception was thrown, signal format error
+      // NumberParseException exception was thrown, signal a format error
       return {format: true};
 
     }
