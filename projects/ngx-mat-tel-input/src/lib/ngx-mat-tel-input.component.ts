@@ -176,9 +176,10 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   ngOnInit(): void {
-    // Sort countries in English alphabetical order
-    this.countries = this.countries.sort(
-      (a, b) => a.name.common.localeCompare(b.name.common)
+    // Remove the countries that libphonenumber doesn't know about
+    const unsupportedCountries = ['AQ', 'BV', 'GS', 'HM', 'PN', 'TF', 'UM'];
+    this.countries = this.countries.filter(
+      (country: Country): boolean => !unsupportedCountries.includes(country.cca2)
     );
 
     // Reduce the country list to just the those chosen by the caller
@@ -193,10 +194,9 @@ export class NgxMatTelInputComponent implements OnInit,
       );
     }
 
-    // Remove the countries that libphonenumber doesn't know about
-    const unsupportedCountries = ['AQ', 'BV', 'GS', 'HM', 'PN', 'TF', 'UM'];
-    this.countries = this.countries.filter(
-      (country: Country): boolean => !unsupportedCountries.includes(country.cca2)
+    // Sort countries in English alphabetical order
+    this.countries = this.countries.sort(
+      (a, b) => a.name.common.localeCompare(b.name.common)
     );
 
     // Create a filtered list of countries based on the user's input
