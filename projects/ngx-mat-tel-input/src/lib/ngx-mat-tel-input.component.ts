@@ -31,7 +31,13 @@ import {Observable, Subject, Subscription} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
 import countries, {Country, Countries} from 'world-countries';
-import {PhoneNumberUtil, PhoneNumberFormat, PhoneNumberType, AsYouTypeFormatter} from 'google-libphonenumber';
+import {
+  PhoneNumberUtil,
+  PhoneNumberFormat,
+  PhoneNumberType,
+  AsYouTypeFormatter,
+  NumberParseException
+} from 'google-libphonenumber';
 
 const enum Format {
   E164,
@@ -357,7 +363,7 @@ export class NgxMatTelInputComponent implements OnInit,
 
       return null;
 
-    } catch (e) {
+    } catch (e: NumberParseException) {
 
       if (e instanceof Error && (
         e.message !== 'The string supplied is too long to be a phone number' &&
@@ -365,9 +371,11 @@ export class NgxMatTelInputComponent implements OnInit,
         e.message !== 'The string supplied is too short to be a phone number' &&
         e.message !== 'Invalid country calling code' &&
         e.message !== 'Phone number too short after IDD')) {
-        throw e; // unexpected error
+        // unexpected error
+        console.error(e.toString());
       }
 
+      // NumberParseException exception was thrown, signal format error
       return {format: true};
 
     }
