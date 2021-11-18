@@ -40,12 +40,6 @@ import {
   NumberParseException
 } from 'google-libphonenumber';
 
-const enum Format {
-  E164,
-  INTERNATIONAL,
-  NATIONAL,
-  RFC3966
-}
 
 class PhoneNumberErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -131,7 +125,7 @@ export class NgxMatTelInputComponent implements OnInit,
   @Input() defaultCountry;
   @Input() countryWhitelist: string[];
   @Input() countryBlacklist: string[];
-  @Input() format: Format = Format.E164;
+  @Input() format: PhoneNumberFormat = PhoneNumberFormat.E164;
 
   countries: Countries = countries;
   filteredCountries: Observable<Countries>;
