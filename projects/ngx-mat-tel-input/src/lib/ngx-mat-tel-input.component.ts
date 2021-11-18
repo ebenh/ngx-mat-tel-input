@@ -193,6 +193,12 @@ export class NgxMatTelInputComponent implements OnInit,
       );
     }
 
+    // Remove the countries that libphonenumber doesn't know about
+    const unsupportedCountries = ['AQ', 'BV', 'GS', 'HM', 'PN', 'TF', 'UM'];
+    this.countries = this.countries.filter(
+      (country: Country): boolean => !unsupportedCountries.includes(country.cca2)
+    );
+
     // Create a filtered list of countries based on the user's input
     this.filteredCountries = this.formGroup.get('countryFilter').valueChanges
       .pipe(
