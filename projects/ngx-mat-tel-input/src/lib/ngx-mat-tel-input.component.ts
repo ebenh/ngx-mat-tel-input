@@ -285,7 +285,7 @@ export class NgxMatTelInputComponent implements OnInit,
       //  If the phone number is valid, format it and return it to the user
       const isValidNumber = phoneNumberUtil.isValidNumber(phoneNumber);
       if (isValidNumber) {
-        const formattedPhoneNumber = phoneNumberUtil.format(phoneNumber, this.format);
+        const formattedPhoneNumber: string = phoneNumberUtil.format(phoneNumber, this.format);
         control.get('outputPhoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
       }
 
