@@ -393,12 +393,12 @@ export class NgxMatTelInputComponent implements OnInit,
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(defaultCountry);
 
     // Format the initial data passed to this widget
-    const phoneNumber: string = this.formGroup.get('phoneNumber').value;
-    const country: Country = this.formGroup.get('country').value;
-    if (phoneNumber) {
+    const inputCountry: Country = this.formGroup.get('country').value;
+    const inputPhoneNumber: string = this.formGroup.get('phoneNumber').value;
+    if (inputPhoneNumber) {
       const phoneNumberUtil: PhoneNumberUtil = PhoneNumberUtil.getInstance();
-      const phoneNumberObject: PhoneNumber = phoneNumberUtil.parse(phoneNumber, country.cca2);
-      const formattedPhoneNumber: string = phoneNumberUtil.format(phoneNumberObject, PhoneNumberFormat.NATIONAL);
+      const phoneNumber: PhoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
+      const formattedPhoneNumber: string = phoneNumberUtil.format(phoneNumber, PhoneNumberFormat.NATIONAL);
       this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
     }
 
