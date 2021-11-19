@@ -11,7 +11,6 @@ import {
   Self,
   ElementRef,
   HostBinding,
-  AfterContentInit,
 } from '@angular/core';
 import {
   FormGroup,
@@ -61,7 +60,6 @@ class PhoneNumberErrorStateMatcher implements ErrorStateMatcher {
 })
 export class NgxMatTelInputComponent implements OnInit,
   AfterViewInit,
-  AfterContentInit,
   DoCheck,
   OnDestroy,
   MatFormFieldControl<string>,
@@ -391,21 +389,9 @@ export class NgxMatTelInputComponent implements OnInit,
     }
     this.formGroup.get('country').setValue(defaultCountry);
 
+    // Set example number
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(defaultCountry);
 
-    // this.subscription.add(
-    //   this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
-    // );
-    // this.subscription.add(
-    //   this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
-    // );
-  }
-
-  /**
-   * AfterContentInit methods
-   */
-
-  ngAfterContentInit() {
     // Format the initial data passed to this widget
     const phoneNumber: string = this.formGroup.get('phoneNumber').value;
     const country: Country = this.formGroup.get('country').value;
@@ -415,6 +401,13 @@ export class NgxMatTelInputComponent implements OnInit,
       const formattedPhoneNumber: string = phoneNumberUtil.format(phoneNumberObject, PhoneNumberFormat.NATIONAL);
       this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
     }
+
+    // this.subscription.add(
+    //   this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
+    // );
+    // this.subscription.add(
+    //   this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
+    // );
   }
 
   /**
