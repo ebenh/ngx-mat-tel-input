@@ -258,9 +258,7 @@ export class NgxMatTelInputComponent implements OnInit,
     try {
       // Attempt to parse the phone number using libphonenumber
       const phoneNumberUtil: PhoneNumberUtil = PhoneNumberUtil.getInstance();
-
       const phoneNumber: PhoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
-
       const regionCode: string = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
 
       // Update the country picker to match region code of phone number
