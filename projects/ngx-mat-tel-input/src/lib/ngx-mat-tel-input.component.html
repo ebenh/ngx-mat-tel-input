@@ -10,7 +10,7 @@
                 #singleSelect>
 
       <mat-select-trigger>
-        <div class="flag {{country.value.cca2}} shrink"></div>
+        <div class="flag {{country.value.cca2}} shrink" [class.disabled]="disabled"></div>
       </mat-select-trigger>
 
       <mat-option *ngIf="countries?.length > 5">

@@ -1,3 +1,7 @@
+.disabled {
+  filter: grayscale(100%);
+}
+
 .shrink {
   zoom: 0.90;
   -moz-transform: scale(0.91);
