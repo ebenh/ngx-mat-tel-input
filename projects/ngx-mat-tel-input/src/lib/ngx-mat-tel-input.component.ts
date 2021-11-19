@@ -246,8 +246,8 @@ export class NgxMatTelInputComponent implements OnInit,
   }
 
   private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
-    const inputCountry = control.get('country').value as Country;
-    const inputPhoneNumber = control.get('phoneNumber').value as string;
+    const inputCountry: Country = control.get('country').value;
+    const inputPhoneNumber: string = control.get('phoneNumber').value;
 
     control.get('outputPhoneNumber').setValue(inputPhoneNumber, {onlySelf: true});
 
