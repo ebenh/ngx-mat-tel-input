@@ -60,8 +60,8 @@ From your target project run:
 
     $ cd ${PROJECT_ROOT}/projects/ngx-mat-tel-input/
     $ VERSION=$(npm version <major|minor|patch>)
-    $ git tag ${VERSION}
-    $ git commit -am "Bumping version number" && git push --tags
+    $ git commit -am "Bumping version number" && git push
+    $ git tag ${VERSION} && git push --tags
     $ cd ../..
     $ npm run package-for-npm
     $ cd dist/ngx-mat-tel-input/
