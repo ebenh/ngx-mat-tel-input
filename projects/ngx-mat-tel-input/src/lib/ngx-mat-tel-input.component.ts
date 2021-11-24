@@ -15,7 +15,6 @@ import {
 import {
   FormGroup,
   FormControl,
-  ValidatorFn,
   ValidationErrors,
   FormGroupDirective,
   NgForm,
@@ -31,14 +30,15 @@ import {Observable, Subject, Subscription} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
 import countries, {Country, Countries} from 'world-countries';
-import {PhoneNumberUtil, PhoneNumberFormat, PhoneNumberType} from 'google-libphonenumber';
+import {
+  PhoneNumber,
+  PhoneNumberUtil,
+  PhoneNumberFormat,
+  PhoneNumberType,
+  AsYouTypeFormatter,
+  NumberParseException
+} from 'google-libphonenumber';
 
-const enum Format {
-  E164,
-  INTERNATIONAL,
-  NATIONAL,
-  RFC3966
-}
 
 class PhoneNumberErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -124,7 +124,7 @@ export class NgxMatTelInputComponent implements OnInit,
   @Input() defaultCountry;
   @Input() countryWhitelist: string[];
   @Input() countryBlacklist: string[];
-  @Input() format: Format = Format.E164;
+  @Input() format: PhoneNumberFormat = PhoneNumberFormat.E164;
 
   countries: Countries = countries;
   filteredCountries: Observable<Countries>;
@@ -153,6 +153,14 @@ export class NgxMatTelInputComponent implements OnInit,
     return `eg. ${exampleNumberString}`;
   }
 
+  private static includes(a: string, b: string): boolean {
+    // This function tells you whether "b" is a substring of "a". We remove diacritics (i.e. accent marks) and lowercase
+    // both arguments before performing a comparison.
+    a = a.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    b = b.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return a.toLowerCase().includes(b.toLowerCase());
+  }
+
   constructor(private controlContainer: ControlContainer,
               @Host() private parentFormGroupDirective: FormGroupDirective,
               private focusMonitor: FocusMonitor,
@@ -175,10 +183,169 @@ export class NgxMatTelInputComponent implements OnInit,
 
   }
 
+  onSelectionChange(selection: Country): void {
+    this.placeholder = NgxMatTelInputComponent.getExampleNumber(selection);
+    // this.formGroup.get('phoneNumber').updateValueAndValidity();
+
+    // Attempt to format the user's input
+    this.formatUserInput();
+  }
+
+  onKeyDown(event: any): void {
+    // Restrict the user's input
+    const validKeys = [
+      '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '(', ')', '-', ' ',
+      'Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'
+    ];
+
+    if (validKeys.includes(event.key)) {
+      return;
+    }
+    if (event.ctrlKey && (event.key === 'x' || event.key === 'c' || event.key === 'v' || event.key === 'a')) {
+      return;
+    }
+
+    event.preventDefault();
+  }
+
+  onKeyUp(event: any): void {
+    // Format the user's input, but only if the caret is at the end
+    if (event.target.selectionStart === this.formGroup.get('phoneNumber').value.length) {
+      this.formatUserInput();
+    }
+  }
+
+  onClick(event: any): void {
+    // Format the user's input, but only if the caret is at the end
+    if (event.target.selectionStart === this.formGroup.get('phoneNumber').value.length) {
+      this.formatUserInput();
+    }
+  }
+
+  onPaste(event: ClipboardEvent) {
+    // Remove invalid characters from pasted data. We only allow digits 0-9 and +.
+    const data = event.clipboardData.getData('text');
+    this.formGroup.get('phoneNumber').setValue(
+      data.replace(/[^0-9+]/g, '')
+    );
+
+    event.preventDefault();
+  }
+
+  onBlur(event: any): void {
+    if (!this.isTouched) {
+      this.isTouched = true;
+      this.onTouched();
+    }
+
+    // Format the user's input only if the caret is **not** at the end.
+    // If the caret is at the end of the input, that means the user's input has already been formatted.
+    if (event.target.selectionStart !== this.formGroup.get('phoneNumber').value.length) {
+      this.formatUserInput();
+    }
+  }
+
+  private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
+    const inputCountry: Country = control.get('country').value;
+    const inputPhoneNumber: string = control.get('phoneNumber').value;
+
+    control.get('outputPhoneNumber').setValue(inputPhoneNumber, {onlySelf: true});
+
+    if (inputPhoneNumber === '') {
+      return null;
+    }
+
+    try {
+      // Attempt to parse the phone number using libphonenumber
+      const phoneNumberUtil: PhoneNumberUtil = PhoneNumberUtil.getInstance();
+      const phoneNumber: PhoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
+      const regionCode: string = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
+
+      // Update the country picker to match region code of phone number
+      let isCountryInWhitelist = true;
+      if (regionCode && regionCode !== inputCountry.cca2) {
+        const country = this.countries.find((el: Country): boolean => el.cca2 === regionCode);
+        if (country) {
+          control.get('country').setValue(country, {onlySelf: true});
+        } else {
+          isCountryInWhitelist = false;
+        }
+      }
+
+      //  If the phone number is valid, format it and return it to the user
+      const isValidNumber = phoneNumberUtil.isValidNumber(phoneNumber);
+      if (isValidNumber) {
+        const formattedPhoneNumber: string = phoneNumberUtil.format(phoneNumber, this.format);
+        control.get('outputPhoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
+      }
+
+      // If the phone number is not valid, signal a format error
+      if (!isValidNumber) {
+        return {format: true};
+      }
+
+      // If the phone number's country is not in the country whitelist, signal a country error
+      if (!isCountryInWhitelist) {
+        return {country: true};
+      }
+
+      return null;
+
+    } catch (e: NumberParseException) {
+
+      if (e instanceof Error && (
+        e.message !== 'The string supplied is too long to be a phone number' &&
+        e.message !== 'The string supplied did not seem to be a phone number' &&
+        e.message !== 'The string supplied is too short to be a phone number' &&
+        e.message !== 'Invalid country calling code' &&
+        e.message !== 'Phone number too short after IDD')) {
+        // unexpected error
+        console.error(e.toString());
+      }
+
+      // NumberParseException exception was thrown, signal a format error
+      return {format: true};
+
+    }
+
+    // unreachable
+
+  }
+
+  private filter(q: string): Countries {
+    return this.countries.filter((country: Country): boolean => {
+      return (
+        NgxMatTelInputComponent.includes(country.name.common, q) ||
+        NgxMatTelInputComponent.includes(country.name.official, q)
+      );
+    });
+  }
+
+  private formatUserInput(): void {
+    // Only call this method if (A) the caret is at the end of the input, or (B) if the input is not in focus!
+
+    const formatter = new AsYouTypeFormatter(this.formGroup.get('country').value.cca2);
+    let formattedPhoneNumber = '';
+    for (const d of this.formGroup.get('phoneNumber').value) {
+      if ((d >= '0' && d <= '9') || d === '+') {
+        formattedPhoneNumber = formatter.inputDigit(d);
+      }
+    }
+
+    // If you enter a country code (e.g. +27), libphonenumber will always put a space after it. This interferes with
+    // backspace. We trim formattedPhoneNumber in order to fix this.
+    this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber.trim(), {onlySelf: true});
+  }
+
+  /**
+   * OnInit methods
+   */
+
   ngOnInit(): void {
-    // Sort countries in English alphabetical order
-    this.countries = this.countries.sort(
-      (a, b) => a.name.common.localeCompare(b.name.common)
+    // Remove the countries that libphonenumber doesn't know about
+    const unsupportedCountries = ['AQ', 'BV', 'GS', 'HM', 'PN', 'TF', 'UM'];
+    this.countries = this.countries.filter(
+      (country: Country): boolean => !unsupportedCountries.includes(country.cca2)
     );
 
     // Reduce the country list to just the those chosen by the caller
@@ -192,6 +359,11 @@ export class NgxMatTelInputComponent implements OnInit,
         (country: Country): boolean => !this.countryBlacklist.includes(country.cca2)
       );
     }
+
+    // Sort countries in English alphabetical order
+    this.countries = this.countries.sort(
+      (a, b) => a.name.common.localeCompare(b.name.common)
+    );
 
     // Create a filtered list of countries based on the user's input
     this.filteredCountries = this.formGroup.get('countryFilter').valueChanges
@@ -209,94 +381,25 @@ export class NgxMatTelInputComponent implements OnInit,
     }
     this.formGroup.get('country').setValue(defaultCountry);
 
+    // Set example number
     this.placeholder = NgxMatTelInputComponent.getExampleNumber(defaultCountry);
 
-    this.subscription.add(
-      this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
-    );
-    this.subscription.add(
-      this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
-    );
-  }
-
-  private filter(q: string): Countries {
-    return this.countries.filter((country: Country): boolean => {
-      return includes(country.name.common, q) || includes(country.name.official, q);
-    });
-  }
-
-  onSelectionChange(selection: Country): void {
-    this.placeholder = NgxMatTelInputComponent.getExampleNumber(selection);
-    this.formGroup.get('phoneNumber').updateValueAndValidity();
-  }
-
-  onBlur(): void {
-    if (!this.isTouched) {
-      this.isTouched = true;
-      this.onTouched();
-    }
-  }
-
-  private phoneNumberValidator(control: FormGroup): ValidationErrors | null {
-    const inputCountry = control.get('country').value as Country;
-    const inputPhoneNumber = control.get('phoneNumber').value as string;
-
-    control.get('outputPhoneNumber').setValue(inputPhoneNumber, {onlySelf: true});
-
-    if (inputPhoneNumber === '') {
-      return null;
+    // Format the initial data passed to this widget
+    const inputCountry: Country = this.formGroup.get('country').value;
+    const inputPhoneNumber: string = this.formGroup.get('phoneNumber').value;
+    if (inputPhoneNumber) {
+      const phoneNumberUtil: PhoneNumberUtil = PhoneNumberUtil.getInstance();
+      const phoneNumber: PhoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
+      const formattedPhoneNumber: string = phoneNumberUtil.format(phoneNumber, PhoneNumberFormat.NATIONAL);
+      this.formGroup.get('phoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
     }
 
-    try {
-      const phoneNumberUtil = PhoneNumberUtil.getInstance();
-
-      const phoneNumber = phoneNumberUtil.parse(inputPhoneNumber, inputCountry.cca2);
-
-      const regionCode = phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
-
-      let isCountryInWhitelist = true;
-      if (regionCode && regionCode !== inputCountry.cca2) {
-        const country = this.countries.find((el: Country): boolean => el.cca2 === regionCode);
-        if (country) {
-          control.get('country').setValue(country, {onlySelf: true});
-        } else {
-          isCountryInWhitelist = false;
-        }
-      }
-
-      const isValidNumber = phoneNumberUtil.isValidNumber(phoneNumber);
-
-      if (isValidNumber) {
-        const formattedPhoneNumber = phoneNumberUtil.format(phoneNumber, this.format);
-        control.get('outputPhoneNumber').setValue(formattedPhoneNumber, {onlySelf: true});
-      }
-
-      if (!isValidNumber) {
-        return {format: true};
-      }
-
-      if (!isCountryInWhitelist) {
-        return {country: true};
-      }
-
-      return null;
-
-    } catch (e) {
-
-      if (e instanceof Error && (
-        e.message !== 'The string supplied did not seem to be a phone number' &&
-        e.message !== 'The string supplied is too short to be a phone number' &&
-        e.message !== 'Invalid country calling code' &&
-        e.message !== 'Phone number too short after IDD')) {
-        throw e; // unexpected error
-      }
-
-      return {phoneNumber: true};
-
-    }
-
-    // unreachable
-
+    // this.subscription.add(
+    //   this.formGroup.get('phoneNumber').valueChanges.subscribe(() => this.stateChanges.next())
+    // );
+    // this.subscription.add(
+    //   this.formGroup.get('country').valueChanges.subscribe(() => this.stateChanges.next())
+    // );
   }
 
   /**
@@ -384,16 +487,4 @@ export class NgxMatTelInputComponent implements OnInit,
       this.formGroup.enable();
     }
   }
-}
-
-/**
- * Utilities
- */
-
-function includes(a: string, b: string): boolean {
-  // This function tells you whether "b" is a substring of "a". We remove diacritics (i.e. accent marks) and lowercase
-  // both arguments before performing a comparison.
-  a = a.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  b = b.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  return a.toLowerCase().includes(b.toLowerCase());
 }

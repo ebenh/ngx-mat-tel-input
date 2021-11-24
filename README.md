@@ -31,8 +31,7 @@ Import the module into your `app.module.ts`:
       ...
       imports: [
         ...,
-        NgxMatTelInputModule,
-        ...
+        NgxMatTelInputModule
       ],
       ...
     })

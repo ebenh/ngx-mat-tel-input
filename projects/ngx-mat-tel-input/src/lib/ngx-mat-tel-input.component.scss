@@ -1,3 +1,7 @@
+.disabled {
+  filter: grayscale(100%);
+}
+
 .flag {
   display: inline-block;
   width: 24px;

@@ -6,10 +6,11 @@
                 formControlName="country"
                 (selectionChange)="onSelectionChange($event.value)"
                 fxFlex="45px"
+                tabindex="-1"
                 #singleSelect>
 
       <mat-select-trigger>
-        <div class="flag {{country.value.cca2}}"></div>
+        <div class="flag {{country.value.cca2}}" [class.disabled]="disabled"></div>
       </mat-select-trigger>
 
       <mat-option *ngIf="countries?.length > 5">
@@ -32,7 +33,11 @@
            formControlName="phoneNumber"
            [placeholder]="placeholder"
            [errorStateMatcher]="phoneNumberErrorStateMatcher"
-           (blur)="onBlur()"
+           (keydown)="onKeyDown($event)"
+           (keyup)="onKeyUp($event)"
+           (click)="onClick($event)"
+           (paste)="onPaste($event)"
+           (blur)="onBlur($event)"
            fxFlex="grow">
 
   </div>
