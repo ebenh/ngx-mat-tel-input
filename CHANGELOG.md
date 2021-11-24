@@ -17,7 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Country picker no longer selectable using keyboard navigation (e.g. by pressing tab)
 - Removed from country picker countries which libphonenumber doesn't support (e.g. Antarctica)
 - Flag icon now greyed out when component is in disabled state
-- Component now same height as other Angular Material components
 
 ### Removed
 - *None*
