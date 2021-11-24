@@ -58,6 +58,8 @@ From your target project run:
 
 ### Publishing to npm
 
+> Note: Before performing these steps `git stash` any changes you do not want to commit.
+
     $ cd ${PROJECT_ROOT}/projects/ngx-mat-tel-input/
     $ VERSION=$(npm version <major|minor|patch>)
     $ git commit -am "Bumping version number" && git push
