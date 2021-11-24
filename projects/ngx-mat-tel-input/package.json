@@ -35,7 +35,8 @@
     "intl-tel-input",
     "ng-intl-tel-input",
     "ngx-intl-tel-input",
-    "ngx-mat-intl-tel-input"
+    "ngx-mat-intl-tel-input",
+    "ngx-mat-select-search"
   ],
   "peerDependencies": {
     "@angular/core": ">=8.2.14",
