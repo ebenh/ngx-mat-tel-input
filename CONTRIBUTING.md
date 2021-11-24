@@ -59,8 +59,9 @@ From your target project run:
 ### Publishing to npm
 
     $ cd ${PROJECT_ROOT}/projects/ngx-mat-tel-input/
-    $ npm version <major|minor|patch>
-    $ git commit -am "Bumping version number" && git push
+    $ VERSION=$(npm version <major|minor|patch>)
+    $ git tag ${VERSION}
+    $ git commit -am "Bumping version number" && git push --tags
     $ cd ../..
     $ npm run package-for-npm
     $ cd dist/ngx-mat-tel-input/
