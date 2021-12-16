@@ -8,7 +8,7 @@ Before contributing, please take time to review our code of conduct [here](CODE_
 
 ### Cloning the Git Repository
 
-    $ git clone https://github.com/ebenh/ngx-mat-tel-input ${PROJECT_ROOT}
+    $ git clone https://github.com/ebenh/ngx-mat-tel-input/ ${PROJECT_ROOT}
 
 ### Installing Dependencies
 
