@@ -52,7 +52,7 @@ with this:
     $ cd dist/ngx-mat-tel-input/
     $ npm pack
 
-From your target project run:
+From your target project the following command. The value of `${VERSION}` should be the library's current semantic version (e.g. `1.0.0`).
 
     $ npm install ${PROJECT_ROOT}/dist/ngx-mat-tel-input/ngx-mat-tel-input-${VERSION}.tgz
 
