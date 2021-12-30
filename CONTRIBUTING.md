@@ -54,14 +54,14 @@ with this:
 
 From your target project run:
 
-    $ npm install ${PROJECT_ROOT}/dist/ngx-mat-tel-input/ngx-mat-tel-input-<version>.tgz
+    $ npm install ${PROJECT_ROOT}/dist/ngx-mat-tel-input/ngx-mat-tel-input-${VERSION}.tgz
 
 ### Publishing to npm
 
 > Note: Before performing these steps `git stash` any changes you do not want to commit.
 
     $ cd ${PROJECT_ROOT}/projects/ngx-mat-tel-input/
-    $ VERSION=$(npm version <major|minor|patch>)
+    $ VERSION=$(npm version [major|minor|patch])
     $ git commit -am "Bumping version number" && git push
     $ git tag ${VERSION} && git push --tags
     $ cd ../..
